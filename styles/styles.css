@@ -18,17 +18,17 @@ body {
   color: #FFFFFF;
 }
 
-.encabezado h1 {
+.titulo-sitio {
   font-size: 2.5rem;
   font-weight: 700;
 }
 
-.menu-navegacion a {
+.enlace-menu {
   color: #FFFFFF;
   font-weight: 700;
 }
 
-.menu-navegacion a:hover {
+.enlace-menu:hover {
   color: #F97316;
 }
 
@@ -38,13 +38,13 @@ body {
 }
 
 /* Títulos */
-.contenido-principal h2 {
+.titulo-seccion {
   color: #111827;
   font-size: 1.8rem;
   font-weight: 700;
 }
 
-.contenido-principal h3 {
+.titulo-tarjeta {
   color: #EA580C;
   font-size: 1.3rem;
   font-weight: 700;
@@ -76,13 +76,13 @@ body {
 }
 
 /* Información adicional */
-aside {
+.info-adicional {
   background-color: #E5E7EB;
   color: #1F2937;
 }
 
 /* Leyendas de imágenes */
-figcaption {
+.leyenda-imagen {
   color: #4B5563;
   font-size: 0.875rem;
 }
@@ -93,10 +93,10 @@ figcaption {
   color: #FFFFFF;
 }
 
-.pie-pagina a {
+.enlace-red-social {
   color: #FDBA74;
 }
 
-.pie-pagina a:hover {
+.enlace-red-social:hover {
   color: #FFFFFF;
 }
