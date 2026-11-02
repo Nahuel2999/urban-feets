@@ -3,7 +3,6 @@
 
 /* font-family: "Roboto", sans-serif */
 
-/* Tipografía y estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -15,40 +14,47 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: "Poppins", "Roboto";
   color: #1F2937;
   background-color: #F3F4F6;
   line-height: 1.6;
 }
 
-/* Encabezado y menú de navegación */
 .encabezado, .contenido-principal, .pie-pagina {
   max-width: 75rem;
   margin: 0 auto;
   padding: 1rem;
 }
 
-.encabezado {
+.encabezado-navbar {
   background-color: #111827;
   color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   border-bottom: 0.25rem solid #ea580c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 .titulo-sitio {
   margin: 0;
   font-size: 2rem;
   font-weight: 700;
+  white-space: nowrap;
+}
+
+.menu-navegacion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
 }
 
 .lista-navegacion {
-  margin: 0;
-  padding: 0;
   list-style: none;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
@@ -66,26 +72,123 @@ body {
   border-color: #f97316;
 }
 
-/* Contenido principal */
 .contenido-principal {
   background-color: #ffffff;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
+.contenido-principal-layout-inicio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.contenido-principal-layout-productos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
 section, aside, article {
-  padding: 1rem;
+  padding: 1.25rem;
   border: 0.0625rem solid #e5e7eb;
   border-radius: 0.5rem;
 }
 
-/* Secciones y títulos */
-.seccion-resumen, .seccion-productos, .seccion-ofertas, .seccion-sobre-nosotros,
-.seccion-mision, .seccion-valores, .seccion-contacto, .seccion-datos-contacto {
+section, aside {
   margin-bottom: 1rem;
+}
+
+.pagina-inicio .seccion-bienvenida {
+  flex: 2 1 34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #fff7ed;
+}
+
+.pagina-inicio .seccion-ofertas-seccion-resumen {
+  flex: 1 1 100rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.pagina-inicio .info-adicional {
+  flex: 1 1 100%;
+}
+
+.pagina-productos .seccion-productos {
+  flex: 2 1 48rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.pagina-productos .info-adicional {
+  flex: 1 1 100rem;
+  align-self: stretch;
+}
+
+.pagina-productos .grilla-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.pagina-productos .tarjeta-producto {
+  flex: 1 1 calc(50% - 0.625rem);
+  min-width: 16rem;
+  background-color: #f3f4f6;
+}
+
+.grilla-ofertas, .lista-valores, .formulario-contacto, .lista-redes {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.grilla-ofertas, .lista-valores {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.tarjeta-oferta, .tarjeta-valor {
+  flex: 1 1 18rem;
+}
+
+.seccion-sobre-nosotros {
+  background-color: #e0f2fe;
+}
+
+.seccion-contacto {
+  background-color: #f3f4f6;
+}
+
+.info-adicional {
+  background-color: #e5e7eb;
+  color: #1f2937;
 }
 
 .titulo-seccion {
@@ -102,7 +205,6 @@ section, aside, article {
   margin-top: 0;
 }
 
-/* Imágenes */
 img {
   max-width: 100%;
   height: auto;
@@ -115,60 +217,14 @@ img {
   font-size: 0.875rem;
 }
 
-/* Grillas de productos y ofertas */
-.grilla-productos, .grilla-ofertas, .lista-valores {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-/* Tarjetas */
-.tarjeta-producto {
-  background-color: #f3f4f6;
-}
-
-.tarjeta-oferta {
-  background-color: #ffedd5;
-}
-
-.tarjeta-valor {
-  background-color: #f9fafb;
-}
-
-.precio {
-  font-weight: 700;
-}
-
-/* Fondos de secciones especiales */
-.seccion-bienvenida {
-  background-color: #fff7ed;
-}
-
-.seccion-sobre-nosotros {
-  background-color: #e0f2fe;
-}
-
-.seccion-contacto {
-  background-color: #f3f4f6;
-}
-
-.info-adicional {
-  background-color: #e5e7eb;
-  color: #1f2937;
-  align-self: start;
-}
-
-/* Listas */
-.lista-info, .lista-precios, .lista-valores, .lista-redes {
-  margin: 0;
+.lista-info, .lista-precios, .lista-valores {
   padding-left: 1.25rem;
 }
 
 .lista-redes {
   list-style: none;
   padding-left: 0;
-  display: flex;
-  gap: 1rem;
+  justify-content: flex-start;
 }
 
 .enlace-red-social {
@@ -180,7 +236,6 @@ img {
   color: #ffffff;
 }
 
-/* Botones y enlaces de acción */
 .boton-enlace {
   display: inline-block;
   padding: 0.5em 1em;
@@ -197,17 +252,14 @@ img {
   color: #ffffff;
 }
 
-/* Formulario de contacto */
 .formulario-contacto {
-  display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: stretch;
 }
 
 fieldset {
   border: 0.0625rem solid #d1d5db;
-  padding: 1rem;
-  margin: 0;
+  padding: 1.25rem;
 }
 
 legend {
@@ -235,23 +287,27 @@ textarea {
   resize: vertical;
 }
 
-/* Pie de página */
 .pie-pagina {
   background-color: #111827;
   color: #ffffff;
 }
 
-/* Diseño responsive */
 @media (max-width: 48rem) {
-  .contenido-principal {
-    grid-template-columns: 1fr;
+  .encabezado-navbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .grilla-productos, .grilla-ofertas, .lista-valores {
-    grid-template-columns: 1fr;
+  .menu-navegacion {
+    justify-content: center;
   }
 
-  .encabezado {
-    padding: 1rem;
+  .lista-navegacion {
+    justify-content: center;
+  }
+
+  .pagina-productos .tarjeta-producto {
+    flex: 1 1 100%;
   }
 }
