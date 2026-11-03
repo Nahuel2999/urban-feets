@@ -1,16 +1,36 @@
-/* Tipografías originales del sitio. */
+/* Tipografías */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { font-size: 16px; }
-body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-color: #F3F4F6; line-height: 1.6; }
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.encabezado-navbar, .contenido-principal, .contenido-principal-layout-inicio, .contenido-principal-layout-productos, .pie-pagina {
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Poppins", "Roboto", sans-serif;
+  color: #1F2937;
+  background-color: #F3F4F6;
+  line-height: 1.6;
+}
+
+/* Contenedores principales */
+.encabezado-navbar,
+.contenido-principal,
+.contenido-principal-layout-inicio,
+.contenido-principal-layout-productos,
+.pie-pagina {
   width: min(100%, 75rem);
   margin-inline: auto;
   padding: 1rem;
 }
 
+/* Encabezado */
 .encabezado-navbar {
   background-color: #111827;
   color: #fff;
@@ -32,6 +52,7 @@ body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-
   text-align: center;
 }
 
+/* Navegación */
 .menu-navegacion {
   grid-area: menu;
   width: 100%;
@@ -60,6 +81,7 @@ body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-
   border-color: #f97316;
 }
 
+/* Layout principal */
 .contenido-principal,
 .contenido-principal-layout-inicio,
 .contenido-principal-layout-productos {
@@ -72,6 +94,7 @@ body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-
   background-color: #fff;
 }
 
+/* Áreas de la página de inicio */
 .contenido-principal-layout-inicio {
   grid-template-areas:
     "bienvenida"
@@ -79,12 +102,16 @@ body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-
     "apoyo";
 }
 
-.contenido-principal-layout-productos {
-  grid-template-areas:
-    "contenido"
-    "apoyo";
+.pagina-inicio .seccion-bienvenida {
+  grid-area: bienvenida;
 }
 
+.pagina-inicio .seccion-ofertas-seccion-resumen {
+  grid-area: ofertas;
+}
+
+/* Áreas de las páginas internas */
+.contenido-principal-layout-productos,
 .contenido-ofertas {
   grid-template-areas:
     "contenido"
@@ -104,22 +131,6 @@ body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-
     "formulario"
     "datos"
     "apoyo";
-}
-
-.pagina-inicio .seccion-bienvenida {
-  grid-area: bienvenida;
-}
-
-.pagina-inicio .seccion-ofertas-seccion-resumen {
-  grid-area: ofertas;
-}
-
-.pagina-inicio .info-adicional,
-.pagina-productos .info-adicional,
-.contenido-ofertas .info-adicional,
-.contenido-sobre-nosotros .info-adicional,
-.contenido-contacto .info-adicional {
-  grid-area: apoyo;
 }
 
 .pagina-productos .seccion-productos,
@@ -147,16 +158,13 @@ body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-
   grid-area: datos;
 }
 
-.pagina-inicio .seccion-bienvenida,
-.pagina-inicio .seccion-ofertas-seccion-resumen,
-.pagina-productos .seccion-productos,
-.seccion-ofertas,
-.seccion-sobre-nosotros,
-.seccion-mision,
-.seccion-valores,
-.seccion-contacto,
-.seccion-datos-contacto {
-  min-width: 0;
+/* Información adicional */
+.pagina-inicio .info-adicional,
+.pagina-productos .info-adicional,
+.contenido-ofertas .info-adicional,
+.contenido-sobre-nosotros .info-adicional,
+.contenido-contacto .info-adicional {
+  grid-area: apoyo;
 }
 
 .info-adicional {
@@ -164,6 +172,7 @@ body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-
   color: #1f2937;
 }
 
+/* Secciones y tarjetas */
 section,
 aside,
 article {
@@ -189,6 +198,19 @@ aside {
   background-color: #f3f4f6;
 }
 
+.pagina-inicio .seccion-bienvenida,
+.pagina-inicio .seccion-ofertas-seccion-resumen,
+.pagina-productos .seccion-productos,
+.seccion-ofertas,
+.seccion-sobre-nosotros,
+.seccion-mision,
+.seccion-valores,
+.seccion-contacto,
+.seccion-datos-contacto {
+  min-width: 0;
+}
+
+/* Grillas de tarjetas */
 .pagina-productos .grilla-productos,
 .grilla-ofertas,
 .lista-valores {
@@ -215,6 +237,7 @@ aside {
   height: 100%;
 }
 
+/* Contenido interno organizado con Flexbox */
 .pagina-inicio .seccion-bienvenida,
 .pagina-inicio .seccion-ofertas-seccion-resumen,
 .pagina-productos .seccion-productos {
@@ -245,6 +268,7 @@ aside {
   padding-left: 1.25rem;
 }
 
+/* Títulos */
 .titulo-seccion {
   margin-top: 0;
   color: #111827;
@@ -259,6 +283,7 @@ aside {
   margin-top: 0;
 }
 
+/* Imágenes */
 img {
   max-width: 100%;
   height: auto;
@@ -271,6 +296,7 @@ img {
   font-size: .875rem;
 }
 
+/* Enlaces de redes sociales */
 .enlace-red-social {
   color: #fdba74;
   text-decoration: none;
@@ -281,6 +307,7 @@ img {
   color: #fff;
 }
 
+/* Botones */
 .boton-enlace {
   display: inline-block;
   width: auto;
@@ -300,6 +327,7 @@ img {
   color: #fff;
 }
 
+/* Formulario */
 fieldset {
   border: .0625rem solid #d1d5db;
   padding: 1.25rem;
@@ -333,11 +361,13 @@ textarea {
   resize: vertical;
 }
 
+/* Pie de página */
 .pie-pagina {
   background-color: #111827;
   color: #fff;
 }
 
+/* Diseño responsive para tablets */
 @media (min-width: 48rem) {
   .encabezado-navbar {
     grid-template-columns: auto minmax(0, 1fr);
@@ -392,6 +422,7 @@ textarea {
   }
 }
 
+/* Diseño responsive para escritorio */
 @media (min-width: 1024px) {
   .contenido-principal-layout-inicio,
   .contenido-principal-layout-productos,
