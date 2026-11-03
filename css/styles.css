@@ -38,10 +38,23 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
+    "logo"
     "marca"
     "menu";
   gap: 1rem;
   justify-items: center;
+}
+
+.logo-sitio {
+  grid-area: logo;
+  justify-self: start;
+  display: block;
+}
+
+.logo-sitio img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
 }
 
 .titulo-sitio {
@@ -91,7 +104,15 @@ body {
   gap: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+
+  /* Fondo atenuado de los contenedores principales */
   background-color: #fff;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)),
+    url("../assets/fondo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Áreas de la página de inicio */
@@ -167,15 +188,11 @@ body {
   grid-area: apoyo;
 }
 
-.info-adicional {
-  background-color: #e5e7eb;
-  color: #1f2937;
-}
-
-/* Secciones y tarjetas */
+/* Secciones, tarjetas e información adicional */
 section,
 aside,
 article {
+  background-color: #f3f4f6;
   padding: 1.25rem;
   border: .0625rem solid #e5e7eb;
   border-radius: .5rem;
@@ -186,15 +203,14 @@ aside {
   margin-bottom: 1rem;
 }
 
-.pagina-inicio .seccion-bienvenida {
-  background-color: #fff7ed;
-}
-
-.seccion-sobre-nosotros {
-  background-color: #e0f2fe;
-}
-
-.seccion-contacto {
+/* Ajustes de color para mantener un fondo uniforme en todos los bloques */
+.info-adicional,
+.pagina-inicio .seccion-bienvenida,
+.seccion-sobre-nosotros,
+.seccion-contacto,
+.pagina-productos .tarjeta-producto,
+.tarjeta-oferta,
+.tarjeta-valor {
   background-color: #f3f4f6;
 }
 
@@ -370,14 +386,14 @@ textarea {
 /* Diseño responsive para tablets */
 @media (min-width: 48rem) {
   .encabezado-navbar {
-    grid-template-columns: auto minmax(0, 1fr);
-    grid-template-areas: "marca menu";
+    grid-template-columns: auto minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-areas: "logo marca menu";
     justify-items: stretch;
     align-items: center;
   }
 
   .titulo-sitio {
-    text-align: left;
+    text-align: center;
     white-space: nowrap;
   }
 
