@@ -1,181 +1,184 @@
-/* Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Tipografías originales del sitio. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap');
 
-/* font-family: "Roboto", sans-serif */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body { font-family: "Poppins", "Roboto", sans-serif; color: #1F2937; background-color: #F3F4F6; line-height: 1.6; }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: "Poppins", "Roboto";
-  color: #1F2937;
-  background-color: #F3F4F6;
-  line-height: 1.6;
-}
-
-.encabezado, .contenido-principal, .pie-pagina {
-  max-width: 75rem;
-  margin: 0 auto;
+.encabezado-navbar, .contenido-principal, .contenido-principal-layout-inicio, .contenido-principal-layout-productos, .pie-pagina {
+  width: min(100%, 75rem);
+  margin-inline: auto;
   padding: 1rem;
 }
 
 .encabezado-navbar {
   background-color: #111827;
-  color: #ffffff;
-  border-bottom: 0.25rem solid #ea580c;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.25rem;
+  color: #fff;
+  border-bottom: .25rem solid #ea580c;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "marca"
+    "menu";
+  gap: 1rem;
+  justify-items: center;
 }
 
 .titulo-sitio {
+  grid-area: marca;
   margin: 0;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 7vw, 2rem);
   font-weight: 700;
-  white-space: nowrap;
+  text-align: center;
 }
 
 .menu-navegacion {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex: 1;
+  grid-area: menu;
+  width: 100%;
 }
 
 .lista-navegacion {
   list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
 }
 
 .enlace-menu {
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
   text-decoration: none;
-  padding: 0.5em 0.75em;
-  border: 0.125rem solid transparent;
+  padding: .5em .75em;
+  border: .125rem solid transparent;
 }
 
-.enlace-menu:hover, .enlace-menu:focus {
+.enlace-menu:hover,
+.enlace-menu:focus {
   color: #f97316;
   border-color: #f97316;
 }
 
-.contenido-principal {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
+.contenido-principal,
+.contenido-principal-layout-inicio,
+.contenido-principal-layout-productos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
   gap: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  background-color: #fff;
 }
 
 .contenido-principal-layout-inicio {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.25rem;
+  grid-template-areas:
+    "bienvenida"
+    "ofertas"
+    "apoyo";
 }
 
 .contenido-principal-layout-productos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.25rem;
+  grid-template-areas:
+    "contenido"
+    "apoyo";
 }
 
-section, aside, article {
+.contenido-ofertas {
+  grid-template-areas:
+    "contenido"
+    "apoyo";
+}
+
+.contenido-sobre-nosotros {
+  grid-template-areas:
+    "presentacion"
+    "mision"
+    "valores"
+    "apoyo";
+}
+
+.contenido-contacto {
+  grid-template-areas:
+    "formulario"
+    "datos"
+    "apoyo";
+}
+
+.pagina-inicio .seccion-bienvenida {
+  grid-area: bienvenida;
+}
+
+.pagina-inicio .seccion-ofertas-seccion-resumen {
+  grid-area: ofertas;
+}
+
+.pagina-inicio .info-adicional,
+.pagina-productos .info-adicional,
+.contenido-ofertas .info-adicional,
+.contenido-sobre-nosotros .info-adicional,
+.contenido-contacto .info-adicional {
+  grid-area: apoyo;
+}
+
+.pagina-productos .seccion-productos,
+.contenido-ofertas .seccion-ofertas {
+  grid-area: contenido;
+}
+
+.contenido-sobre-nosotros .seccion-sobre-nosotros {
+  grid-area: presentacion;
+}
+
+.contenido-sobre-nosotros .seccion-mision {
+  grid-area: mision;
+}
+
+.contenido-sobre-nosotros .seccion-valores {
+  grid-area: valores;
+}
+
+.contenido-contacto .seccion-contacto {
+  grid-area: formulario;
+}
+
+.contenido-contacto .seccion-datos-contacto {
+  grid-area: datos;
+}
+
+.pagina-inicio .seccion-bienvenida,
+.pagina-inicio .seccion-ofertas-seccion-resumen,
+.pagina-productos .seccion-productos,
+.seccion-ofertas,
+.seccion-sobre-nosotros,
+.seccion-mision,
+.seccion-valores,
+.seccion-contacto,
+.seccion-datos-contacto {
+  min-width: 0;
+}
+
+.info-adicional {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+section,
+aside,
+article {
   padding: 1.25rem;
-  border: 0.0625rem solid #e5e7eb;
-  border-radius: 0.5rem;
+  border: .0625rem solid #e5e7eb;
+  border-radius: .5rem;
 }
 
-section, aside {
+section,
+aside {
   margin-bottom: 1rem;
 }
 
 .pagina-inicio .seccion-bienvenida {
-  flex: 2 1 34rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
   background-color: #fff7ed;
-}
-
-.pagina-inicio .seccion-ofertas-seccion-resumen {
-  flex: 1 1 100rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.pagina-inicio .info-adicional {
-  flex: 1 1 100%;
-}
-
-.pagina-productos .seccion-productos {
-  flex: 2 1 48rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  gap: 1.25rem;
-}
-
-.pagina-productos .info-adicional {
-  flex: 1 1 100rem;
-  align-self: stretch;
-}
-
-.pagina-productos .grilla-productos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  gap: 1.25rem;
-}
-
-.pagina-productos .tarjeta-producto {
-  flex: 1 1 calc(50% - 0.625rem);
-  min-width: 16rem;
-  background-color: #f3f4f6;
-}
-
-.grilla-ofertas, .lista-valores, .formulario-contacto, .lista-redes {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.grilla-ofertas, .lista-valores {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.tarjeta-oferta, .tarjeta-valor {
-  flex: 1 1 18rem;
 }
 
 .seccion-sobre-nosotros {
@@ -186,9 +189,60 @@ section, aside {
   background-color: #f3f4f6;
 }
 
-.info-adicional {
-  background-color: #e5e7eb;
-  color: #1f2937;
+.pagina-productos .grilla-productos,
+.grilla-ofertas,
+.lista-valores {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.pagina-productos .tarjeta-producto,
+.tarjeta-oferta,
+.tarjeta-valor {
+  min-width: 0;
+  background-color: #f3f4f6;
+}
+
+.lista-valores {
+  list-style: none;
+  padding-left: 0;
+}
+
+.grilla-ofertas .tarjeta-oferta,
+.lista-valores .tarjeta-valor {
+  height: 100%;
+}
+
+.pagina-inicio .seccion-bienvenida,
+.pagina-inicio .seccion-ofertas-seccion-resumen,
+.pagina-productos .seccion-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.lista-redes {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.25rem;
+}
+
+.lista-info,
+.lista-precios {
+  padding-left: 1.25rem;
 }
 
 .titulo-seccion {
@@ -209,22 +263,12 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  border-radius: 0.5rem;
+  border-radius: .5rem;
 }
 
 .leyenda-imagen {
   color: #4b5563;
-  font-size: 0.875rem;
-}
-
-.lista-info, .lista-precios, .lista-valores {
-  padding-left: 1.25rem;
-}
-
-.lista-redes {
-  list-style: none;
-  padding-left: 0;
-  justify-content: flex-start;
+  font-size: .875rem;
 }
 
 .enlace-red-social {
@@ -232,53 +276,55 @@ img {
   text-decoration: none;
 }
 
-.enlace-red-social:hover, .enlace-red-social:focus {
-  color: #ffffff;
+.enlace-red-social:hover,
+.enlace-red-social:focus {
+  color: #fff;
 }
 
 .boton-enlace {
   display: inline-block;
-  padding: 0.5em 1em;
-  border: 0.125rem solid #ea580c;
+  width: auto;
+  padding: .5em 1em;
+  border: .125rem solid #ea580c;
   color: #ea580c;
-  background-color: #ffffff;
+  background-color: #fff;
   text-decoration: none;
   font-weight: 700;
-  border-radius: 0.375rem;
+  border-radius: .375rem;
+  cursor: pointer;
 }
 
-.boton-enlace:hover, .boton-enlace:focus {
+.boton-enlace:hover,
+.boton-enlace:focus {
   background-color: #ea580c;
-  color: #ffffff;
-}
-
-.formulario-contacto {
-  flex-direction: column;
-  align-items: stretch;
+  color: #fff;
 }
 
 fieldset {
-  border: 0.0625rem solid #d1d5db;
+  border: .0625rem solid #d1d5db;
   padding: 1.25rem;
 }
 
 legend {
   font-weight: 700;
-  padding: 0 0.5rem;
+  padding: 0 .5rem;
 }
 
 label {
   display: block;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-top: .5rem;
+  margin-bottom: .25rem;
   font-weight: 600;
 }
 
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   width: 100%;
-  padding: 0.6rem;
-  border: 0.0625rem solid #9ca3af;
-  border-radius: 0.375rem;
+  padding: .6rem;
+  border: .0625rem solid #9ca3af;
+  border-radius: .375rem;
   font: inherit;
 }
 
@@ -289,25 +335,91 @@ textarea {
 
 .pie-pagina {
   background-color: #111827;
-  color: #ffffff;
+  color: #fff;
 }
 
-@media (max-width: 48rem) {
+@media (min-width: 48rem) {
   .encabezado-navbar {
-    flex-direction: column;
-    justify-content: center;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas: "marca menu";
+    justify-items: stretch;
     align-items: center;
   }
 
-  .menu-navegacion {
-    justify-content: center;
+  .titulo-sitio {
+    text-align: left;
+    white-space: nowrap;
   }
 
   .lista-navegacion {
-    justify-content: center;
+    justify-content: flex-end;
+    gap: .75rem;
   }
 
-  .pagina-productos .tarjeta-producto {
-    flex: 1 1 100%;
+  .pagina-productos .grilla-productos,
+  .grilla-ofertas,
+  .lista-valores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contenido-principal-layout-inicio,
+  .contenido-principal-layout-productos,
+  .contenido-ofertas {
+    grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
+    grid-template-areas: "contenido apoyo";
+  }
+
+  .contenido-principal-layout-inicio {
+    grid-template-areas:
+      "bienvenida apoyo"
+      "ofertas apoyo";
+  }
+
+  .contenido-sobre-nosotros {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "presentacion presentacion"
+      "mision mision"
+      "valores valores"
+      "apoyo apoyo";
+  }
+
+  .contenido-contacto {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "formulario datos"
+      "formulario apoyo";
+  }
+}
+
+@media (min-width: 1024px) {
+  .contenido-principal-layout-inicio,
+  .contenido-principal-layout-productos,
+  .contenido-ofertas {
+    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+  }
+
+  .pagina-productos .grilla-productos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grilla-ofertas,
+  .lista-valores {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+
+  .contenido-sobre-nosotros {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "presentacion presentacion"
+      "mision apoyo"
+      "valores valores";
+  }
+
+  .contenido-contacto {
+    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+    grid-template-areas:
+      "formulario datos"
+      "formulario apoyo";
   }
 }
