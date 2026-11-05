@@ -72,18 +72,26 @@ body {
   padding: 0;
 }
 
+/* Cambio: el botón queda alineado a la derecha en móvil y tablet. */
 .boton-menu {
+  display: block;
   margin-left: auto;
   border-color: #f97316;
+}
+
+/* Cambio: el menú desplegado sigue el flujo natural de lectura. */
+.menu-navegacion .navbar-collapse {
+  justify-content: flex-start;
 }
 
 .lista-navegacion {
   list-style: none;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: .5rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: .25rem;
   margin: 0;
   padding: 0;
 }
@@ -607,29 +615,39 @@ textarea {
 /* Diseño responsive para tablets */
 @media (min-width: 48rem) {
   .encabezado-navbar {
-    grid-template-columns: auto auto auto;
-    grid-template-areas: "logo marca menu";
-    justify-content: start;
-    justify-items: start;
+    /* Cambio: mantiene logo y marca arriba, con el menú en una fila inferior. */
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-areas:
+      "logo marca ."
+      "menu menu menu";
+    justify-items: stretch;
     align-items: center;
     column-gap: .5rem;
   }
 
-  .titulo-sitio {
+  .logo-sitio {
     justify-self: start;
+  }
+
+  .titulo-sitio {
+    justify-self: center;
     margin-left: 0;
-    text-align: left;
+    text-align: center;
     white-space: nowrap;
   }
 
+  /* Cambio: usa todo el ancho de la fila y deja el botón a la derecha. */
   .menu-navegacion {
-    width: auto;
-    justify-self: start;
+    width: 100%;
+    justify-self: stretch;
     margin-left: 0;
   }
 
+  /* Cambio: al abrirse, los enlaces quedan alineados a la izquierda. */
   .lista-navegacion {
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
     gap: .25rem;
   }
 
@@ -684,6 +702,34 @@ textarea {
 
 /* Diseño responsive para escritorio */
 @media (min-width: 1024px) {
+  .encabezado-navbar {
+    /* Cambio: organiza logo, marca y menú en una sola fila. */
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "logo marca menu";
+    justify-items: stretch;
+  }
+
+  .titulo-sitio {
+    justify-self: center;
+    text-align: center;
+  }
+
+  /* Cambio: coloca el menú al extremo derecho del encabezado. */
+  .menu-navegacion {
+    width: max-content;
+    max-width: 100%;
+    justify-self: end;
+  }
+
+  /* Cambio: presenta los enlaces en horizontal, alineados a la derecha. */
+  .lista-navegacion {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .25rem;
+  }
+
   .contenido-principal-layout-inicio,
   .contenido-principal-layout-productos,
   .contenido-ofertas {
