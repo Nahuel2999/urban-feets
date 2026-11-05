@@ -65,10 +65,16 @@ body {
   text-align: center;
 }
 
-/* Navegación */
+/* Navbar Bootstrap personalizada */
 .menu-navegacion {
   grid-area: menu;
   width: 100%;
+  padding: 0;
+}
+
+.boton-menu {
+  margin-left: auto;
+  border-color: #f97316;
 }
 
 .lista-navegacion {
@@ -78,6 +84,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: .5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .enlace-menu {
@@ -86,6 +94,17 @@ body {
   text-decoration: none;
   padding: .5em .75em;
   border: .125rem solid transparent;
+  border-radius: .375rem;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+}
+
+/* Estados de los enlaces del menú en orden LVHA */
+.enlace-menu:link {
+  color: #fff;
+}
+
+.enlace-menu:visited {
+  color: #fdba74;
 }
 
 .enlace-menu:hover,
@@ -94,7 +113,44 @@ body {
   border-color: #f97316;
 }
 
-/* Layout principal */
+.enlace-menu:active {
+  color: #fff;
+  background-color: #ea580c;
+}
+
+/* Menú desplegable de productos */
+.menu-productos {
+  min-width: 10rem;
+  padding: .4rem;
+  background-color: #111827;
+  border: .0625rem solid #ea580c;
+  border-radius: .375rem;
+}
+
+.enlace-desplegable {
+  padding: .5rem .75rem;
+  color: #fff;
+  border-radius: .25rem;
+  transition: color .2s ease, background-color .2s ease;
+}
+
+.enlace-desplegable:link,
+.enlace-desplegable:visited {
+  color: #fff;
+}
+
+.enlace-desplegable:hover,
+.enlace-desplegable:focus {
+  color: #111827;
+  background-color: #fdba74;
+}
+
+.enlace-desplegable:active {
+  color: #fff;
+  background-color: #ea580c;
+}
+
+/* Layout principal con CSS Grid */
 .contenido-principal,
 .contenido-principal-layout-inicio,
 .contenido-principal-layout-productos {
@@ -104,8 +160,6 @@ body {
   gap: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-
-  /* Fondo atenuado de los contenedores principales */
   background-color: #fff;
   background-image:
     linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)),
@@ -203,7 +257,7 @@ aside {
   margin-bottom: 1rem;
 }
 
-/* Ajustes de color para mantener un fondo uniforme en todos los bloques */
+/* Colores de los bloques */
 .info-adicional,
 .pagina-inicio .seccion-bienvenida,
 .seccion-sobre-nosotros,
@@ -241,6 +295,62 @@ aside {
 .tarjeta-valor {
   min-width: 0;
   background-color: #f3f4f6;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+/* Tarjetas Bootstrap personalizadas */
+.tarjeta-producto.card,
+.tarjeta-oferta.card {
+  color: #1F2937;
+  border: .0625rem solid #e5e7eb;
+  border-radius: .5rem;
+  background-color: #f3f4f6;
+}
+
+.tarjeta-producto.card .card-body,
+.tarjeta-oferta.card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0;
+}
+
+.tarjeta-producto.card .card-title,
+.tarjeta-oferta.card .card-title {
+  margin-bottom: 1rem;
+}
+
+.tarjeta-producto.card .card-text {
+  color: #1F2937;
+}
+
+/* Alineación uniforme de los botones de las tarjetas */
+.tarjeta-producto.card .boton-enlace,
+.tarjeta-oferta.card .boton-enlace {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Estados interactivos uniformes para todas las tarjetas */
+.grilla-productos .tarjeta-producto:hover,
+.grilla-ofertas .tarjeta-oferta:hover,
+.lista-valores .tarjeta-valor:hover {
+  transform: translateY(-.2rem);
+  border-color: #ea580c;
+  box-shadow: 0 .5rem 1rem rgba(17, 24, 39, .15);
+}
+
+.grilla-productos .tarjeta-producto:focus-within,
+.grilla-ofertas .tarjeta-oferta:focus-within,
+.lista-valores .tarjeta-valor:focus-within {
+  outline: .2rem solid #f97316;
+  outline-offset: .15rem;
+}
+
+.grilla-productos .tarjeta-producto:active,
+.grilla-ofertas .tarjeta-oferta:active,
+.lista-valores .tarjeta-valor:active {
+  transform: translateY(0);
 }
 
 .lista-valores {
@@ -284,6 +394,11 @@ aside {
   padding-left: 1.25rem;
 }
 
+/* Pseudoclases estructurales */
+.lista-valores > li:nth-child(even) .tarjeta-valor {
+  border-color: #e5e7eb;
+}
+
 /* Títulos */
 .titulo-seccion {
   margin-top: 0;
@@ -312,15 +427,97 @@ img {
   font-size: .875rem;
 }
 
-/* Enlaces de redes sociales */
-.enlace-red-social {
+/* Carousel Bootstrap personalizado */
+.carrusel-sitio {
+  overflow: hidden;
+  border-radius: .5rem;
+}
+
+.imagen-carrusel {
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+}
+
+.carrusel-sitio .carousel-caption {
+  right: 0;
+  bottom: 2rem;
+  left: 0;
+  padding: 1rem 3.5rem;
+  color: #fff;
+  background-color: rgba(17, 24, 39, .72);
+}
+
+.carrusel-sitio .carousel-caption p {
+  margin: 0;
+}
+
+.carrusel-sitio .carousel-indicators {
+  bottom: .25rem;
+  margin-bottom: 0;
+}
+
+.carrusel-sitio .carousel-indicators [data-bs-target] {
+  width: .75rem;
+  height: .75rem;
+  border: 0;
+  border-radius: 50%;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.carrusel-sitio .carousel-indicators [data-bs-target]:hover,
+.carrusel-sitio .carousel-indicators [data-bs-target]:focus {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.carrusel-sitio .carousel-control-prev,
+.carrusel-sitio .carousel-control-next {
+  transition: background-color .2s ease, opacity .2s ease;
+}
+
+.carrusel-sitio .carousel-control-prev:hover,
+.carrusel-sitio .carousel-control-next:hover,
+.carrusel-sitio .carousel-control-prev:focus,
+.carrusel-sitio .carousel-control-next:focus {
+  background-color: rgba(17, 24, 39, .25);
+  opacity: 1;
+}
+
+.carrusel-sitio .carousel-control-prev:active,
+.carrusel-sitio .carousel-control-next:active {
+  background-color: rgba(234, 88, 12, .55);
+}
+
+/* Enlaces de redes sociales en orden LVHA */
+.enlace-red-social:link {
   color: #fdba74;
   text-decoration: none;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+.enlace-red-social:visited {
+  color: #f9a66c;
 }
 
 .enlace-red-social:hover,
 .enlace-red-social:focus {
   color: #fff;
+  text-decoration: underline;
+}
+
+.enlace-red-social:active {
+  color: #ea580c;
+}
+
+/* Enlaces del contenido */
+main a:not(.boton-enlace) {
+  transition: color .2s ease;
+}
+
+main a:not(.boton-enlace):hover,
+main a:not(.boton-enlace):focus {
+  color: #c2410c;
 }
 
 /* Botones */
@@ -335,12 +532,36 @@ img {
   font-weight: 700;
   border-radius: .375rem;
   cursor: pointer;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
 }
 
 .boton-enlace:hover,
 .boton-enlace:focus {
   background-color: #ea580c;
+  border-color: #ea580c;
   color: #fff;
+}
+
+.boton-enlace:active {
+  background-color: #c2410c;
+  border-color: #c2410c;
+  color: #fff;
+  transform: translateY(.1rem);
+}
+
+/* Botón de ofertas ajustado al ancho de su texto */
+.pagina-inicio .seccion-ofertas-seccion-resumen > .boton-enlace {
+  align-self: flex-start;
+}
+
+/* Indicador de foco para navegación con teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: .2rem solid #f97316;
+  outline-offset: .15rem;
 }
 
 /* Formulario */
@@ -364,7 +585,7 @@ label {
 input,
 textarea,
 select,
-button {
+.formulario-contacto button {
   width: 100%;
   padding: .6rem;
   border: .0625rem solid #9ca3af;
@@ -386,20 +607,30 @@ textarea {
 /* Diseño responsive para tablets */
 @media (min-width: 48rem) {
   .encabezado-navbar {
-    grid-template-columns: auto minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-columns: auto auto auto;
     grid-template-areas: "logo marca menu";
-    justify-items: stretch;
+    justify-content: start;
+    justify-items: start;
     align-items: center;
+    column-gap: .5rem;
   }
 
   .titulo-sitio {
-    text-align: center;
+    justify-self: start;
+    margin-left: 0;
+    text-align: left;
     white-space: nowrap;
   }
 
+  .menu-navegacion {
+    width: auto;
+    justify-self: start;
+    margin-left: 0;
+  }
+
   .lista-navegacion {
-    justify-content: flex-end;
-    gap: .75rem;
+    justify-content: flex-start;
+    gap: .25rem;
   }
 
   .pagina-productos .grilla-productos,
@@ -431,10 +662,23 @@ textarea {
   }
 
   .contenido-contacto {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+    grid-template-rows: min-content min-content;
     grid-template-areas:
       "formulario datos"
       "formulario apoyo";
+    align-content: start;
+    row-gap: 1rem;
+  }
+
+  .contenido-contacto .seccion-contacto {
+    grid-row: 1 / span 2;
+  }
+
+  .contenido-contacto .seccion-datos-contacto,
+  .contenido-contacto .info-adicional {
+    align-self: start;
+    margin-bottom: 0;
   }
 }
 
@@ -462,11 +706,28 @@ textarea {
       "mision apoyo"
       "valores valores";
   }
+}
 
-  .contenido-contacto {
-    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
-    grid-template-areas:
-      "formulario datos"
-      "formulario apoyo";
+/* Ajustes del carousel en pantallas pequeñas */
+@media (max-width: 30rem) {
+  .imagen-carrusel {
+    height: 16rem;
+  }
+
+  .carrusel-sitio .carousel-caption {
+    padding-inline: 2.75rem;
+    font-size: .85rem;
+  }
+}
+
+/* Preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
