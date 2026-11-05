@@ -192,7 +192,7 @@ body {
 section,
 aside,
 article {
-  background-color: #f3f4f6;
+  background-color: #e0e1e4;
   padding: 1.25rem;
   border: .0625rem solid #e5e7eb;
   border-radius: .5rem;
@@ -211,7 +211,7 @@ aside {
 .pagina-productos .tarjeta-producto,
 .tarjeta-oferta,
 .tarjeta-valor {
-  background-color: #f3f4f6;
+  background-color: #e0e1e4;
 }
 
 .pagina-inicio .seccion-bienvenida,
