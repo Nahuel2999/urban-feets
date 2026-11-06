@@ -1,7 +1,7 @@
-/* Tipografías */
+/* ===== Tipografías ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap');
 
-/* Estilos generales */
+/* ===== Estilos generales ===== */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body {
   line-height: 1.6;
 }
 
-/* Contenedores principales */
+/* ===== Contenedores principales ===== */
 .encabezado-navbar,
 .contenido-principal,
 .contenido-principal-layout-inicio,
@@ -30,19 +30,18 @@ body {
   padding: 1rem;
 }
 
-/* Encabezado */
+/* ===== Encabezado ===== */
 .encabezado-navbar {
   background-color: #111827;
   color: #fff;
   border-bottom: .25rem solid #ea580c;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas:
-    "logo"
-    "marca"
-    "menu";
-  gap: 1rem;
-  justify-items: center;
+  
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "logo marca menu";
+  gap: .5rem;
+  justify-items: stretch;
+  align-items: center;
 }
 
 .logo-sitio {
@@ -60,26 +59,31 @@ body {
 .titulo-sitio {
   grid-area: marca;
   margin: 0;
-  font-size: clamp(1.5rem, 7vw, 2rem);
+  
+  justify-self: start;
+  font-size: clamp(1.25rem, 6vw, 2rem);
   font-weight: 700;
-  text-align: center;
+  text-align: left;
 }
 
-/* Navbar Bootstrap personalizada */
+/* ===== Navbar Bootstrap personalizada ===== */
 .menu-navegacion {
   grid-area: menu;
-  width: 100%;
+  
+  width: auto;
   padding: 0;
+  position: relative;
+  justify-self: end;
 }
 
-/* Cambio: el botón queda alineado a la derecha en móvil y tablet. */
+
 .boton-menu {
   display: block;
   margin-left: auto;
   border-color: #f97316;
 }
 
-/* Cambio: el menú desplegado sigue el flujo natural de lectura. */
+
 .menu-navegacion .navbar-collapse {
   justify-content: flex-start;
 }
@@ -106,7 +110,7 @@ body {
   transition: color .2s ease, background-color .2s ease, border-color .2s ease;
 }
 
-/* Estados de los enlaces del menú en orden LVHA */
+/* ===== Estados de los enlaces del menú en orden LVHA ===== */
 .enlace-menu:link {
   color: #fff;
 }
@@ -126,7 +130,7 @@ body {
   background-color: #ea580c;
 }
 
-/* Menú desplegable de productos */
+/* ===== Menú desplegable de productos ===== */
 .menu-productos {
   min-width: 10rem;
   padding: .4rem;
@@ -158,7 +162,7 @@ body {
   background-color: #ea580c;
 }
 
-/* Layout principal con CSS Grid */
+/* ===== Layout principal con CSS Grid ===== */
 .contenido-principal,
 .contenido-principal-layout-inicio,
 .contenido-principal-layout-productos {
@@ -177,7 +181,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Áreas de la página de inicio */
+/* ===== Áreas de la página de inicio ===== */
 .contenido-principal-layout-inicio {
   grid-template-areas:
     "bienvenida"
@@ -193,7 +197,7 @@ body {
   grid-area: ofertas;
 }
 
-/* Áreas de las páginas internas */
+/* ===== Áreas de las páginas internas ===== */
 .contenido-principal-layout-productos,
 .contenido-ofertas {
   grid-template-areas:
@@ -241,7 +245,7 @@ body {
   grid-area: datos;
 }
 
-/* Información adicional */
+/* ===== Información adicional ===== */
 .pagina-inicio .info-adicional,
 .pagina-productos .info-adicional,
 .contenido-ofertas .info-adicional,
@@ -250,7 +254,7 @@ body {
   grid-area: apoyo;
 }
 
-/* Secciones, tarjetas e información adicional */
+/* ===== Secciones, tarjetas e información adicional ===== */
 section,
 aside,
 article {
@@ -265,7 +269,7 @@ aside {
   margin-bottom: 1rem;
 }
 
-/* Colores de los bloques */
+/* ===== Colores de los bloques ===== */
 .info-adicional,
 .pagina-inicio .seccion-bienvenida,
 .seccion-sobre-nosotros,
@@ -288,7 +292,7 @@ aside {
   min-width: 0;
 }
 
-/* Grillas de tarjetas */
+/* ===== Grillas de tarjetas ===== */
 .pagina-productos .grilla-productos,
 .grilla-ofertas,
 .lista-valores {
@@ -306,7 +310,7 @@ aside {
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
-/* Tarjetas Bootstrap personalizadas */
+/* ===== Tarjetas Bootstrap personalizadas ===== */
 .tarjeta-producto.card,
 .tarjeta-oferta.card {
   color: #1F2937;
@@ -332,14 +336,14 @@ aside {
   color: #1F2937;
 }
 
-/* Alineación uniforme de los botones de las tarjetas */
+/* ===== Alineación uniforme de los botones de las tarjetas ===== */
 .tarjeta-producto.card .boton-enlace,
 .tarjeta-oferta.card .boton-enlace {
   align-self: flex-start;
   margin-top: auto;
 }
 
-/* Estados interactivos uniformes para todas las tarjetas */
+/* ===== Estados interactivos uniformes para todas las tarjetas ===== */
 .grilla-productos .tarjeta-producto:hover,
 .grilla-ofertas .tarjeta-oferta:hover,
 .lista-valores .tarjeta-valor:hover {
@@ -371,7 +375,7 @@ aside {
   height: 100%;
 }
 
-/* Contenido interno organizado con Flexbox */
+/* ===== Contenido interno organizado con Flexbox ===== */
 .pagina-inicio .seccion-bienvenida,
 .pagina-inicio .seccion-ofertas-seccion-resumen,
 .pagina-productos .seccion-productos {
@@ -402,12 +406,12 @@ aside {
   padding-left: 1.25rem;
 }
 
-/* Pseudoclases estructurales */
+/* ===== Pseudoclases estructurales ===== */
 .lista-valores > li:nth-child(even) .tarjeta-valor {
   border-color: #e5e7eb;
 }
 
-/* Títulos */
+/* ===== Títulos ===== */
 .titulo-seccion {
   margin-top: 0;
   color: #111827;
@@ -422,7 +426,7 @@ aside {
   margin-top: 0;
 }
 
-/* Imágenes */
+/* ===== Imágenes ===== */
 img {
   max-width: 100%;
   height: auto;
@@ -435,7 +439,7 @@ img {
   font-size: .875rem;
 }
 
-/* Carousel Bootstrap personalizado */
+/* ===== Carousel Bootstrap personalizado ===== */
 .carrusel-sitio {
   overflow: hidden;
   border-radius: .5rem;
@@ -497,7 +501,7 @@ img {
   background-color: rgba(234, 88, 12, .55);
 }
 
-/* Enlaces de redes sociales en orden LVHA */
+/* ===== Enlaces de redes sociales en orden LVHA ===== */
 .enlace-red-social:link {
   color: #fdba74;
   text-decoration: none;
@@ -518,7 +522,7 @@ img {
   color: #ea580c;
 }
 
-/* Enlaces del contenido */
+/* ===== Enlaces del contenido ===== */
 main a:not(.boton-enlace) {
   transition: color .2s ease;
 }
@@ -528,7 +532,7 @@ main a:not(.boton-enlace):focus {
   color: #c2410c;
 }
 
-/* Botones */
+/* ===== Botones ===== */
 .boton-enlace {
   display: inline-block;
   width: auto;
@@ -557,12 +561,12 @@ main a:not(.boton-enlace):focus {
   transform: translateY(.1rem);
 }
 
-/* Botón de ofertas ajustado al ancho de su texto */
+/* ===== Botón de ofertas ajustado al ancho de su texto ===== */
 .pagina-inicio .seccion-ofertas-seccion-resumen > .boton-enlace {
   align-self: flex-start;
 }
 
-/* Indicador de foco para navegación con teclado */
+/* ===== Indicador de foco para navegación con teclado ===== */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -572,7 +576,7 @@ select:focus-visible {
   outline-offset: .15rem;
 }
 
-/* Formulario */
+/* ===== Formulario ===== */
 fieldset {
   border: .0625rem solid #d1d5db;
   padding: 1.25rem;
@@ -606,20 +610,18 @@ textarea {
   resize: vertical;
 }
 
-/* Pie de página */
+/* ===== Pie de página ===== */
 .pie-pagina {
   background-color: #111827;
   color: #fff;
 }
 
-/* Diseño responsive para tablets */
+/* ===== Diseño responsive para tablets ===== */
 @media (min-width: 48rem) {
   .encabezado-navbar {
-    /* Cambio: mantiene logo y marca arriba, con el menú en una fila inferior. */
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    grid-template-areas:
-      "logo marca ."
-      "menu menu menu";
+    
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "logo marca menu";
     justify-items: stretch;
     align-items: center;
     column-gap: .5rem;
@@ -630,20 +632,20 @@ textarea {
   }
 
   .titulo-sitio {
-    justify-self: center;
+    justify-self: start;
     margin-left: 0;
-    text-align: center;
+    text-align: left;
     white-space: nowrap;
   }
 
-  /* Cambio: usa todo el ancho de la fila y deja el botón a la derecha. */
+  
   .menu-navegacion {
-    width: 100%;
-    justify-self: stretch;
+    width: auto;
+    justify-self: end;
     margin-left: 0;
   }
 
-  /* Cambio: al abrirse, los enlaces quedan alineados a la izquierda. */
+  
   .lista-navegacion {
     flex-direction: column;
     justify-content: flex-start;
@@ -700,28 +702,28 @@ textarea {
   }
 }
 
-/* Diseño responsive para escritorio */
+/* ===== Diseño responsive para escritorio ===== */
 @media (min-width: 1024px) {
   .encabezado-navbar {
-    /* Cambio: organiza logo, marca y menú en una sola fila. */
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    grid-template-areas: "logo marca menu";
+    
+    grid-template-columns: auto auto minmax(0, 1fr) auto;
+    grid-template-areas: "logo marca . menu";
     justify-items: stretch;
   }
 
   .titulo-sitio {
-    justify-self: center;
-    text-align: center;
+    justify-self: start;
+    text-align: left;
   }
 
-  /* Cambio: coloca el menú al extremo derecho del encabezado. */
+  
   .menu-navegacion {
     width: max-content;
     max-width: 100%;
     justify-self: end;
   }
 
-  /* Cambio: presenta los enlaces en horizontal, alineados a la derecha. */
+  
   .lista-navegacion {
     flex-direction: row;
     flex-wrap: wrap;
@@ -754,7 +756,36 @@ textarea {
   }
 }
 
-/* Ajustes del carousel en pantallas pequeñas */
+/* ===== Menú desplegable en móvil y tablet ===== */
+@media (max-width: 61.99rem) {
+  .menu-navegacion .navbar-collapse {
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    min-width: 12rem;
+    padding: .5rem;
+    background-color: #111827;
+    border: .0625rem solid #ea580c;
+    border-radius: .375rem;
+  }
+}
+
+/* ===== Encabezado compacto en móviles ===== */
+@media (max-width: 30rem) {
+  .logo-sitio img {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .titulo-sitio {
+    font-size: clamp(1rem, 5vw, 1.4rem);
+    white-space: nowrap;
+  }
+}
+
+/* ===== Ajustes del carousel en pantallas pequeñas ===== */
 @media (max-width: 30rem) {
   .imagen-carrusel {
     height: 16rem;
@@ -766,7 +797,7 @@ textarea {
   }
 }
 
-/* Preferencia de movimiento reducido */
+/* ===== Preferencia de movimiento reducido ===== */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
