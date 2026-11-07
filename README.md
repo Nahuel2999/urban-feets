@@ -1,22 +1,25 @@
-# Urban Feets
+# URBAN FEETS
 
-Tienda online de zapatillas desarrollada como proyecto del curso de **Desarrollo Web** de Coderhouse.
+Sitio web estático de una tienda de zapatillas, desarrollado como proyecto del curso de **Desarrollo Web** de Coderhouse.
 
 ## Descripción
 
-Urban Feets es un sitio web estático para una tienda de zapatillas. El proyecto incluye una página de inicio con secciones de bienvenida, ofertas especiales e información de envíos, y enlaces a las demás páginas del sitio.
+URBAN FEETS presenta un catálogo de zapatillas y reúne información sobre ofertas, la tienda y sus medios de contacto. El sitio cuenta con una página de inicio y cuatro páginas internas.
 
-## Tecnologías utilizadas
+## Tecnologías
 
-- **HTML5**: estructura semántica del sitio (header, nav, main, section, aside, footer).
-- **CSS3**: estilos, tipografías, colores y efectos hover.
+- **HTML5** para la estructura y el contenido de las páginas.
+- **CSS3** para los estilos y la adaptación a distintos tamaños de pantalla.
+- **Bootstrap 5.3.3** para componentes como la navegación colapsable, las tarjetas y el carrusel.
+- **Google Fonts** para las tipografías Poppins y Roboto.
+
+Bootstrap y Google Fonts se cargan desde servicios externos mediante CDN, por lo que requieren conexión a internet.
 
 ## Estructura del proyecto
 
-```
 urban-feets/
 ├── index.html
-├── styles/
+├── css/
 │   └── styles.css
 ├── pages/
 │   ├── productos.html
@@ -24,24 +27,28 @@ urban-feets/
 │   ├── sobre-nosotros.html
 │   └── contacto.html
 └── assets/
-    └── imágenes del sitio (zapatillas e imágenes generales)
-```
+    └── imágenes y recursos del sitio
 
-## Páginas del sitio
+## Páginas
 
-- **Inicio** (`index.html`): presentación de la tienda, ofertas y envíos.
-- **Productos**: catálogo de zapatillas disponibles.
-- **Ofertas**: descuentos en modelos seleccionados.
-- **Sobre nosotros**: información de la tienda.
-- **Contacto**: formulario de contacto.
+- **Inicio** (`index.html`): presentación de la tienda, carrusel de imágenes, ofertas e información sobre envíos.
+- **Productos** (`pages/productos.html`): catálogo de zapatillas.
+- **Ofertas** (`pages/ofertas.html`): descuentos en modelos seleccionados.
+- **Sobre nosotros** (`pages/sobre-nosotros.html`): presentación, misión y valores de la tienda.
+- **Contacto** (`pages/contacto.html`): formulario y otros medios de contacto.
 
 ## Características
 
-- Menú de navegación con enlaces a todas las páginas del sitio.
-- Tipografías de Google Fonts (Poppins y Roboto).
-- Efectos hover en los enlaces del menú y del pie de página.
-- Enlaces a redes sociales (Instagram y Facebook).
+- Menú de navegación adaptable con enlaces a las páginas del sitio.
+- Carrusel de imágenes en la página de inicio.
+- Tarjetas para presentar productos y ofertas.
+- Diseño adaptable a celulares, tablets y ordenadores.
+- Enlaces a Instagram y Facebook.
+
+## Cómo abrir el sitio
+
+No se requiere instalación ni compilación. Abrí `index.html` en un navegador para recorrer el sitio. Para cargar Bootstrap y las tipografías externas, se necesita conexión a internet.
 
 ## Estado del proyecto
 
-En desarrollo — se irán incorporando los contenidos de los próximos módulos del curso.
+En desarrollo.
