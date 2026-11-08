@@ -138,6 +138,17 @@
     </aside>
   </main>
 
+  <!-- Toast informativo para el formulario de demostración -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast aviso-formulario" id="avisoFormulario" role="status" aria-live="polite" aria-atomic="true" data-bs-delay="8000">
+      <div class="toast-header">
+        <strong class="me-auto">URBAN FEETS</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar aviso"></button>
+      </div>
+      <div class="toast-body">El formulario está validado, pero todavía necesita conectarse a un servicio para enviar tu consulta.</div>
+    </div>
+  </div>
+
   <footer class="pie-pagina">
     <p>&copy; 2026 - URBAN FEETS</p>
     <p>Seguinos en redes sociales:</p>
@@ -149,5 +160,12 @@
 
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Aclara que el formulario de esta maqueta aún no transmite los datos.
+    document.querySelector(".formulario-contacto").addEventListener("submit", (evento) => {
+      evento.preventDefault();
+      bootstrap.Toast.getOrCreateInstance(document.getElementById("avisoFormulario")).show();
+    });
+  </script>
 </body>
 </html>

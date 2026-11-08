@@ -394,28 +394,85 @@ aside {
   border-radius: .375rem;
 }
 
-/* ===== Pestañas de información institucional ===== */
-.pestanas-informacion .nav-tabs {
+.contenido-pestanas {
+  padding-top: 1rem;
+}
+
+/* ===== Filtros, paginación y aviso de formulario ===== */
+.panel-filtros.card {
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border-color: var(--color-border-strong);
+}
+
+.panel-filtros .form-select:focus {
+  border-color: var(--color-orange-bright);
+  box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .2);
+}
+
+.boton-limpiar-filtro {
+  align-self: flex-start;
+}
+
+.resumen-resultados {
+  min-height: 1.6em;
+  margin: .75rem 0;
+  color: var(--color-muted);
+}
+
+.paginacion-productos .page-link {
+  color: var(--color-orange-dark);
+  border-color: var(--color-border-strong);
+}
+
+.paginacion-productos .page-item.active .page-link {
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.pestanas-ofertas.nav-tabs {
   border-bottom-color: var(--color-border-strong);
 }
 
-.pestanas-informacion .nav-link {
+.pestanas-informacion .nav-link,
+.pestanas-ofertas .nav-link {
   color: var(--color-orange-dark);
 }
 
 .pestanas-informacion .nav-link:hover,
-.pestanas-informacion .nav-link:focus-visible {
+.pestanas-informacion .nav-link:focus-visible,
+.pestanas-ofertas .nav-link:hover,
+.pestanas-ofertas .nav-link:focus-visible {
   color: var(--color-orange);
 }
 
-.pestanas-informacion .nav-link.active {
+.pestanas-informacion .nav-link.active,
+.pestanas-ofertas .nav-link.active {
   color: var(--color-ink);
   background-color: var(--color-block);
   border-color: var(--color-border-strong) var(--color-border-strong) var(--color-block);
 }
 
-.contenido-pestanas {
-  padding-top: 1rem;
+.acciones-ofertas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.aviso-formulario.toast {
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border-color: var(--color-orange);
+}
+
+.toast-container {
+  z-index: 1090;
+}
+
+.aviso-formulario .toast-header {
+  color: var(--color-white);
+  background-color: var(--color-ink);
 }
 
 /* ===== Alineación de botones de tarjetas ===== */
