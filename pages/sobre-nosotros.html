@@ -68,33 +68,44 @@
       </figure>
     </section>
 
-    <section class="seccion-mision">
-      <h2 class="titulo-seccion">Nuestra misión</h2>
-      <p>Queremos ayudar a cada cliente a encontrar zapatillas que se adapten a su estilo, sus actividades y su día a día.</p>
-    </section>
-
-    <section class="seccion-valores">
-      <h2 class="titulo-seccion">Lo que valoramos</h2>
-      <ul class="lista-valores">
-        <li>
-          <article class="tarjeta-valor">
-            <h3 class="titulo-tarjeta">Comodidad</h3>
-            <p>Seleccionamos modelos pensados para acompañarte durante todo el día.</p>
-          </article>
+    <!-- Pestañas con la misión y los valores de la tienda -->
+    <section class="seccion-mision pestanas-informacion">
+      <h2 class="titulo-seccion">Conocé URBAN FEETS</h2>
+      <ul class="nav nav-tabs" id="pestanasSobreNosotros" role="tablist" aria-label="Información sobre Urban Feets">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pestanaMision" data-bs-toggle="tab" data-bs-target="#contenidoMision" type="button" role="tab" aria-controls="contenidoMision" aria-selected="true">Nuestra misión</button>
         </li>
-        <li>
-          <article class="tarjeta-valor">
-            <h3 class="titulo-tarjeta">Estilo</h3>
-            <p>Ofrecemos zapatillas para diferentes gustos y ocasiones.</p>
-          </article>
-        </li>
-        <li>
-          <article class="tarjeta-valor">
-            <h3 class="titulo-tarjeta">Calidad</h3>
-            <p>Buscamos productos duraderos para que disfrutes cada compra.</p>
-          </article>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pestanaValores" data-bs-toggle="tab" data-bs-target="#contenidoValores" type="button" role="tab" aria-controls="contenidoValores" aria-selected="false">Lo que valoramos</button>
         </li>
       </ul>
+      <div class="tab-content contenido-pestanas" id="contenidoSobreNosotros">
+        <div class="tab-pane fade show active" id="contenidoMision" role="tabpanel" aria-labelledby="pestanaMision" tabindex="0">
+          <p>Queremos ayudar a cada cliente a encontrar zapatillas que se adapten a su estilo, sus actividades y su día a día.</p>
+        </div>
+        <div class="tab-pane fade" id="contenidoValores" role="tabpanel" aria-labelledby="pestanaValores" tabindex="0">
+          <ul class="lista-valores">
+            <li>
+              <article class="tarjeta-valor">
+                <h3 class="titulo-tarjeta">Comodidad</h3>
+                <p>Seleccionamos modelos pensados para acompañarte durante todo el día.</p>
+              </article>
+            </li>
+            <li>
+              <article class="tarjeta-valor">
+                <h3 class="titulo-tarjeta">Estilo</h3>
+                <p>Ofrecemos zapatillas para diferentes gustos y ocasiones.</p>
+              </article>
+            </li>
+            <li>
+              <article class="tarjeta-valor">
+                <h3 class="titulo-tarjeta">Calidad</h3>
+                <p>Buscamos productos duraderos para que disfrutes cada compra.</p>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <aside class="info-adicional">

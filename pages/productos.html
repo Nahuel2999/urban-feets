@@ -99,7 +99,7 @@
             </figure>
             <p class="card-text">Zapatillas cómodas para realizar actividades físicas al aire libre.</p>
             <p class="card-text">Precio: $55.000</p>
-            <button type="button" class="boton-enlace mt-auto">Ver producto</button>
+            <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanRunV2" aria-label="Ver detalles de Urban Run V2">Ver producto</button>
           </div>
         </article>
 
@@ -112,7 +112,7 @@
             </figure>
             <p class="card-text">Un modelo clásico para combinar con cualquier estilo.</p>
             <p class="card-text">Precio: $50.000</p>
-            <button type="button" class="boton-enlace mt-auto">Ver producto</button>
+            <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanRun" aria-label="Ver detalles de Urban Run">Ver producto</button>
           </div>
         </article>
 
@@ -125,7 +125,7 @@
             </figure>
             <p class="card-text">Zapatillas cómodas para realizar actividades físicas al aire libre.</p>
             <p class="card-text">Precio: $50.000</p>
-            <button type="button" class="boton-enlace mt-auto">Ver producto</button>
+            <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanRunMujer" aria-label="Ver detalles de Urban Run para mujer">Ver producto</button>
           </div>
         </article>
 
@@ -138,7 +138,7 @@
             </figure>
             <p class="card-text">Zapatillas de estilo clásico, ideales para un look versátil.</p>
             <p class="card-text">Precio: $48.000</p>
-            <button type="button" class="boton-enlace mt-auto">Ver producto</button>
+            <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalStreetClassic" aria-label="Ver detalles de Street Classic">Ver producto</button>
           </div>
         </article>
 
@@ -151,7 +151,7 @@
             </figure>
             <p class="card-text">Un modelo para realizar actividades físicas al aire libre.</p>
             <p class="card-text">Precio: $60.000</p>
-            <button type="button" class="boton-enlace mt-auto">Ver producto</button>
+            <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanAirForce" aria-label="Ver detalles de Urban AirForce">Ver producto</button>
           </div>
         </article>
 
@@ -164,7 +164,7 @@
             </figure>
             <p class="card-text">Un estilo versátil para acompañarte todos los días.</p>
             <p class="card-text">Precio: $65.000</p>
-            <button type="button" class="boton-enlace mt-auto">Ver producto</button>
+            <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanAirForceBlancas" aria-label="Ver detalles de Urban AirForce blancas">Ver producto</button>
           </div>
         </article>
       </div>
@@ -175,6 +175,79 @@
       <p>Visitá nuestra sección de <a href="ofertas.html">ofertas especiales</a>.</p>
     </aside>
   </main>
+
+  <!-- Modales con información ampliada de productos -->
+  <div class="modal fade" id="modalUrbanRunV2" tabindex="-1" aria-labelledby="tituloUrbanRunV2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-producto">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="tituloUrbanRunV2">Urban Run V2</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body"><div class="row g-3 align-items-center"><div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-deportivas.png" alt="Zapatillas azul oscuro con detalles rojos y blancos y suela negra"></div><div class="col-md-7"><p>Zapatillas cómodas para realizar actividades físicas al aire libre.</p><p class="mb-0"><strong>Precio: $55.000</strong></p></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalUrbanRun" tabindex="-1" aria-labelledby="tituloUrbanRun" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-producto">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="tituloUrbanRun">Urban Run</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body"><div class="row g-3 align-items-center"><div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-deportivas2.png" alt="Zapatillas blancas con detalles negros y suela blanca"></div><div class="col-md-7"><p>Un modelo clásico para combinar con cualquier estilo.</p><p class="mb-0"><strong>Precio: $50.000</strong></p></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalUrbanRunMujer" tabindex="-1" aria-labelledby="tituloUrbanRunMujer" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-producto">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="tituloUrbanRunMujer">Urban Run (mujer)</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body"><div class="row g-3 align-items-center"><div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-mujer.png" alt="Zapatillas para mujer blancas con detalles rosas"></div><div class="col-md-7"><p>Zapatillas cómodas para realizar actividades físicas al aire libre.</p><p class="mb-0"><strong>Precio: $50.000</strong></p></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalStreetClassic" tabindex="-1" aria-labelledby="tituloStreetClassic" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-producto">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="tituloStreetClassic">Street Classic</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body"><div class="row g-3 align-items-center"><div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-streetclassic.png" alt="Zapatillas negras Street Classic con detalles blancos y suela marrón"></div><div class="col-md-7"><p>Zapatillas de estilo clásico, ideales para un look versátil.</p><p class="mb-0"><strong>Precio: $48.000</strong></p></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalUrbanAirForce" tabindex="-1" aria-labelledby="tituloUrbanAirForce" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-producto">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="tituloUrbanAirForce">Urban AirForce</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body"><div class="row g-3 align-items-center"><div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-airforce.png" alt="Zapatillas Urban AirForce negras y rojas"></div><div class="col-md-7"><p>Un modelo para realizar actividades físicas al aire libre.</p><p class="mb-0"><strong>Precio: $60.000</strong></p></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalUrbanAirForceBlancas" tabindex="-1" aria-labelledby="tituloUrbanAirForceBlancas" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-producto">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="tituloUrbanAirForceBlancas">Urban AirForce (blancas)</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body"><div class="row g-3 align-items-center"><div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-airforce-blancas.png" alt="Zapatillas Urban AirForce blancas"></div><div class="col-md-7"><p>Un estilo versátil para acompañarte todos los días.</p><p class="mb-0"><strong>Precio: $65.000</strong></p></div></div></div>
+      </div>
+    </div>
+  </div>
 
   <footer class="pie-pagina">
     <p>&copy; 2026 - URBAN FEETS</p>

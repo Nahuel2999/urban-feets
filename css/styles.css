@@ -251,7 +251,6 @@ body {
   grid-template-areas:
     "presentacion"
     "mision"
-    "valores"
     "apoyo";
 }
 
@@ -273,10 +272,6 @@ body {
 
 .contenido-sobre-nosotros .seccion-mision {
   grid-area: mision;
-}
-
-.contenido-sobre-nosotros .seccion-valores {
-  grid-area: valores;
 }
 
 .contenido-contacto .seccion-contacto {
@@ -379,6 +374,48 @@ aside {
 
 .tarjeta-producto.card .card-text {
   color: var(--color-text);
+}
+
+/* ===== Ventanas de detalle de producto ===== */
+.modal-producto {
+  color: var(--color-text);
+  background-color: var(--color-block);
+  border-color: var(--color-border);
+}
+
+.modal-producto .modal-header {
+  border-bottom-color: var(--color-border-strong);
+}
+
+.imagen-modal-producto {
+  width: 100%;
+  max-height: 18rem;
+  object-fit: contain;
+  border-radius: .375rem;
+}
+
+/* ===== Pestañas de información institucional ===== */
+.pestanas-informacion .nav-tabs {
+  border-bottom-color: var(--color-border-strong);
+}
+
+.pestanas-informacion .nav-link {
+  color: var(--color-orange-dark);
+}
+
+.pestanas-informacion .nav-link:hover,
+.pestanas-informacion .nav-link:focus-visible {
+  color: var(--color-orange);
+}
+
+.pestanas-informacion .nav-link.active {
+  color: var(--color-ink);
+  background-color: var(--color-block);
+  border-color: var(--color-border-strong) var(--color-border-strong) var(--color-block);
+}
+
+.contenido-pestanas {
+  padding-top: 1rem;
 }
 
 /* ===== Alineación de botones de tarjetas ===== */
@@ -745,7 +782,6 @@ textarea {
     grid-template-areas:
       "presentacion presentacion"
       "mision mision"
-      "valores valores"
       "apoyo apoyo";
   }
 
@@ -819,8 +855,7 @@ textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
       "presentacion presentacion"
-      "mision apoyo"
-      "valores valores";
+      "mision apoyo";
   }
 }
 
