@@ -1,6 +1,23 @@
+
 /* ===== Tipografías ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap');
 
+:root {
+  --color-white: #fff;
+  --color-ink: #111827;
+  --color-text: #1F2937;
+  --color-page: #F3F4F6;
+  --color-block: #e0e1e4;
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+  --color-input-border: #9ca3af;
+  --color-muted: #4b5563;
+  --color-orange: #ea580c;
+  --color-orange-bright: #f97316;
+  --color-orange-soft: #fdba74;
+  --color-orange-dark: #c2410c;
+  --color-social-visited: #f9a66c;
+}
 /* ===== Estilos generales ===== */
 * {
   margin: 0;
@@ -14,8 +31,8 @@ html {
 
 body {
   font-family: "Poppins", "Roboto", sans-serif;
-  color: #1F2937;
-  background-color: #F3F4F6;
+  color: var(--color-text);
+  background-color: var(--color-page);
   line-height: 1.6;
 }
 
@@ -32,9 +49,9 @@ body {
 
 /* ===== Encabezado ===== */
 .encabezado-navbar {
-  background-color: #111827;
-  color: #fff;
-  border-bottom: .25rem solid #ea580c;
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  border-bottom: .25rem solid var(--color-orange);
   display: grid;
 
   grid-template-columns: auto minmax(0, 1fr) auto;
@@ -79,7 +96,7 @@ body {
 .boton-menu {
   display: block;
   margin-left: auto;
-  border-color: #f97316;
+  border-color: var(--color-orange-bright);
 }
 
 .menu-navegacion .navbar-collapse {
@@ -99,7 +116,7 @@ body {
 }
 
 .enlace-menu {
-  color: #fff;
+  color: var(--color-white);
   font-weight: 700;
   text-decoration: none;
   padding: .5em .75em;
@@ -110,60 +127,81 @@ body {
 
 /* ===== Estados de los enlaces del menú ===== */
 .enlace-menu:link {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .enlace-menu:visited {
-  color: #fdba74;
+  color: var(--color-orange-soft);
 }
 
 /* ===== Enlace de navegación actual ===== */
 .enlace-menu[aria-current="page"] {
-  color: #f97316;
-  border-color: #f97316;
+  color: var(--color-orange-bright);
+  border-color: var(--color-orange-bright);
 }
 
 .enlace-menu:hover,
 .enlace-menu:focus {
-  color: #f97316;
-  border-color: #f97316;
+  color: var(--color-orange-bright);
+  border-color: var(--color-orange-bright);
 }
 
 .enlace-menu:active {
-  color: #fff;
-  background-color: #ea580c;
+  color: var(--color-white);
+  background-color: var(--color-orange);
 }
 
 /* ===== Menú desplegable de productos ===== */
 .menu-productos {
   min-width: 10rem;
   padding: .4rem;
-  background-color: #111827;
-  border: .0625rem solid #ea580c;
+  background-color: var(--color-ink);
+  border: .0625rem solid var(--color-orange);
   border-radius: .375rem;
 }
 
 .enlace-desplegable {
   padding: .5rem .75rem;
-  color: #fff;
+  color: var(--color-white);
   border-radius: .25rem;
   transition: color .2s ease, background-color .2s ease;
 }
 
 .enlace-desplegable:link,
 .enlace-desplegable:visited {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .enlace-desplegable:hover,
 .enlace-desplegable:focus {
-  color: #111827;
-  background-color: #fdba74;
+  color: var(--color-ink);
+  background-color: var(--color-orange-soft);
 }
 
 .enlace-desplegable:active {
-  color: #fff;
-  background-color: #ea580c;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+}
+
+/* ===== Migas de pan ===== */
+.breadcrumb {
+  margin-bottom: 1rem;
+  font-size: .9rem;
+}
+
+.breadcrumb-item a {
+  color: var(--color-orange-dark);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover,
+.breadcrumb-item a:focus {
+  color: var(--color-orange);
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: var(--color-muted);
 }
 
 /* ===== Layout principal con CSS Grid ===== */
@@ -176,7 +214,7 @@ body {
   gap: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background-color: #fff;
+  background-color: var(--color-white);
   background-image:
     linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)),
     url("../assets/fondo.png");
@@ -262,9 +300,9 @@ body {
 section,
 aside,
 article {
-  background-color: #e0e1e4;
+  background-color: var(--color-block);
   padding: 1.25rem;
-  border: .0625rem solid #e5e7eb;
+  border: .0625rem solid var(--color-border);
   border-radius: .5rem;
 }
 
@@ -281,7 +319,7 @@ aside {
 .pagina-productos .tarjeta-producto,
 .tarjeta-oferta,
 .tarjeta-valor {
-  background-color: #e0e1e4;
+  background-color: var(--color-block);
 }
 
 .pagina-inicio .seccion-bienvenida,
@@ -314,20 +352,23 @@ aside {
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
+/* ===== Etiquetas de ofertas ===== */
+.etiqueta-oferta {
+  align-self: flex-start;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+}
 /* ===== Tarjetas Bootstrap personalizadas ===== */
 .tarjeta-producto.card,
 .tarjeta-oferta.card {
-  color: #1F2937;
-  border: .0625rem solid #e5e7eb;
+  color: var(--color-text);
+  border: .0625rem solid var(--color-border);
   border-radius: .5rem;
   background-color: #f3f4f6;
 }
 
 .tarjeta-producto.card .card-body,
 .tarjeta-oferta.card .card-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
   padding: 0;
 }
 
@@ -337,14 +378,13 @@ aside {
 }
 
 .tarjeta-producto.card .card-text {
-  color: #1F2937;
+  color: var(--color-text);
 }
 
 /* ===== Alineación de botones de tarjetas ===== */
 .tarjeta-producto.card .boton-enlace,
 .tarjeta-oferta.card .boton-enlace {
   align-self: flex-start;
-  margin-top: auto;
 }
 
 /* ===== Estados interactivos de tarjetas ===== */
@@ -352,14 +392,14 @@ aside {
 .grilla-ofertas .tarjeta-oferta:hover,
 .lista-valores .tarjeta-valor:hover {
   transform: translateY(-.2rem);
-  border-color: #ea580c;
+  border-color: var(--color-orange);
   box-shadow: 0 .5rem 1rem rgba(17, 24, 39, .15);
 }
 
 .grilla-productos .tarjeta-producto:focus-within,
 .grilla-ofertas .tarjeta-oferta:focus-within,
 .lista-valores .tarjeta-valor:focus-within {
-  outline: .2rem solid #f97316;
+  outline: .2rem solid var(--color-orange-bright);
   outline-offset: .15rem;
 }
 
@@ -412,19 +452,46 @@ aside {
 
 /* ===== Pseudoclases estructurales ===== */
 .lista-valores > li:nth-child(even) .tarjeta-valor {
-  border-color: #e5e7eb;
+  border-color: var(--color-border);
+}
+
+/* ===== Acordeón de preguntas frecuentes ===== */
+.acordeon-preguntas {
+  margin-top: 1.25rem;
+}
+
+.acordeon-preguntas .accordion-button {
+  color: var(--color-ink);
+  background-color: #f3f4f6;
+  font: inherit;
+  font-weight: 600;
+}
+
+.acordeon-preguntas .accordion-button:not(.collapsed) {
+  color: var(--color-ink);
+  background-color: var(--color-orange-soft);
+  box-shadow: none;
+}
+
+.acordeon-preguntas .accordion-button:focus {
+  border-color: var(--color-orange-bright);
+  box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .25);
+}
+
+.acordeon-preguntas .accordion-body {
+  background-color: var(--color-white);
 }
 
 /* ===== Títulos ===== */
 .titulo-seccion {
   margin-top: 0;
-  color: #111827;
+  color: var(--color-ink);
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .titulo-tarjeta {
-  color: #ea580c;
+  color: var(--color-orange);
   font-size: 1.2rem;
   font-weight: 700;
   margin-top: 0;
@@ -439,7 +506,7 @@ img {
 }
 
 .leyenda-imagen {
-  color: #4b5563;
+  color: var(--color-muted);
   font-size: .875rem;
 }
 
@@ -460,7 +527,7 @@ img {
   bottom: 2rem;
   left: 0;
   padding: 1rem 3.5rem;
-  color: #fff;
+  color: var(--color-white);
   background-color: rgba(17, 24, 39, .72);
 }
 
@@ -507,23 +574,23 @@ img {
 
 /* ===== Enlaces de redes sociales ===== */
 .enlace-red-social:link {
-  color: #fdba74;
+  color: var(--color-orange-soft);
   text-decoration: none;
   transition: color .2s ease, text-decoration-color .2s ease;
 }
 
 .enlace-red-social:visited {
-  color: #f9a66c;
+  color: var(--color-social-visited);
 }
 
 .enlace-red-social:hover,
 .enlace-red-social:focus {
-  color: #fff;
+  color: var(--color-white);
   text-decoration: underline;
 }
 
 .enlace-red-social:active {
-  color: #ea580c;
+  color: var(--color-orange);
 }
 
 /* ===== Enlaces del contenido ===== */
@@ -533,7 +600,7 @@ main a:not(.boton-enlace) {
 
 main a:not(.boton-enlace):hover,
 main a:not(.boton-enlace):focus {
-  color: #c2410c;
+  color: var(--color-orange-dark);
 }
 
 /* ===== Botones ===== */
@@ -541,9 +608,9 @@ main a:not(.boton-enlace):focus {
   display: inline-block;
   width: auto;
   padding: .5em 1em;
-  border: .125rem solid #ea580c;
-  color: #ea580c;
-  background-color: #fff;
+  border: .125rem solid var(--color-orange);
+  color: var(--color-orange);
+  background-color: var(--color-white);
   text-decoration: none;
   font-weight: 700;
   border-radius: .375rem;
@@ -553,15 +620,15 @@ main a:not(.boton-enlace):focus {
 
 .boton-enlace:hover,
 .boton-enlace:focus {
-  background-color: #ea580c;
-  border-color: #ea580c;
-  color: #fff;
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+  color: var(--color-white);
 }
 
 .boton-enlace:active {
-  background-color: #c2410c;
-  border-color: #c2410c;
-  color: #fff;
+  background-color: var(--color-orange-dark);
+  border-color: var(--color-orange-dark);
+  color: var(--color-white);
   transform: translateY(.1rem);
 }
 
@@ -576,13 +643,13 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: .2rem solid #f97316;
+  outline: .2rem solid var(--color-orange-bright);
   outline-offset: .15rem;
 }
 
 /* ===== Formulario ===== */
 fieldset {
-  border: .0625rem solid #d1d5db;
+  border: .0625rem solid var(--color-border-strong);
   padding: 1.25rem;
 }
 
@@ -604,7 +671,7 @@ select,
 .formulario-contacto button {
   width: 100%;
   padding: .6rem;
-  border: .0625rem solid #9ca3af;
+  border: .0625rem solid var(--color-input-border);
   border-radius: .375rem;
   font: inherit;
 }
@@ -616,14 +683,13 @@ textarea {
 
 /* ===== Pie de página ===== */
 .pie-pagina {
-  background-color: #111827;
-  color: #fff;
+  background-color: var(--color-ink);
+  color: var(--color-white);
 }
 
 /* ===== Diseño responsive para tablets ===== */
 @media (min-width: 48rem) {
   .encabezado-navbar {
-
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: "logo marca menu";
     justify-items: stretch;
@@ -704,10 +770,9 @@ textarea {
   }
 }
 
-/* ===== Diseño responsive para escritorio ===== */
-@media (min-width: 1024px) {
+/* ===== Navbar en escritorio ===== */
+@media (min-width: 62rem) {
   .encabezado-navbar {
-
     grid-template-columns: auto auto minmax(0, 1fr) auto;
     grid-template-areas: "logo marca . menu";
     justify-items: stretch;
@@ -731,7 +796,10 @@ textarea {
     align-items: center;
     gap: .25rem;
   }
+}
 
+/* ===== Diseño responsive para escritorio ===== */
+@media (min-width: 1024px) {
   .contenido-principal-layout-inicio,
   .contenido-principal-layout-productos,
   .contenido-ofertas {
@@ -766,14 +834,15 @@ textarea {
     width: max-content;
     min-width: 12rem;
     padding: .5rem;
-    background-color: #111827;
-    border: .0625rem solid #ea580c;
+    background-color: var(--color-ink);
+    border: .0625rem solid var(--color-orange);
     border-radius: .375rem;
   }
 }
 
-/* ===== Encabezado compacto en móviles ===== */
+/* ===== Ajustes para pantallas pequeñas ===== */
 @media (max-width: 30rem) {
+  /* ===== Encabezado compacto ===== */
   .logo-sitio img {
     width: 2.75rem;
     height: 2.75rem;
@@ -783,10 +852,8 @@ textarea {
     font-size: clamp(1rem, 5vw, 1.4rem);
     white-space: nowrap;
   }
-}
 
-/* ===== Ajustes del carousel en pantallas pequeñas ===== */
-@media (max-width: 30rem) {
+  /* ===== Carrusel ===== */
   .imagen-carrusel {
     height: 16rem;
   }
@@ -796,7 +863,6 @@ textarea {
     font-size: .85rem;
   }
 }
-
 /* ===== Preferencia de movimiento reducido ===== */
 @media (prefers-reduced-motion: reduce) {
   *,
