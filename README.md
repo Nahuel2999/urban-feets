@@ -10,8 +10,7 @@ URBAN FEETS presenta un catálogo de zapatillas y reúne información sobre ofer
 
 - **HTML5** para la estructura y el contenido.
 - **CSS3** para el diseño responsive y los estilos propios.
-- **JavaScript** para los filtros y la paginación local del catálogo, además de las interacciones de Bootstrap.
-- **Bootstrap 5.3.3** para la navbar, las cards, los badges, los breadcrumbs, el acordeón, las pestañas, los modales, los filtros plegables, la paginación y las notificaciones Toast.
+- **Bootstrap 5.3.3** para la navbar, las tarjetas, los badges, las migas de pan, el acordeón, las pestañas, los modales, los filtros plegables, la paginación y las notificaciones Toast.
 - **Google Fonts** para las tipografías Poppins y Roboto.
 - **Inteligencia artificial generativa** como herramienta de soporte para explorar mejoras, revisar el código y apoyar la documentación. Las propuestas se revisan y adaptan al proyecto.
 
@@ -43,15 +42,15 @@ urban-feets/
 
 ## Características
 
-- Navbar responsive con estado activo por página.
-- Breadcrumbs para indicar la ubicación en las páginas internas.
-- Cards Bootstrap con alturas y botones alineados.
+- Navbar adaptable con estado activo por página.
+- Breadcrumbs en las páginas internas.
+- Tarjetas Bootstrap con alturas y botones alineados.
 - Badges para identificar las ofertas.
 - Preguntas frecuentes en un acordeón Bootstrap.
-- Modales con información ampliada y selectores de talle en productos y ofertas, del 36 al 46.
+- Modales con información ampliada de productos.
 - Pestañas para organizar la información institucional y las ofertas.
-- Filtros plegables para productos y ofertas, y paginación local en el catálogo.
-- Notificación Toast informativa en el formulario de contacto. El formulario todavía no envía los datos; requiere conectarse a un servicio.
+- Filtros plegables para productos y ofertas, con paginación local en el catálogo.
+- Notificación Toast informativa en el formulario de contacto.
 - Estilos propios que adaptan los componentes a la paleta de URBAN FEETS.
 - Enlaces a Instagram y Facebook.
 
