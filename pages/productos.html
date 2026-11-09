@@ -62,23 +62,6 @@
       <h2 class="titulo-seccion">Nuestros productos</h2>
       <p>Conocé algunos de los modelos de zapatillas disponibles en Urban Feets.</p>
 
-      <!-- Filtros plegables del catálogo -->
-      <div class="herramientas-catalogo">
-        <button class="boton-enlace" type="button" data-bs-toggle="collapse" data-bs-target="#filtrosProductos" aria-expanded="false" aria-controls="filtrosProductos">Filtrar productos</button>
-        <div class="collapse" id="filtrosProductos">
-          <div class="card card-body panel-filtros mt-3">
-            <label class="form-label" for="filtroCategoriaProductos">Categoría</label>
-            <select class="form-select" id="filtroCategoriaProductos">
-              <option value="todos">Todas las categorías</option>
-              <option value="deportivo">Deportivas</option>
-              <option value="urbano">Urbanas</option>
-            </select>
-            <button class="boton-enlace boton-limpiar-filtro mt-3" type="button" id="limpiarFiltroProductos">Limpiar filtro</button>
-          </div>
-        </div>
-      </div>
-      <p id="resultadoProductos" class="resumen-resultados" aria-live="polite"></p>
-
       <div id="galeriaProductos" class="carousel slide carrusel-sitio" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#galeriaProductos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ver imagen 1"></button>
@@ -106,6 +89,29 @@
         </button>
       </div>
 
+      <!-- Filtros plegables del catálogo -->
+      <div class="herramientas-catalogo">
+        <button class="boton-enlace" type="button" data-bs-toggle="collapse" data-bs-target="#filtrosProductos" aria-expanded="false" aria-controls="filtrosProductos">Filtrar productos</button>
+        <div class="collapse" id="filtrosProductos">
+          <div class="card card-body panel-filtros mt-3">
+            <label class="form-label" for="filtroCategoriaProductos">Categoría</label>
+            <select class="form-select" id="filtroCategoriaProductos">
+              <option value="todos">Todas las categorías</option>
+              <option value="deportivo">Deportivas</option>
+              <option value="urbano">Urbanas</option>
+            </select>
+            <button class="boton-enlace boton-limpiar-filtro mt-3" type="button" id="limpiarFiltroProductos">Limpiar filtro</button>
+          </div>
+        </div>
+      </div>
+      <p id="resultadoProductos" class="resumen-resultados" aria-live="polite"></p>
+
+      <div class="alert alert-light alert-talles" role="note">
+        <p id="ayudaTallesProductos" class="mb-2">Los modelos tienen talles del 36 al 46. Elegí una opción para consultar cada producto; la disponibilidad debe confirmarse antes de la compra.</p>
+        <a class="boton-enlace" href="contacto.html">Consultar disponibilidad</a>
+      </div>
+
+      <!-- Tarjetas con selección de talle -->
       <div class="grilla-productos">
         <article class="tarjeta-producto card h-100" data-categoria="deportivo">
           <div class="card-body d-flex flex-column">
@@ -116,6 +122,13 @@
             </figure>
             <p class="card-text">Zapatillas cómodas para realizar actividades físicas al aire libre.</p>
             <p class="card-text">Precio: $55.000</p>
+            <div class="selector-talle mb-3">
+              <label class="form-label" for="talleUrbanRunV2">Talle</label>
+              <select class="form-select form-select-sm" id="talleUrbanRunV2" name="talle-urban-run-v2" aria-describedby="ayudaTallesProductos">
+                <option value="" selected disabled>Elegí un talle</option>
+                <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option>
+              </select>
+            </div>
             <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanRunV2" aria-label="Ver detalles de Urban Run V2">Ver producto</button>
           </div>
         </article>
@@ -129,6 +142,13 @@
             </figure>
             <p class="card-text">Un modelo clásico para combinar con cualquier estilo.</p>
             <p class="card-text">Precio: $50.000</p>
+            <div class="selector-talle mb-3">
+              <label class="form-label" for="talleUrbanRun">Talle</label>
+              <select class="form-select form-select-sm" id="talleUrbanRun" name="talle-urban-run" aria-describedby="ayudaTallesProductos">
+                <option value="" selected disabled>Elegí un talle</option>
+                <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option>
+              </select>
+            </div>
             <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanRun" aria-label="Ver detalles de Urban Run">Ver producto</button>
           </div>
         </article>
@@ -142,6 +162,13 @@
             </figure>
             <p class="card-text">Zapatillas cómodas para realizar actividades físicas al aire libre.</p>
             <p class="card-text">Precio: $50.000</p>
+            <div class="selector-talle mb-3">
+              <label class="form-label" for="talleUrbanRunMujer">Talle</label>
+              <select class="form-select form-select-sm" id="talleUrbanRunMujer" name="talle-urban-run-mujer" aria-describedby="ayudaTallesProductos">
+                <option value="" selected disabled>Elegí un talle</option>
+                <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option>
+              </select>
+            </div>
             <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanRunMujer" aria-label="Ver detalles de Urban Run para mujer">Ver producto</button>
           </div>
         </article>
@@ -155,6 +182,13 @@
             </figure>
             <p class="card-text">Zapatillas de estilo clásico, ideales para un look versátil.</p>
             <p class="card-text">Precio: $48.000</p>
+            <div class="selector-talle mb-3">
+              <label class="form-label" for="talleStreetClassic">Talle</label>
+              <select class="form-select form-select-sm" id="talleStreetClassic" name="talle-street-classic" aria-describedby="ayudaTallesProductos">
+                <option value="" selected disabled>Elegí un talle</option>
+                <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option>
+              </select>
+            </div>
             <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalStreetClassic" aria-label="Ver detalles de Street Classic">Ver producto</button>
           </div>
         </article>
@@ -168,6 +202,13 @@
             </figure>
             <p class="card-text">Un modelo para realizar actividades físicas al aire libre.</p>
             <p class="card-text">Precio: $60.000</p>
+            <div class="selector-talle mb-3">
+              <label class="form-label" for="talleUrbanAirForce">Talle</label>
+              <select class="form-select form-select-sm" id="talleUrbanAirForce" name="talle-urban-airforce" aria-describedby="ayudaTallesProductos">
+                <option value="" selected disabled>Elegí un talle</option>
+                <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option>
+              </select>
+            </div>
             <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanAirForce" aria-label="Ver detalles de Urban AirForce">Ver producto</button>
           </div>
         </article>
@@ -181,6 +222,13 @@
             </figure>
             <p class="card-text">Un estilo versátil para acompañarte todos los días.</p>
             <p class="card-text">Precio: $65.000</p>
+            <div class="selector-talle mb-3">
+              <label class="form-label" for="talleUrbanAirForceBlancas">Talle</label>
+              <select class="form-select form-select-sm" id="talleUrbanAirForceBlancas" name="talle-urban-airforce-blancas" aria-describedby="ayudaTallesProductos">
+                <option value="" selected disabled>Elegí un talle</option>
+                <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option>
+              </select>
+            </div>
             <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalUrbanAirForceBlancas" aria-label="Ver detalles de Urban AirForce blancas">Ver producto</button>
           </div>
         </article>

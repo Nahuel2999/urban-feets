@@ -399,6 +399,21 @@ aside {
 }
 
 /* ===== Filtros, paginación y aviso de formulario ===== */
+.selector-talle .form-select:focus {
+  border-color: var(--color-orange-bright);
+  box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .2);
+}
+
+.alert-talles {
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border-color: var(--color-border-strong);
+}
+
+.alert-talles .boton-enlace {
+  margin-top: .25rem;
+}
+
 .panel-filtros.card {
   color: var(--color-text);
   background-color: var(--color-white);

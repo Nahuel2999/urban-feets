@@ -90,7 +90,12 @@
             </div>
           </div>
           <p id="resultadoOfertas" class="resumen-resultados" aria-live="polite"></p>
+          <div class="alert alert-light alert-talles" role="note">
+            <p id="ayudaTallesOfertas" class="mb-2">Seleccioná el talle que buscás. Los modelos promocionados ofrecen talles del 36 al 46, sujetos a disponibilidad.</p>
+            <a class="boton-enlace" href="contacto.html">Consultar stock</a>
+          </div>
 
+          <!-- Tarjetas de ofertas con selección de talle -->
           <div class="grilla-ofertas">
             <article class="tarjeta-oferta card h-100" data-color="negro-rojo">
               <div class="card-body d-flex flex-column">
@@ -104,6 +109,13 @@
                   <li>Precio anterior: <del>$50.000</del></li>
                   <li>Precio de oferta: $40.000</li>
                 </ul>
+                <div class="selector-talle mb-3">
+                  <label class="form-label" for="talleOfertaJordanRojo">Talle</label>
+                  <select class="form-select form-select-sm" id="talleOfertaJordanRojo" name="talle-oferta-jordan-rojo" aria-describedby="ayudaTallesOfertas">
+                    <option value="" selected disabled>Elegí un talle</option>
+                    <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option>
+                  </select>
+                </div>
                 <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalOfertaJordanRojo" aria-label="Ver detalles de Air Jordan negro y rojo">Ver producto</button>
               </div>
             </article>
@@ -120,6 +132,13 @@
                   <li>Precio anterior: <del>$45.000</del></li>
                   <li>Precio de oferta: $35.000</li>
                 </ul>
+                <div class="selector-talle mb-3">
+                  <label class="form-label" for="talleOfertaJordanAmarillo">Talle</label>
+                  <select class="form-select form-select-sm" id="talleOfertaJordanAmarillo" name="talle-oferta-jordan-amarillo" aria-describedby="ayudaTallesOfertas">
+                    <option value="" selected disabled>Elegí un talle</option>
+                    <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option>
+                  </select>
+                </div>
                 <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modalOfertaJordanAmarillo" aria-label="Ver detalles de Air Jordan negro y amarillo">Ver producto</button>
               </div>
             </article>
