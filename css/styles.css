@@ -221,7 +221,6 @@ body {
 }
 
 .contenido-principal-layout-catalogo {
-  grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "contenido";
 }
 
@@ -340,7 +339,7 @@ aside {
 .tarjeta-oferta,
 .tarjeta-valor {
   min-width: 0;
-  background-color: #f3f4f6;
+  background-color: var(--color-page);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
@@ -357,7 +356,7 @@ aside {
   color: var(--color-text);
   border: .0625rem solid var(--color-border);
   border-radius: .5rem;
-  background-color: #f3f4f6;
+  background-color: var(--color-page);
 }
 
 .tarjeta-producto.card .card-body,
@@ -524,7 +523,7 @@ aside {
 
 .acordeon-preguntas .accordion-button {
   color: var(--color-ink);
-  background-color: #f3f4f6;
+  background-color: var(--color-page);
   font: inherit;
   font-weight: 600;
 }
@@ -697,7 +696,7 @@ main a:not(.boton-enlace):focus {
   transform: translateY(.1rem);
 }
 
-/* ===== Alineación del botón de ofertas ===== */
+/* ===== Acciones de inicio ===== */
 .pagina-inicio .seccion-catalogo-inicio,
 .pagina-inicio .seccion-ofertas-seccion-resumen {
   display: flex;
@@ -1092,36 +1091,12 @@ textarea {
 
 /* ===== Diseño responsive para tablets ===== */
 @media (min-width: 48rem) {
-  .encabezado-navbar {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    grid-template-areas: "logo marca menu";
-    justify-items: stretch;
-    align-items: center;
-    column-gap: .5rem;
-  }
-
-  .logo-sitio {
-    justify-self: start;
-  }
-
   .titulo-sitio {
-    justify-self: start;
-    margin-left: 0;
-    text-align: left;
     white-space: nowrap;
   }
 
-  .menu-navegacion {
-    width: auto;
-    justify-self: end;
-    margin-left: 0;
-  }
-
   .lista-navegacion {
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
-    gap: .25rem;
   }
 
   .pagina-catalogo .grilla-productos,
@@ -1178,12 +1153,6 @@ textarea {
   .encabezado-navbar {
     grid-template-columns: auto auto minmax(0, 1fr) auto;
     grid-template-areas: "logo marca . menu";
-    justify-items: stretch;
-  }
-
-  .titulo-sitio {
-    justify-self: start;
-    text-align: left;
   }
 
   .menu-navegacion {
@@ -1197,7 +1166,6 @@ textarea {
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
-    gap: .25rem;
   }
 
 }
@@ -1206,10 +1174,6 @@ textarea {
 @media (min-width: 1024px) {
   .contenido-ofertas {
     grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
-  }
-
-  .contenido-principal-layout-inicio {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .pagina-catalogo .grilla-productos {
@@ -1222,7 +1186,6 @@ textarea {
   }
 
   .contenido-sobre-nosotros {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
       "presentacion presentacion"
       "mision apoyo";
@@ -1268,6 +1231,7 @@ textarea {
 
 }
 
+/* ===== Ajustes móviles de modales y catálogo ===== */
 @media (max-width: 47.99rem) {
   .modal-producto .modal-body .col-md-5,
   .modal-producto .modal-body .col-md-7 {

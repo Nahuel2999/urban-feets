@@ -13,14 +13,16 @@
       <a class="logo-sitio" href="../index.html"><img src="../assets/logoUF.png" alt="Logo de URBAN FEETS"></a>
       <h1 class="titulo-sitio">URBAN FEETS</h1>
       <nav class="navbar navbar-expand-lg navbar-dark menu-navegacion" aria-label="Menú de navegación principal">
-        <button class="navbar-toggler boton-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar el menú"><span class="navbar-toggler-icon"></span></button>
+        <button class="navbar-toggler boton-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav lista-navegacion">
             <li class="nav-item"><a class="nav-link enlace-menu" href="../index.html">Inicio</a></li>
             <li class="nav-item"><a class="nav-link enlace-menu active" href="./catalogo.html" aria-current="page">Catálogo</a></li>
-            <li class="nav-item"><a class="nav-link enlace-menu " href="./ofertas.html" >Ofertas</a></li>
-            <li class="nav-item"><a class="nav-link enlace-menu " href="./sobre-nosotros.html" >Sobre nosotros</a></li>
-            <li class="nav-item"><a class="nav-link enlace-menu " href="./contacto.html" >Contacto</a></li>
+            <li class="nav-item"><a class="nav-link enlace-menu" href="./ofertas.html">Ofertas</a></li>
+            <li class="nav-item"><a class="nav-link enlace-menu" href="./sobre-nosotros.html">Sobre nosotros</a></li>
+            <li class="nav-item"><a class="nav-link enlace-menu" href="./contacto.html">Contacto</a></li>
           </ul>
         </div>
       </nav>
@@ -36,7 +38,11 @@
         <h2 class="titulo-seccion" id="titulo-catalogo">Catálogo de productos</h2>
         <p>Conocé algunos de los modelos de zapatillas disponibles en Urban Feets.</p>
         <div id="galeriaCatalogo" class="carousel slide carrusel-sitio" data-bs-ride="carousel" aria-label="Galería de productos destacados">
-          <div class="carousel-indicators"><button type="button" data-bs-target="#galeriaCatalogo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ver imagen 1"></button><button type="button" data-bs-target="#galeriaCatalogo" data-bs-slide-to="1" aria-label="Ver imagen 2"></button><button type="button" data-bs-target="#galeriaCatalogo" data-bs-slide-to="2" aria-label="Ver imagen 3"></button></div>
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#galeriaCatalogo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ver imagen 1"></button>
+            <button type="button" data-bs-target="#galeriaCatalogo" data-bs-slide-to="1" aria-label="Ver imagen 2"></button>
+            <button type="button" data-bs-target="#galeriaCatalogo" data-bs-slide-to="2" aria-label="Ver imagen 3"></button>
+          </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img class="imagen-carrusel" src="../assets/carousel.catalogo.png" alt="Zapatillas destacadas, imagen 1" loading="lazy">
@@ -57,8 +63,12 @@
               </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCatalogo" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-          <button class="carousel-control-next" type="button" data-bs-target="#galeriaCatalogo" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+          <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCatalogo" data-bs-slide="prev" aria-label="Imagen anterior">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#galeriaCatalogo" data-bs-slide="next" aria-label="Imagen siguiente">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
         </div>
         <section class="seccion-ofertas-seccion-resumen seccion-ofertas-catalogo" aria-labelledby="titulo-ofertas-catalogo">
           <div>
@@ -67,9 +77,21 @@
           </div>
           <a class="boton-enlace" href="./ofertas.html">Explorar ofertas</a>
         </section>
-        <fieldset class="controles-catalogo paginacion-catalogo"><legend class="form-label">Página del catálogo</legend><nav class="btn-group" aria-label="Páginas del catálogo"><input class="btn-check" type="radio" name="catalogo-pagina" id="catalogoPagina1" checked><label class="btn btn-outline-secondary" for="catalogoPagina1">1</label><input class="btn-check" type="radio" name="catalogo-pagina" id="catalogoPagina2"><label class="btn btn-outline-secondary" for="catalogoPagina2">2</label><input class="btn-check" type="radio" name="catalogo-pagina" id="catalogoPagina3"><label class="btn btn-outline-secondary" for="catalogoPagina3">3</label><input class="btn-check" type="radio" name="catalogo-pagina" id="catalogoPagina4"><label class="btn btn-outline-secondary" for="catalogoPagina4">4</label></nav></fieldset>
+        <fieldset class="controles-catalogo paginacion-catalogo">
+          <legend class="form-label">Página del catálogo</legend>
+          <nav class="btn-group" aria-label="Páginas del catálogo">
+            <input class="btn-check" type="radio" name="catalogo-pagina" id="catalogoPagina1" checked>
+            <label class="btn btn-outline-secondary" for="catalogoPagina1">1</label>
+            <input class="btn-check" type="radio" name="catalogo-pagina" id="catalogoPagina2">
+            <label class="btn btn-outline-secondary" for="catalogoPagina2">2</label>
+            <input class="btn-check" type="radio" name="catalogo-pagina" id="catalogoPagina3">
+            <label class="btn btn-outline-secondary" for="catalogoPagina3">3</label>
+            <input class="btn-check" type="radio" name="catalogo-pagina" id="catalogoPagina4">
+            <label class="btn btn-outline-secondary" for="catalogoPagina4">4</label>
+          </nav>
+        </fieldset>
         <div class="grilla-productos grilla-catalogo">
-<article class="tarjeta-producto card h-100 pagina-1">
+          <article class="tarjeta-producto card h-100 pagina-1">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Urban Run V2</h3>
@@ -79,8 +101,15 @@
               </figure>
               <p class="card-text descripcion-producto">Cómodas para actividades físicas al aire libre.</p>
               <p class="card-text precio-producto">Precio: $55.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-urban-run-v2-0">Género</label><select class="form-select form-select-sm" id="genero-urban-run-v2-0" name="genero-urban-run-v2-0"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-urban-run-v2-0">Género</label>
+                <select class="form-select form-select-sm" id="genero-urban-run-v2-0" name="genero-urban-run-v2-0">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-urban-run-v2-0">Talle</label>
                 <select class="form-select form-select-sm" id="talle-urban-run-v2-0" name="talle-urban-run-v2-0" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -100,7 +129,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-urban-run-v2-0" aria-label="Ver detalles de Urban Run V2">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-1">
+          <article class="tarjeta-producto card h-100 pagina-1">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Urban Run V1</h3>
@@ -110,8 +139,15 @@
               </figure>
               <p class="card-text descripcion-producto">Clásicas para combinar con distintos estilos.</p>
               <p class="card-text precio-producto">Precio: $50.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-urban-run-1">Género</label><select class="form-select form-select-sm" id="genero-urban-run-1" name="genero-urban-run-1"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-urban-run-1">Género</label>
+                <select class="form-select form-select-sm" id="genero-urban-run-1" name="genero-urban-run-1">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-urban-run-1">Talle</label>
                 <select class="form-select form-select-sm" id="talle-urban-run-1" name="talle-urban-run-1" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -131,7 +167,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-urban-run-1" aria-label="Ver detalles de Urban Run">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-1">
+          <article class="tarjeta-producto card h-100 pagina-1">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Street Classic</h3>
@@ -141,8 +177,15 @@
               </figure>
               <p class="card-text descripcion-producto">Estilo clásico para un look urbano.</p>
               <p class="card-text precio-producto">Precio: $48.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-street-classic-2">Género</label><select class="form-select form-select-sm" id="genero-street-classic-2" name="genero-street-classic-2"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-street-classic-2">Género</label>
+                <select class="form-select form-select-sm" id="genero-street-classic-2" name="genero-street-classic-2">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-street-classic-2">Talle</label>
                 <select class="form-select form-select-sm" id="talle-street-classic-2" name="talle-street-classic-2" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -162,7 +205,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-street-classic-2" aria-label="Ver detalles de Street Classic">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-1">
+          <article class="tarjeta-producto card h-100 pagina-1">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Urban AirForce</h3>
@@ -172,8 +215,15 @@
               </figure>
               <p class="card-text descripcion-producto">Modelo deportivo para todos los días.</p>
               <p class="card-text precio-producto">Precio: $60.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-urban-airforce-3">Género</label><select class="form-select form-select-sm" id="genero-urban-airforce-3" name="genero-urban-airforce-3"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-urban-airforce-3">Género</label>
+                <select class="form-select form-select-sm" id="genero-urban-airforce-3" name="genero-urban-airforce-3">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-urban-airforce-3">Talle</label>
                 <select class="form-select form-select-sm" id="talle-urban-airforce-3" name="talle-urban-airforce-3" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -193,7 +243,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-urban-airforce-3" aria-label="Ver detalles de Urban AirForce">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-1">
+          <article class="tarjeta-producto card h-100 pagina-1">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Urban AirForce blancas</h3>
@@ -203,8 +253,15 @@
               </figure>
               <p class="card-text descripcion-producto">Versátiles para acompañar tus actividades.</p>
               <p class="card-text precio-producto">Precio: $65.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-urban-airforce-blancas-4">Género</label><select class="form-select form-select-sm" id="genero-urban-airforce-blancas-4" name="genero-urban-airforce-blancas-4"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-urban-airforce-blancas-4">Género</label>
+                <select class="form-select form-select-sm" id="genero-urban-airforce-blancas-4" name="genero-urban-airforce-blancas-4">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-urban-airforce-blancas-4">Talle</label>
                 <select class="form-select form-select-sm" id="talle-urban-airforce-blancas-4" name="talle-urban-airforce-blancas-4" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -224,7 +281,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-urban-airforce-blancas-4" aria-label="Ver detalles de Urban AirForce blancas">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-1">
+          <article class="tarjeta-producto card h-100 pagina-1">
             <div class="card-body d-flex flex-column">
               <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 25%</span></div>
               <h3 class="titulo-tarjeta card-title">Air Jordan - Negro y rojo</h3>
@@ -237,8 +294,15 @@
                 <li>Antes: <del>$50.000</del></li>
                 <li>Oferta: <strong>$37.500</strong></li>
               </ul>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-air-jordan-negro-y-rojo-5">Género</label><select class="form-select form-select-sm" id="genero-air-jordan-negro-y-rojo-5" name="genero-air-jordan-negro-y-rojo-5"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-air-jordan-negro-y-rojo-5">Género</label>
+                <select class="form-select form-select-sm" id="genero-air-jordan-negro-y-rojo-5" name="genero-air-jordan-negro-y-rojo-5">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-promo-jordanrojo-catalogo">Talle</label>
                 <select class="form-select form-select-sm" id="talle-promo-jordanrojo-catalogo" name="talle-promo-jordanrojo-catalogo">
                   <option value="" selected>Elegí un talle</option>
@@ -258,7 +322,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-catalogo-oferta-rojo">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-2">
+          <article class="tarjeta-producto card h-100 pagina-2">
             <div class="card-body d-flex flex-column">
               <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 20%</span></div>
               <h3 class="titulo-tarjeta card-title">Air Jordan - Negro y amarillo</h3>
@@ -271,8 +335,15 @@
                 <li>Antes: <del>$45.000</del></li>
                 <li>Oferta: <strong>$36.000</strong></li>
               </ul>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-air-jordan-negro-y-amarillo-6">Género</label><select class="form-select form-select-sm" id="genero-air-jordan-negro-y-amarillo-6" name="genero-air-jordan-negro-y-amarillo-6"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-air-jordan-negro-y-amarillo-6">Género</label>
+                <select class="form-select form-select-sm" id="genero-air-jordan-negro-y-amarillo-6" name="genero-air-jordan-negro-y-amarillo-6">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-promo-jordanamarillo-catalogo">Talle</label>
                 <select class="form-select form-select-sm" id="talle-promo-jordanamarillo-catalogo" name="talle-promo-jordanamarillo-catalogo">
                   <option value="" selected>Elegí un talle</option>
@@ -292,7 +363,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-catalogo-oferta-amarillo">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-2">
+          <article class="tarjeta-producto card h-100 pagina-2">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Runner City</h3>
@@ -302,8 +373,15 @@
               </figure>
               <p class="card-text descripcion-producto">Zapatillas urbanas livianas para uso cotidiano.</p>
               <p class="card-text precio-producto">Precio: $47.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-runner-city-catalogo-8">Género</label><select class="form-select form-select-sm" id="genero-runner-city-catalogo-8" name="genero-runner-city-catalogo-8"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-runner-city-catalogo-8">Género</label>
+                <select class="form-select form-select-sm" id="genero-runner-city-catalogo-8" name="genero-runner-city-catalogo-8">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-runner-city-5">Talle</label>
                 <select class="form-select form-select-sm" id="talle-runner-city-5" name="talle-runner-city-5" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -323,7 +401,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-runner-city-5" aria-label="Ver detalles de Runner City">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-2">
+          <article class="tarjeta-producto card h-100 pagina-2">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Street Motion</h3>
@@ -333,8 +411,15 @@
               </figure>
               <p class="card-text descripcion-producto">Diseño deportivo para sumar comodidad a tu rutina.</p>
               <p class="card-text precio-producto">Precio: $52.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-street-motion-catalogo-9">Género</label><select class="form-select form-select-sm" id="genero-street-motion-catalogo-9" name="genero-street-motion-catalogo-9"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-street-motion-catalogo-9">Género</label>
+                <select class="form-select form-select-sm" id="genero-street-motion-catalogo-9" name="genero-street-motion-catalogo-9">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-street-motion-6">Talle</label>
                 <select class="form-select form-select-sm" id="talle-street-motion-6" name="talle-street-motion-6" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -354,7 +439,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-street-motion-6" aria-label="Ver detalles de Street Motion">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-2">
+          <article class="tarjeta-producto card h-100 pagina-2">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Urban Track</h3>
@@ -364,8 +449,15 @@
               </figure>
               <p class="card-text descripcion-producto">Silueta urbana con detalles deportivos.</p>
               <p class="card-text precio-producto">Precio: $58.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-urban-track-catalogo-10">Género</label><select class="form-select form-select-sm" id="genero-urban-track-catalogo-10" name="genero-urban-track-catalogo-10"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-urban-track-catalogo-10">Género</label>
+                <select class="form-select form-select-sm" id="genero-urban-track-catalogo-10" name="genero-urban-track-catalogo-10">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-urban-track-7">Talle</label>
                 <select class="form-select form-select-sm" id="talle-urban-track-7" name="talle-urban-track-7" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -385,7 +477,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-urban-track-7" aria-label="Ver detalles de Urban Track">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-2">
+          <article class="tarjeta-producto card h-100 pagina-2">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Daily Flex</h3>
@@ -395,8 +487,15 @@
               </figure>
               <p class="card-text descripcion-producto">Modelo versátil para distintos conjuntos.</p>
               <p class="card-text precio-producto">Precio: $43.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-daily-flex-catalogo-11">Género</label><select class="form-select form-select-sm" id="genero-daily-flex-catalogo-11" name="genero-daily-flex-catalogo-11"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-daily-flex-catalogo-11">Género</label>
+                <select class="form-select form-select-sm" id="genero-daily-flex-catalogo-11" name="genero-daily-flex-catalogo-11">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-daily-flex-8">Talle</label>
                 <select class="form-select form-select-sm" id="talle-daily-flex-8" name="talle-daily-flex-8" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -416,7 +515,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-daily-flex-8" aria-label="Ver detalles de Daily Flex">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-2">
+          <article class="tarjeta-producto card h-100 pagina-2">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Runner Pro</h3>
@@ -426,8 +525,15 @@
               </figure>
               <p class="card-text descripcion-producto">Zapatillas de perfil deportivo.</p>
               <p class="card-text precio-producto">Precio: $72.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-runner-pro-catalogo-12">Género</label><select class="form-select form-select-sm" id="genero-runner-pro-catalogo-12" name="genero-runner-pro-catalogo-12"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-runner-pro-catalogo-12">Género</label>
+                <select class="form-select form-select-sm" id="genero-runner-pro-catalogo-12" name="genero-runner-pro-catalogo-12">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-runner-pro-9">Talle</label>
                 <select class="form-select form-select-sm" id="talle-runner-pro-9" name="talle-runner-pro-9" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -447,7 +553,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-runner-pro-9" aria-label="Ver detalles de Runner Pro">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-3">
+          <article class="tarjeta-producto card h-100 pagina-3">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Rosa Maryland</h3>
@@ -457,8 +563,15 @@
               </figure>
               <p class="card-text descripcion-producto">Cómodas para realizar actividades físicas.</p>
               <p class="card-text precio-producto">Precio: $50.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-rosa-md-catalogo-13">Género</label><select class="form-select form-select-sm" id="genero-rosa-md-catalogo-13" name="genero-rosa-md-catalogo-13"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-rosa-md-catalogo-13">Género</label>
+                <select class="form-select form-select-sm" id="genero-rosa-md-catalogo-13" name="genero-rosa-md-catalogo-13">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-rosa-md-0">Talle</label>
                 <select class="form-select form-select-sm" id="talle-rosa-md-0" name="talle-rosa-md-0" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -475,10 +588,10 @@
                   <option value="46">46</option>
                 </select>
               </div>
-              <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-urban-run-mujer-0" aria-label="Ver detalles de Urban Run (mujer)">Ver detalles</button>
+              <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-rosa-maryland-13" aria-label="Ver detalles de Rosa Maryland">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-3">
+          <article class="tarjeta-producto card h-100 pagina-3">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Urban Luna</h3>
@@ -488,8 +601,15 @@
               </figure>
               <p class="card-text descripcion-producto">Silueta versátil para un estilo casual.</p>
               <p class="card-text precio-producto">Precio: $45.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-luna-urbana-catalogo-14">Género</label><select class="form-select form-select-sm" id="genero-luna-urbana-catalogo-14" name="genero-luna-urbana-catalogo-14"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-luna-urbana-catalogo-14">Género</label>
+                <select class="form-select form-select-sm" id="genero-luna-urbana-catalogo-14" name="genero-luna-urbana-catalogo-14">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-luna-urbana-6">Talle</label>
                 <select class="form-select form-select-sm" id="talle-luna-urbana-6" name="talle-luna-urbana-6" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -509,7 +629,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-luna-urbana-6" aria-label="Ver detalles de Luna Urbana">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-3">
+          <article class="tarjeta-producto card h-100 pagina-3">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Rosa Street</h3>
@@ -519,8 +639,15 @@
               </figure>
               <p class="card-text descripcion-producto">Diseño urbano cómodo para tus actividades.</p>
               <p class="card-text precio-producto">Precio: $52.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-rosa-street-catalogo-15">Género</label><select class="form-select form-select-sm" id="genero-rosa-street-catalogo-15" name="genero-rosa-street-catalogo-15"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-rosa-street-catalogo-15">Género</label>
+                <select class="form-select form-select-sm" id="genero-rosa-street-catalogo-15" name="genero-rosa-street-catalogo-15">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-rosa-street-7">Talle</label>
                 <select class="form-select form-select-sm" id="talle-rosa-street-7" name="talle-rosa-street-7" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -540,7 +667,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-rosa-street-7" aria-label="Ver detalles de Rosa Street">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-3">
+          <article class="tarjeta-producto card h-100 pagina-3">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">City Soft</h3>
@@ -550,8 +677,15 @@
               </figure>
               <p class="card-text descripcion-producto">Modelo liviano para toda la semana.</p>
               <p class="card-text precio-producto">Precio: $49.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-city-soft-catalogo-16">Género</label><select class="form-select form-select-sm" id="genero-city-soft-catalogo-16" name="genero-city-soft-catalogo-16"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-city-soft-catalogo-16">Género</label>
+                <select class="form-select form-select-sm" id="genero-city-soft-catalogo-16" name="genero-city-soft-catalogo-16">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-city-soft-8">Talle</label>
                 <select class="form-select form-select-sm" id="talle-city-soft-8" name="talle-city-soft-8" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -571,7 +705,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-city-soft-8" aria-label="Ver detalles de City Soft">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-3">
+          <article class="tarjeta-producto card h-100 pagina-3">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Unisex</span>
               <h3 class="titulo-tarjeta card-title">Urban Bloom</h3>
@@ -581,8 +715,15 @@
               </figure>
               <p class="card-text descripcion-producto">Estilo moderno y fácil de combinar.</p>
               <p class="card-text precio-producto">Precio: $57.000</p>
-              <div class="selector-genero mb-3"><label class="form-label" for="genero-urban-bloom-catalogo-17">Género</label><select class="form-select form-select-sm" id="genero-urban-bloom-catalogo-17" name="genero-urban-bloom-catalogo-17"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
-                  <div class="selector-talle mb-3">
+              <div class="selector-genero mb-3">
+                <label class="form-label" for="genero-urban-bloom-catalogo-17">Género</label>
+                <select class="form-select form-select-sm" id="genero-urban-bloom-catalogo-17" name="genero-urban-bloom-catalogo-17">
+                  <option value="" selected>Elegí un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+              </div>
+              <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-urban-bloom-9">Talle</label>
                 <select class="form-select form-select-sm" id="talle-urban-bloom-9" name="talle-urban-bloom-9" aria-label="Talle">
                   <option value="" selected>Elegí un talle</option>
@@ -602,7 +743,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-urban-bloom-9" aria-label="Ver detalles de Urban Bloom">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-3">
+          <article class="tarjeta-producto card h-100 pagina-3">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Niños</span>
               <h3 class="titulo-tarjeta card-title">Mini Runner</h3>
@@ -615,7 +756,7 @@
               <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-mini-runner-0">Talle</label>
                 <select class="form-select form-select-sm" id="talle-mini-runner-0" name="talle-mini-runner-0" aria-label="Talle">
-                                    <option value="" selected>Elegí un talle</option>
+                  <option value="" selected>Elegí un talle</option>
                   <option value="20">20</option>
                   <option value="21">21</option>
                   <option value="22">22</option>
@@ -638,7 +779,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-mini-runner-0" aria-label="Ver detalles de Mini Runner">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-4">
+          <article class="tarjeta-producto card h-100 pagina-4">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Niños</span>
               <h3 class="titulo-tarjeta card-title">Peque Street</h3>
@@ -651,7 +792,7 @@
               <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-peque-street-1">Talle</label>
                 <select class="form-select form-select-sm" id="talle-peque-street-1" name="talle-peque-street-1" aria-label="Talle">
-                                    <option value="" selected>Elegí un talle</option>
+                  <option value="" selected>Elegí un talle</option>
                   <option value="20">20</option>
                   <option value="21">21</option>
                   <option value="22">22</option>
@@ -674,12 +815,12 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-peque-street-1" aria-label="Ver detalles de Peque Street">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-4">
+          <article class="tarjeta-producto card h-100 pagina-4">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Niños</span>
               <h3 class="titulo-tarjeta card-title">Kids Flex</h3>
               <figure>
-                <img src="../assets//zap-kidsflex.png" alt="Zapatillas Kids Flex" loading="lazy" decoding="async">
+                <img src="../assets/zap-kidsflex.png" alt="Zapatillas Kids Flex" loading="lazy" decoding="async">
                 <figcaption class="leyenda-imagen">Kids Flex</figcaption>
               </figure>
               <p class="card-text descripcion-producto">Modelo liviano y versátil.</p>
@@ -687,7 +828,7 @@
               <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-kids-flex-2">Talle</label>
                 <select class="form-select form-select-sm" id="talle-kids-flex-2" name="talle-kids-flex-2" aria-label="Talle">
-                                    <option value="" selected>Elegí un talle</option>
+                  <option value="" selected>Elegí un talle</option>
                   <option value="20">20</option>
                   <option value="21">21</option>
                   <option value="22">22</option>
@@ -710,7 +851,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-kids-flex-2" aria-label="Ver detalles de Kids Flex">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-4">
+          <article class="tarjeta-producto card h-100 pagina-4">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Niños</span>
               <h3 class="titulo-tarjeta card-title">Play Color</h3>
@@ -723,7 +864,7 @@
               <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-play-color-3">Talle</label>
                 <select class="form-select form-select-sm" id="talle-play-color-3" name="talle-play-color-3" aria-label="Talle">
-                                    <option value="" selected>Elegí un talle</option>
+                  <option value="" selected>Elegí un talle</option>
                   <option value="20">20</option>
                   <option value="21">21</option>
                   <option value="22">22</option>
@@ -746,7 +887,7 @@
               <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-play-color-3" aria-label="Ver detalles de Play Color">Ver detalles</button>
             </div>
           </article>
-<article class="tarjeta-producto card h-100 pagina-4">
+          <article class="tarjeta-producto card h-100 pagina-4">
             <div class="card-body d-flex flex-column">
               <span class="badge badge-genero">Niños</span>
               <h3 class="titulo-tarjeta card-title">Junior Sport</h3>
@@ -759,7 +900,7 @@
               <div class="selector-talle mb-3">
                 <label class="form-label" for="talle-junior-sport-4">Talle</label>
                 <select class="form-select form-select-sm" id="talle-junior-sport-4" name="talle-junior-sport-4" aria-label="Talle">
-                                    <option value="" selected>Elegí un talle</option>
+                  <option value="" selected>Elegí un talle</option>
                   <option value="20">20</option>
                   <option value="21">21</option>
                   <option value="22">22</option>
@@ -784,7 +925,24 @@
           </article>
         </div>
 
-        <nav class="paginacion-inferior" aria-label="Navegación de páginas"><div class="paginacion-estado pagina-inferior-1"><button class="btn btn-outline-secondary" disabled>Anterior</button><label class="btn btn-primary" for="catalogoPagina2">Siguiente</label></div><div class="paginacion-estado pagina-inferior-2"><label class="btn btn-primary" for="catalogoPagina1">Anterior</label><label class="btn btn-primary" for="catalogoPagina3">Siguiente</label></div><div class="paginacion-estado pagina-inferior-3"><label class="btn btn-primary" for="catalogoPagina2">Anterior</label><label class="btn btn-primary" for="catalogoPagina4">Siguiente</label></div><div class="paginacion-estado pagina-inferior-4"><label class="btn btn-primary" for="catalogoPagina3">Anterior</label><button class="btn btn-outline-secondary" disabled>Siguiente</button></div></nav>
+        <nav class="paginacion-inferior" aria-label="Navegación de páginas">
+          <div class="paginacion-estado pagina-inferior-1">
+            <button class="btn btn-outline-secondary" disabled>Anterior</button>
+            <label class="btn btn-primary" for="catalogoPagina2">Siguiente</label>
+          </div>
+          <div class="paginacion-estado pagina-inferior-2">
+            <label class="btn btn-primary" for="catalogoPagina1">Anterior</label>
+            <label class="btn btn-primary" for="catalogoPagina3">Siguiente</label>
+          </div>
+          <div class="paginacion-estado pagina-inferior-3">
+            <label class="btn btn-primary" for="catalogoPagina2">Anterior</label>
+            <label class="btn btn-primary" for="catalogoPagina4">Siguiente</label>
+          </div>
+          <div class="paginacion-estado pagina-inferior-4">
+            <label class="btn btn-primary" for="catalogoPagina3">Anterior</label>
+            <button class="btn btn-outline-secondary" disabled>Siguiente</button>
+          </div>
+        </nav>
       </section>
 
     </main>
@@ -797,7 +955,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3 align-items-center">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-deportivas.png" alt="Zapatillas Urban Run V2" loading="lazy"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-urban-runv2.png" alt="Zapatillas Urban Run V2" loading="lazy"></div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
                 <p class="mt-3">Perfil deportivo, diseño liviano y suela flexible.</p>
@@ -809,7 +967,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-urban-run-1" tabindex="-1" aria-labelledby="titulo-urban-run-1" aria-hidden="true">
+    <div class="modal fade" id="modal-urban-run-1" tabindex="-1" aria-labelledby="titulo-urban-run-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -818,7 +976,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3 align-items-center">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-deportivas2.png" alt="Zapatillas Urban Run" loading="lazy"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-urban-runv1.png" alt="Zapatillas Urban Run" loading="lazy"></div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
                 <p class="mt-3">Estilo versátil para actividades cotidianas.</p>
@@ -830,7 +988,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-street-classic-2" tabindex="-1" aria-labelledby="titulo-street-classic-2" aria-hidden="true">
+    <div class="modal fade" id="modal-street-classic-2" tabindex="-1" aria-labelledby="titulo-street-classic-2" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -839,7 +997,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3 align-items-center">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-streetclassic.png" alt="Zapatillas Street Classic" loading="lazy"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-streetclassic.png" alt="Zapatillas Street Classic" loading="lazy"></div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
                 <p class="mt-3">Diseño urbano de líneas clásicas.</p>
@@ -851,7 +1009,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-urban-airforce-3" tabindex="-1" aria-labelledby="titulo-urban-airforce-3" aria-hidden="true">
+    <div class="modal fade" id="modal-urban-airforce-3" tabindex="-1" aria-labelledby="titulo-urban-airforce-3" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -860,7 +1018,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3 align-items-center">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-airforce.png" alt="Zapatillas Urban AirForce" loading="lazy"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-urban-airforce.png" alt="Zapatillas Urban AirForce" loading="lazy"></div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
                 <p class="mt-3">Diseño llamativo de estilo deportivo.</p>
@@ -872,7 +1030,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-urban-airforce-blancas-4" tabindex="-1" aria-labelledby="titulo-urban-airforce-blancas-4" aria-hidden="true">
+    <div class="modal fade" id="modal-urban-airforce-blancas-4" tabindex="-1" aria-labelledby="titulo-urban-airforce-blancas-4" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -881,7 +1039,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3 align-items-center">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-airforce-blancas.png" alt="Zapatillas Urban AirForce blancas" loading="lazy"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-urban-airforce-blancas.png" alt="Zapatillas Urban AirForce blancas" loading="lazy"></div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
                 <p class="mt-3">Color claro y diseño urbano.</p>
@@ -893,7 +1051,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-catalogo-oferta-rojo" tabindex="-1" aria-labelledby="titulo-catalogo-oferta-rojo" aria-hidden="true">
+    <div class="modal fade" id="modal-catalogo-oferta-rojo" tabindex="-1" aria-labelledby="titulo-catalogo-oferta-rojo" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -902,7 +1060,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-urbanas.png" alt="Zapatillas Air Jordan urbanas con detalles negros y rojos"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-airjordan-nyr.png" alt="Zapatillas Air Jordan urbanas con detalles negros y rojos"></div>
               <div class="col-md-7">
                 <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 25%</span></div>
                 <p>Zapatilla urbana en negro y rojo con precio promocional.</p>
@@ -915,7 +1073,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-catalogo-oferta-amarillo" tabindex="-1" aria-labelledby="titulo-catalogo-oferta-amarillo" aria-hidden="true">
+    <div class="modal fade" id="modal-catalogo-oferta-amarillo" tabindex="-1" aria-labelledby="titulo-catalogo-oferta-amarillo" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -924,7 +1082,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-urbanas2.png" alt="Zapatillas Air Jordan negras urbanas con detalles amarillos"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-airjordan-nya.png" alt="Zapatillas Air Jordan negras urbanas con detalles amarillos"></div>
               <div class="col-md-7">
                 <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 20%</span></div>
                 <p>Zapatilla urbana en negro y amarillo con precio promocional.</p>
@@ -937,7 +1095,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-runner-city-5" tabindex="-1" aria-labelledby="titulo-runner-city-5" aria-hidden="true">
+    <div class="modal fade" id="modal-runner-city-5" tabindex="-1" aria-labelledby="titulo-runner-city-5" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -947,7 +1105,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-02.png" alt="Zapatillas Runner City" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-runner-city.png" alt="Zapatillas Runner City" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -960,7 +1118,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-street-motion-6" tabindex="-1" aria-labelledby="titulo-street-motion-6" aria-hidden="true">
+    <div class="modal fade" id="modal-street-motion-6" tabindex="-1" aria-labelledby="titulo-street-motion-6" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -970,7 +1128,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-03.png" alt="Zapatillas Street Motion" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-street-motion.png" alt="Zapatillas Street Motion" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -983,7 +1141,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-urban-track-7" tabindex="-1" aria-labelledby="titulo-urban-track-7" aria-hidden="true">
+    <div class="modal fade" id="modal-urban-track-7" tabindex="-1" aria-labelledby="titulo-urban-track-7" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -993,7 +1151,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-04.png" alt="Zapatillas Urban Track" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-urban-track.png" alt="Zapatillas Urban Track" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -1006,7 +1164,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-daily-flex-8" tabindex="-1" aria-labelledby="titulo-daily-flex-8" aria-hidden="true">
+    <div class="modal fade" id="modal-daily-flex-8" tabindex="-1" aria-labelledby="titulo-daily-flex-8" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1016,7 +1174,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-05.png" alt="Zapatillas Daily Flex" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-daily-flex.png" alt="Zapatillas Daily Flex" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -1029,7 +1187,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-runner-pro-9" tabindex="-1" aria-labelledby="titulo-runner-pro-9" aria-hidden="true">
+    <div class="modal fade" id="modal-runner-pro-9" tabindex="-1" aria-labelledby="titulo-runner-pro-9" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1039,7 +1197,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-06.png" alt="Zapatillas Runner Pro" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-runnerpro.png" alt="Zapatillas Runner Pro" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -1052,19 +1210,19 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-urban-run-mujer-0" tabindex="-1" aria-labelledby="titulo-urban-run-mujer-0" aria-hidden="true">
+    <div class="modal fade" id="modal-rosa-maryland-13" tabindex="-1" aria-labelledby="titulo-rosa-maryland-13" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
-            <h2 class="modal-title fs-5" id="titulo-urban-run-mujer-0">Urban Run (mujer)</h2>
+            <h2 class="modal-title fs-5" id="titulo-rosa-maryland-13">Rosa Maryland</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
           <div class="modal-body">
             <div class="row g-3 align-items-center">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-mujer.png" alt="Zapatillas Urban Run (mujer)" loading="lazy"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-rosamaryland.png" alt="Zapatillas Rosa Maryland" loading="lazy"></div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
-                <p class="mt-3">Modelo deportivo clásico para el uso diario.</p>
+                <p class="mt-3">Cómodas para realizar actividades físicas.</p>
                 <p class="mb-0"><strong>Precio: $50.000</strong></p>
                 <p class="mt-3 mb-0">Elegí el talle en la tarjeta del producto (36 al 46).</p>
               </div>
@@ -1073,7 +1231,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-luna-urbana-6" tabindex="-1" aria-labelledby="titulo-luna-urbana-6" aria-hidden="true">
+    <div class="modal fade" id="modal-luna-urbana-6" tabindex="-1" aria-labelledby="titulo-luna-urbana-6" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1083,7 +1241,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-07.png" alt="Zapatillas Luna Urbana" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-urban-luna.png" alt="Zapatillas Luna Urbana" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -1096,7 +1254,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-rosa-street-7" tabindex="-1" aria-labelledby="titulo-rosa-street-7" aria-hidden="true">
+    <div class="modal fade" id="modal-rosa-street-7" tabindex="-1" aria-labelledby="titulo-rosa-street-7" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1106,7 +1264,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-08.png" alt="Zapatillas Rosa Street" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-rosastreet.png" alt="Zapatillas Rosa Street" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -1119,7 +1277,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-city-soft-8" tabindex="-1" aria-labelledby="titulo-city-soft-8" aria-hidden="true">
+    <div class="modal fade" id="modal-city-soft-8" tabindex="-1" aria-labelledby="titulo-city-soft-8" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1129,7 +1287,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-09.png" alt="Zapatillas City Soft" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-citysoft.png" alt="Zapatillas City Soft" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -1142,7 +1300,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-urban-bloom-9" tabindex="-1" aria-labelledby="titulo-urban-bloom-9" aria-hidden="true">
+    <div class="modal fade" id="modal-urban-bloom-9" tabindex="-1" aria-labelledby="titulo-urban-bloom-9" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1152,7 +1310,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-10.png" alt="Zapatillas Urban Bloom" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-urban-bloom.png" alt="Zapatillas Urban Bloom" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Unisex</span>
@@ -1165,7 +1323,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-mini-runner-0" tabindex="-1" aria-labelledby="titulo-mini-runner-0" aria-hidden="true">
+    <div class="modal fade" id="modal-mini-runner-0" tabindex="-1" aria-labelledby="titulo-mini-runner-0" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1175,7 +1333,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-11.png" alt="Zapatillas Mini Runner" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-minirunner.png" alt="Zapatillas Mini Runner" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Niños</span>
@@ -1188,7 +1346,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-peque-street-1" tabindex="-1" aria-labelledby="titulo-peque-street-1" aria-hidden="true">
+    <div class="modal fade" id="modal-peque-street-1" tabindex="-1" aria-labelledby="titulo-peque-street-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1198,7 +1356,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-12.png" alt="Zapatillas Peque Street" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-pequestreet.png" alt="Zapatillas Peque Street" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Niños</span>
@@ -1211,7 +1369,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-kids-flex-2" tabindex="-1" aria-labelledby="titulo-kids-flex-2" aria-hidden="true">
+    <div class="modal fade" id="modal-kids-flex-2" tabindex="-1" aria-labelledby="titulo-kids-flex-2" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1221,7 +1379,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-13.png" alt="Zapatillas Kids Flex" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-kidsflex.png" alt="Zapatillas Kids Flex" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Niños</span>
@@ -1234,7 +1392,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-play-color-3" tabindex="-1" aria-labelledby="titulo-play-color-3" aria-hidden="true">
+    <div class="modal fade" id="modal-play-color-3" tabindex="-1" aria-labelledby="titulo-play-color-3" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1244,7 +1402,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-14.png" alt="Zapatillas Play Color" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-playcolor.png" alt="Zapatillas Play Color" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Niños</span>
@@ -1257,7 +1415,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-junior-sport-4" tabindex="-1" aria-labelledby="titulo-junior-sport-4" aria-hidden="true">
+    <div class="modal fade" id="modal-junior-sport-4" tabindex="-1" aria-labelledby="titulo-junior-sport-4" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -1267,7 +1425,7 @@
           <div class="modal-body">
             <div class="row g-3 align-items-center">
               <div class="col-md-5">
-                <img class="img-fluid imagen-modal-producto" src="../assets/imagen-15.png" alt="Zapatillas Junior Sport" loading="lazy" decoding="async">
+                <img class="img-fluid imagen-modal-producto" src="../assets/zap-juniorsport.png" alt="Zapatillas Junior Sport" loading="lazy" decoding="async">
               </div>
               <div class="col-md-7">
                 <span class="badge badge-genero">Niños</span>

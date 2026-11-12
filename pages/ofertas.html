@@ -13,14 +13,16 @@
       <a class="logo-sitio" href="../index.html"><img src="../assets/logoUF.png" alt="Logo de URBAN FEETS"></a>
       <h1 class="titulo-sitio">URBAN FEETS</h1>
       <nav class="navbar navbar-expand-lg navbar-dark menu-navegacion" aria-label="Menú de navegación principal">
-        <button class="navbar-toggler boton-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar el menú"><span class="navbar-toggler-icon"></span></button>
+        <button class="navbar-toggler boton-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav lista-navegacion">
             <li class="nav-item"><a class="nav-link enlace-menu" href="../index.html">Inicio</a></li>
             <li class="nav-item"><a class="nav-link enlace-menu" href="./catalogo.html">Catálogo</a></li>
             <li class="nav-item"><a class="nav-link enlace-menu active" href="./ofertas.html" aria-current="page">Ofertas</a></li>
-            <li class="nav-item"><a class="nav-link enlace-menu " href="./sobre-nosotros.html" >Sobre nosotros</a></li>
-            <li class="nav-item"><a class="nav-link enlace-menu " href="./contacto.html" >Contacto</a></li>
+            <li class="nav-item"><a class="nav-link enlace-menu" href="./sobre-nosotros.html">Sobre nosotros</a></li>
+            <li class="nav-item"><a class="nav-link enlace-menu" href="./contacto.html">Contacto</a></li>
           </ul>
         </div>
       </nav>
@@ -36,13 +38,17 @@
         <h2 class="titulo-seccion" id="titulo-ofertas">Ofertas especiales</h2>
         <p>Descubrí descuentos en modelos seleccionados de URBAN FEETS.</p>
         <ul class="nav nav-tabs pestanas-ofertas" id="pestanasOfertas" role="tablist" aria-label="Información de ofertas">
-          <li class="nav-item" role="presentation"><button class="nav-link active" id="pestanaOfertasActivas" data-bs-toggle="tab" data-bs-target="#contenidoOfertasActivas" type="button" role="tab" aria-controls="contenidoOfertasActivas" aria-selected="true">Ofertas disponibles</button></li>
-          <li class="nav-item" role="presentation"><button class="nav-link" id="pestanaCondiciones" data-bs-toggle="tab" data-bs-target="#contenidoCondiciones" type="button" role="tab" aria-controls="contenidoCondiciones" aria-selected="false">Condiciones</button></li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pestanaOfertasActivas" data-bs-toggle="tab" data-bs-target="#contenidoOfertasActivas" type="button" role="tab" aria-controls="contenidoOfertasActivas" aria-selected="true">Ofertas disponibles</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pestanaCondiciones" data-bs-toggle="tab" data-bs-target="#contenidoCondiciones" type="button" role="tab" aria-controls="contenidoCondiciones" aria-selected="false">Condiciones</button>
+          </li>
         </ul>
         <div class="tab-content contenido-pestanas" id="contenidoPestanasOfertas">
           <div class="tab-pane fade show active" id="contenidoOfertasActivas" role="tabpanel" aria-labelledby="pestanaOfertasActivas" tabindex="0">
             <div class="grilla-ofertas">
-<article class="tarjeta-oferta card h-100">
+              <article class="tarjeta-oferta card h-100">
                 <div class="card-body d-flex flex-column">
                   <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 25%</span></div>
                   <h3 class="titulo-tarjeta card-title">Air Jordan - Negro y rojo</h3>
@@ -55,7 +61,14 @@
                     <li>Antes: <del>$50.000</del></li>
                     <li>Oferta: <strong>$37.500</strong></li>
                   </ul>
-                  <div class="selector-genero mb-3"><label class="form-label" for="genero-air-jordan-negro-y-rojo-oferta">Género</label><select class="form-select form-select-sm" id="genero-air-jordan-negro-y-rojo-oferta" name="genero-air-jordan-negro-y-rojo-oferta"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
+                  <div class="selector-genero mb-3">
+                    <label class="form-label" for="genero-air-jordan-negro-y-rojo-oferta">Género</label>
+                    <select class="form-select form-select-sm" id="genero-air-jordan-negro-y-rojo-oferta" name="genero-air-jordan-negro-y-rojo-oferta">
+                      <option value="" selected>Elegí un género</option>
+                      <option value="hombre">Hombre</option>
+                      <option value="mujer">Mujer</option>
+                    </select>
+                  </div>
                   <div class="selector-talle mb-3">
                     <label class="form-label" for="talle-promo-jordanrojo">Talle</label>
                     <select class="form-select form-select-sm" id="talle-promo-jordanrojo" name="talle-promo-jordanrojo">
@@ -76,7 +89,7 @@
                   <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-promo-jordanrojo">Ver detalles</button>
                 </div>
               </article>
-<article class="tarjeta-oferta card h-100">
+              <article class="tarjeta-oferta card h-100">
                 <div class="card-body d-flex flex-column">
                   <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 20%</span></div>
                   <h3 class="titulo-tarjeta card-title">Air Jordan - Negro y amarillo</h3>
@@ -89,7 +102,14 @@
                     <li>Antes: <del>$45.000</del></li>
                     <li>Oferta: <strong>$36.000</strong></li>
                   </ul>
-                  <div class="selector-genero mb-3"><label class="form-label" for="genero-air-jordan-negro-y-amarillo-oferta">Género</label><select class="form-select form-select-sm" id="genero-air-jordan-negro-y-amarillo-oferta" name="genero-air-jordan-negro-y-amarillo-oferta"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
+                  <div class="selector-genero mb-3">
+                    <label class="form-label" for="genero-air-jordan-negro-y-amarillo-oferta">Género</label>
+                    <select class="form-select form-select-sm" id="genero-air-jordan-negro-y-amarillo-oferta" name="genero-air-jordan-negro-y-amarillo-oferta">
+                      <option value="" selected>Elegí un género</option>
+                      <option value="hombre">Hombre</option>
+                      <option value="mujer">Mujer</option>
+                    </select>
+                  </div>
                   <div class="selector-talle mb-3">
                     <label class="form-label" for="talle-promo-jordanamarillo">Talle</label>
                     <select class="form-select form-select-sm" id="talle-promo-jordanamarillo" name="talle-promo-jordanamarillo">
@@ -110,7 +130,7 @@
                   <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-promo-jordanamarillo">Ver detalles</button>
                 </div>
               </article>
-<article class="tarjeta-oferta card h-100">
+              <article class="tarjeta-oferta card h-100">
                 <div class="card-body d-flex flex-column">
                   <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 25%</span></div>
                   <h3 class="titulo-tarjeta card-title">Street Classic</h3>
@@ -123,7 +143,14 @@
                     <li>Antes: <del>$48.000</del></li>
                     <li>Oferta: <strong>$36.000</strong></li>
                   </ul>
-                  <div class="selector-genero mb-3"><label class="form-label" for="genero-street-classic-oferta">Género</label><select class="form-select form-select-sm" id="genero-street-classic-oferta" name="genero-street-classic-oferta"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
+                  <div class="selector-genero mb-3">
+                    <label class="form-label" for="genero-street-classic-oferta">Género</label>
+                    <select class="form-select form-select-sm" id="genero-street-classic-oferta" name="genero-street-classic-oferta">
+                      <option value="" selected>Elegí un género</option>
+                      <option value="hombre">Hombre</option>
+                      <option value="mujer">Mujer</option>
+                    </select>
+                  </div>
                   <div class="selector-talle mb-3">
                     <label class="form-label" for="talle-street-classic-2">Talle</label>
                     <select class="form-select form-select-sm" id="talle-street-classic-2" name="talle-street-classic-2" aria-label="Talle">
@@ -144,7 +171,7 @@
                   <button type="button" class="boton-enlace mt-auto" data-bs-toggle="modal" data-bs-target="#modal-promo-streetclassic" aria-label="Ver detalles de Street Classic">Ver detalles</button>
                 </div>
               </article>
-<article class="tarjeta-oferta card h-100">
+              <article class="tarjeta-oferta card h-100">
                 <div class="card-body d-flex flex-column">
                   <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 15%</span></div>
                   <h3 class="titulo-tarjeta card-title">Urban AirForce</h3>
@@ -157,7 +184,14 @@
                     <li>Antes: <del>$60.000</del></li>
                     <li>Oferta: <strong>$51.000</strong></li>
                   </ul>
-                  <div class="selector-genero mb-3"><label class="form-label" for="genero-urban-airforce-oferta">Género</label><select class="form-select form-select-sm" id="genero-urban-airforce-oferta" name="genero-urban-airforce-oferta"><option value="" selected>Elegí un género</option><option value="hombre">Hombre</option><option value="mujer">Mujer</option></select></div>
+                  <div class="selector-genero mb-3">
+                    <label class="form-label" for="genero-urban-airforce-oferta">Género</label>
+                    <select class="form-select form-select-sm" id="genero-urban-airforce-oferta" name="genero-urban-airforce-oferta">
+                      <option value="" selected>Elegí un género</option>
+                      <option value="hombre">Hombre</option>
+                      <option value="mujer">Mujer</option>
+                    </select>
+                  </div>
                   <div class="selector-talle mb-3">
                     <label class="form-label" for="talle-urban-airforce-3">Talle</label>
                     <select class="form-select form-select-sm" id="talle-urban-airforce-3" name="talle-urban-airforce-3" aria-label="Talle">
@@ -207,7 +241,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-urbanas.png" alt="Air Jordan - Negro y rojo"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-airjordan-nyr.png" alt="Air Jordan - Negro y rojo"></div>
               <div class="col-md-7">
                 <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 25%</span></div>
                 <p>Air Jordan - Negro y rojo con descuento del 25%.</p>
@@ -220,7 +254,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-promo-jordanamarillo" tabindex="-1" aria-labelledby="titulo-promo-jordanamarillo-hombre" aria-hidden="true">
+    <div class="modal fade" id="modal-promo-jordanamarillo" tabindex="-1" aria-labelledby="titulo-promo-jordanamarillo-hombre" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -229,7 +263,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-urbanas2.png" alt="Air Jordan - Negro y amarillo"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-airjordan-nya.png" alt="Air Jordan - Negro y amarillo"></div>
               <div class="col-md-7">
                 <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 20%</span></div>
                 <p>Air Jordan - Negro y amarillo con descuento del 20%.</p>
@@ -242,7 +276,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-promo-streetclassic" tabindex="-1" aria-labelledby="titulo-promo-streetclassic-hombre" aria-hidden="true">
+    <div class="modal fade" id="modal-promo-streetclassic" tabindex="-1" aria-labelledby="titulo-promo-streetclassic-hombre" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -251,7 +285,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-streetclassic.png" alt="Street Classic"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-streetclassic.png" alt="Street Classic"></div>
               <div class="col-md-7">
                 <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 25%</span></div>
                 <p>Street Classic con descuento del 25%.</p>
@@ -264,7 +298,7 @@
         </div>
       </div>
     </div>
-<div class="modal fade" id="modal-promo-urbanairforce" tabindex="-1" aria-labelledby="titulo-promo-urbanairforce-hombre" aria-hidden="true">
+    <div class="modal fade" id="modal-promo-urbanairforce" tabindex="-1" aria-labelledby="titulo-promo-urbanairforce-hombre" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-producto">
           <div class="modal-header">
@@ -273,7 +307,7 @@
           </div>
           <div class="modal-body">
             <div class="row g-3">
-              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zapatillas-airforce.png" alt="Urban AirForce"></div>
+              <div class="col-md-5"><img class="img-fluid imagen-modal-producto" src="../assets/zap-urban-airforce.png" alt="Urban AirForce"></div>
               <div class="col-md-7">
                 <div class="etiquetas-producto"><span class="badge badge-genero">Unisex</span><span class="badge etiqueta-oferta">Oferta 15%</span></div>
                 <p>Urban AirForce con descuento del 15%.</p>
