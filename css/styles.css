@@ -1089,6 +1089,36 @@ textarea {
   line-height: 1.45;
 }
 
+/* ===== Menú desplegable en móvil y tablet ===== */
+@media (max-width: 61.99rem) {
+  .menu-navegacion {
+    z-index: 2;
+  }
+
+  .menu-navegacion .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 1.75rem);
+    right: 0;
+    z-index: 20;
+    width: min(88vw, 18rem);
+    padding: .5rem;
+    border: .0625rem solid var(--color-orange);
+    border-radius: .5rem;
+    background-color: var(--color-ink);
+    box-shadow: 0 .5rem 1rem rgba(17, 24, 39, .28);
+  }
+
+  .menu-navegacion .navbar-collapse .lista-navegacion {
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .menu-navegacion .navbar-collapse .enlace-menu {
+    width: 100%;
+    text-align: left;
+  }
+}
+
 /* ===== Diseño responsive para tablets ===== */
 @media (min-width: 48rem) {
   .titulo-sitio {
