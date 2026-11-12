@@ -1,7 +1,5 @@
-
 /* ===== Tipografías ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap');
-
 :root {
   --color-white: #fff;
   --color-ink: #111827;
@@ -18,6 +16,7 @@
   --color-orange-dark: #c2410c;
   --color-social-visited: #f9a66c;
 }
+
 /* ===== Estilos generales ===== */
 * {
   margin: 0;
@@ -40,7 +39,7 @@ body {
 .encabezado-navbar,
 .contenido-principal,
 .contenido-principal-layout-inicio,
-.contenido-principal-layout-productos,
+.contenido-principal-layout-catalogo,
 .pie-pagina {
   width: min(100%, 75rem);
   margin-inline: auto;
@@ -53,7 +52,6 @@ body {
   color: var(--color-white);
   border-bottom: .25rem solid var(--color-orange);
   display: grid;
-
   grid-template-columns: auto minmax(0, 1fr) auto;
   grid-template-areas: "logo marca menu";
   gap: .5rem;
@@ -76,7 +74,6 @@ body {
 .titulo-sitio {
   grid-area: marca;
   margin: 0;
-
   justify-self: start;
   font-size: clamp(1.25rem, 6vw, 2rem);
   font-weight: 700;
@@ -86,7 +83,6 @@ body {
 /* ===== Navbar Bootstrap personalizada ===== */
 .menu-navegacion {
   grid-area: menu;
-
   width: auto;
   padding: 0;
   position: relative;
@@ -151,38 +147,6 @@ body {
   background-color: var(--color-orange);
 }
 
-/* ===== Menú desplegable de productos ===== */
-.menu-productos {
-  min-width: 10rem;
-  padding: .4rem;
-  background-color: var(--color-ink);
-  border: .0625rem solid var(--color-orange);
-  border-radius: .375rem;
-}
-
-.enlace-desplegable {
-  padding: .5rem .75rem;
-  color: var(--color-white);
-  border-radius: .25rem;
-  transition: color .2s ease, background-color .2s ease;
-}
-
-.enlace-desplegable:link,
-.enlace-desplegable:visited {
-  color: var(--color-white);
-}
-
-.enlace-desplegable:hover,
-.enlace-desplegable:focus {
-  color: var(--color-ink);
-  background-color: var(--color-orange-soft);
-}
-
-.enlace-desplegable:active {
-  color: var(--color-white);
-  background-color: var(--color-orange);
-}
-
 /* ===== Migas de pan ===== */
 .breadcrumb {
   margin-bottom: 1rem;
@@ -207,7 +171,7 @@ body {
 /* ===== Layout principal con CSS Grid ===== */
 .contenido-principal,
 .contenido-principal-layout-inicio,
-.contenido-principal-layout-productos {
+.contenido-principal-layout-catalogo {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: start;
@@ -227,6 +191,7 @@ body {
 .contenido-principal-layout-inicio {
   grid-template-areas:
     "bienvenida"
+    "catalogo"
     "ofertas"
     "apoyo";
 }
@@ -235,16 +200,29 @@ body {
   grid-area: bienvenida;
 }
 
+.pagina-inicio .seccion-catalogo-inicio,
+.pagina-inicio .seccion-ofertas-seccion-resumen {
+  align-self: stretch;
+}
+
 .pagina-inicio .seccion-ofertas-seccion-resumen {
   grid-area: ofertas;
 }
 
+.pagina-inicio .seccion-catalogo-inicio {
+  grid-area: catalogo;
+}
+
 /* ===== Áreas de las páginas internas ===== */
-.contenido-principal-layout-productos,
 .contenido-ofertas {
   grid-template-areas:
     "contenido"
     "apoyo";
+}
+
+.contenido-principal-layout-catalogo {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "contenido";
 }
 
 .contenido-sobre-nosotros {
@@ -261,7 +239,7 @@ body {
     "apoyo";
 }
 
-.pagina-productos .seccion-productos,
+.pagina-catalogo .seccion-catalogo,
 .contenido-ofertas .seccion-ofertas {
   grid-area: contenido;
 }
@@ -284,7 +262,6 @@ body {
 
 /* ===== Información adicional ===== */
 .pagina-inicio .info-adicional,
-.pagina-productos .info-adicional,
 .contenido-ofertas .info-adicional,
 .contenido-sobre-nosotros .info-adicional,
 .contenido-contacto .info-adicional {
@@ -311,7 +288,7 @@ aside {
 .pagina-inicio .seccion-bienvenida,
 .seccion-sobre-nosotros,
 .seccion-contacto,
-.pagina-productos .tarjeta-producto,
+.pagina-catalogo .tarjeta-producto,
 .tarjeta-oferta,
 .tarjeta-valor {
   background-color: var(--color-block);
@@ -319,18 +296,38 @@ aside {
 
 .pagina-inicio .seccion-bienvenida,
 .pagina-inicio .seccion-ofertas-seccion-resumen,
-.pagina-productos .seccion-productos,
+.pagina-catalogo .seccion-catalogo,
 .seccion-ofertas,
 .seccion-sobre-nosotros,
 .seccion-mision,
-.seccion-valores,
 .seccion-contacto,
 .seccion-datos-contacto {
   min-width: 0;
 }
 
+/* ===== Oferta destacada del catálogo ===== */
+.pagina-catalogo .seccion-ofertas-catalogo {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-white);
+  background-color: var(--color-ink);
+  border-color: var(--color-orange);
+}
+
+.pagina-catalogo .seccion-ofertas-catalogo .titulo-seccion {
+  margin-bottom: .35rem;
+  color: var(--color-white);
+}
+
+.pagina-catalogo .seccion-ofertas-catalogo p {
+  margin-bottom: 0;
+}
+
 /* ===== Grillas de tarjetas ===== */
-.pagina-productos .grilla-productos,
+.pagina-catalogo .grilla-productos,
 .grilla-ofertas,
 .lista-valores {
   display: grid;
@@ -339,7 +336,7 @@ aside {
   align-items: stretch;
 }
 
-.pagina-productos .tarjeta-producto,
+.pagina-catalogo .tarjeta-producto,
 .tarjeta-oferta,
 .tarjeta-valor {
   min-width: 0;
@@ -353,6 +350,7 @@ aside {
   color: var(--color-white);
   background-color: var(--color-orange);
 }
+
 /* ===== Tarjetas Bootstrap personalizadas ===== */
 .tarjeta-producto.card,
 .tarjeta-oferta.card {
@@ -364,16 +362,57 @@ aside {
 
 .tarjeta-producto.card .card-body,
 .tarjeta-oferta.card .card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
   padding: 0;
 }
 
 .tarjeta-producto.card .card-title,
 .tarjeta-oferta.card .card-title {
+  min-height: 2.4em;
   margin-bottom: 1rem;
+}
+
+.badge-genero {
+  align-self: flex-start;
+  margin-bottom: .5rem;
+  color: var(--color-ink);
+  background-color: var(--color-orange-soft);
 }
 
 .tarjeta-producto.card .card-text {
   color: var(--color-text);
+}
+
+/* ===== Espacios uniformes en tarjetas de productos y ofertas ===== */
+.tarjeta-producto.card figure,
+.tarjeta-oferta.card figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 1rem;
+}
+
+.tarjeta-producto.card figure img,
+.tarjeta-oferta.card figure img {
+  width: 100%;
+  height: 14rem;
+  object-fit: contain;
+  background-color: var(--color-white);
+}
+
+.tarjeta-producto.card .leyenda-imagen,
+.tarjeta-oferta.card .leyenda-imagen {
+  min-height: 2.8em;
+}
+
+.tarjeta-producto.card figure + .card-text {
+  min-height: 4.8rem;
+}
+
+.tarjeta-producto.card figure + .card-text + .card-text {
+  min-height: 1.6rem;
 }
 
 /* ===== Ventanas de detalle de producto ===== */
@@ -398,96 +437,11 @@ aside {
   padding-top: 1rem;
 }
 
-/* ===== Filtros, paginación y aviso de formulario ===== */
-.selector-talle .form-select:focus {
+/* ===== Selectores de talle y género ===== */
+.selector-talle .form-select:focus,
+.selector-genero .form-select:focus {
   border-color: var(--color-orange-bright);
   box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .2);
-}
-
-.alert-talles {
-  color: var(--color-text);
-  background-color: var(--color-white);
-  border-color: var(--color-border-strong);
-}
-
-.alert-talles .boton-enlace {
-  margin-top: .25rem;
-}
-
-.panel-filtros.card {
-  color: var(--color-text);
-  background-color: var(--color-white);
-  border-color: var(--color-border-strong);
-}
-
-.panel-filtros .form-select:focus {
-  border-color: var(--color-orange-bright);
-  box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .2);
-}
-
-.boton-limpiar-filtro {
-  align-self: flex-start;
-}
-
-.resumen-resultados {
-  min-height: 1.6em;
-  margin: .75rem 0;
-  color: var(--color-muted);
-}
-
-.paginacion-productos .page-link {
-  color: var(--color-orange-dark);
-  border-color: var(--color-border-strong);
-}
-
-.paginacion-productos .page-item.active .page-link {
-  color: var(--color-white);
-  background-color: var(--color-orange);
-  border-color: var(--color-orange);
-}
-
-.pestanas-ofertas.nav-tabs {
-  border-bottom-color: var(--color-border-strong);
-}
-
-.pestanas-informacion .nav-link,
-.pestanas-ofertas .nav-link {
-  color: var(--color-orange-dark);
-}
-
-.pestanas-informacion .nav-link:hover,
-.pestanas-informacion .nav-link:focus-visible,
-.pestanas-ofertas .nav-link:hover,
-.pestanas-ofertas .nav-link:focus-visible {
-  color: var(--color-orange);
-}
-
-.pestanas-informacion .nav-link.active,
-.pestanas-ofertas .nav-link.active {
-  color: var(--color-ink);
-  background-color: var(--color-block);
-  border-color: var(--color-border-strong) var(--color-border-strong) var(--color-block);
-}
-
-.acciones-ofertas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-}
-
-.aviso-formulario.toast {
-  color: var(--color-text);
-  background-color: var(--color-white);
-  border-color: var(--color-orange);
-}
-
-.toast-container {
-  z-index: 1090;
-}
-
-.aviso-formulario .toast-header {
-  color: var(--color-white);
-  background-color: var(--color-ink);
 }
 
 /* ===== Alineación de botones de tarjetas ===== */
@@ -530,8 +484,7 @@ aside {
 
 /* ===== Contenido interno con Flexbox ===== */
 .pagina-inicio .seccion-bienvenida,
-.pagina-inicio .seccion-ofertas-seccion-resumen,
-.pagina-productos .seccion-productos {
+.pagina-catalogo .seccion-catalogo {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -621,13 +574,16 @@ img {
 
 /* ===== Carousel Bootstrap personalizado ===== */
 .carrusel-sitio {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
   overflow: hidden;
   border-radius: .5rem;
 }
 
 .imagen-carrusel {
   width: 100%;
-  height: 22rem;
+  height: clamp(15rem, 36vw, 24rem);
   object-fit: cover;
 }
 
@@ -742,8 +698,24 @@ main a:not(.boton-enlace):focus {
 }
 
 /* ===== Alineación del botón de ofertas ===== */
+.pagina-inicio .seccion-catalogo-inicio,
+.pagina-inicio .seccion-ofertas-seccion-resumen {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.pagina-inicio .seccion-catalogo-inicio > .titulo-seccion,
+.pagina-inicio .seccion-catalogo-inicio > p,
+.pagina-inicio .seccion-ofertas-seccion-resumen > .titulo-seccion,
+.pagina-inicio .seccion-ofertas-seccion-resumen > p {
+  margin: 0;
+}
+
+.pagina-inicio .seccion-catalogo-inicio > .boton-enlace,
 .pagina-inicio .seccion-ofertas-seccion-resumen > .boton-enlace {
   align-self: flex-start;
+  margin-top: .25rem;
 }
 
 /* ===== Foco de teclado ===== */
@@ -774,7 +746,7 @@ label {
   font-weight: 600;
 }
 
-input,
+input:not(.btn-check),
 textarea,
 select,
 .formulario-contacto button {
@@ -794,6 +766,328 @@ textarea {
 .pie-pagina {
   background-color: var(--color-ink);
   color: var(--color-white);
+}
+
+/* ===== Controles y paginación de catálogos ===== */
+.controles-catalogo {
+  min-width: 0;
+  margin: 0 0 1rem;
+  padding: .75rem;
+  border: .0625rem solid var(--color-border-strong);
+  border-radius: .5rem;
+  background-color: var(--color-white);
+}
+
+.controles-catalogo .form-label {
+  margin: 0 0 .5rem;
+  font-weight: 700;
+}
+
+.controles-catalogo .btn-group {
+  display: flex;
+  width: 100%;
+}
+
+.controles-catalogo .btn {
+  flex: 1 1 auto;
+  white-space: normal;
+}
+
+.controles-catalogo .btn-outline-secondary {
+  color: var(--color-ink);
+  border-color: var(--color-border-strong);
+}
+
+.controles-catalogo .btn-check:checked + .btn-outline-secondary {
+  color: var(--color-white);
+  background-color: var(--color-ink);
+  border-color: var(--color-orange);
+}
+
+.controles-catalogo .btn-check:focus-visible + .btn-outline-secondary {
+  outline: .2rem solid var(--color-orange-bright);
+  outline-offset: .15rem;
+}
+
+/* ===== Paginación de catálogos ===== */
+.seccion-catalogo:has(#catalogoPagina1:checked) .grilla-catalogo .tarjeta-producto:not(.pagina-1),
+.seccion-catalogo:has(#catalogoPagina2:checked) .grilla-catalogo .tarjeta-producto:not(.pagina-2),
+.seccion-catalogo:has(#catalogoPagina3:checked) .grilla-catalogo .tarjeta-producto:not(.pagina-3),
+.seccion-catalogo:has(#catalogoPagina4:checked) .grilla-catalogo .tarjeta-producto:not(.pagina-4) {
+  display: none;
+}
+
+.descripcion-producto {
+  min-height: 3.2em;
+}
+
+.selector-talle,
+.selector-genero {
+  margin-top: 0;
+}
+
+/* ===== Controles compactos de catálogo ===== */
+.paginacion-catalogo .btn-group {
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: .35rem;
+}
+
+.paginacion-catalogo .btn {
+  min-width: 2.75rem;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* ===== Uniformidad de tarjetas y detalles ===== */
+.etiquetas-producto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: .35rem;
+  margin-bottom: .75rem;
+}
+
+.etiquetas-producto .badge {
+  align-self: flex-start;
+  margin-bottom: 0;
+}
+
+.modal-producto .modal-body > .row {
+  align-items: stretch !important;
+}
+
+.modal-producto .modal-body .col-md-5 {
+  display: flex;
+  min-height: 18rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-producto .modal-body .col-md-5 > img {
+  width: 100%;
+  height: 18rem;
+  max-height: 18rem;
+  object-fit: contain;
+}
+
+.modal-producto .modal-body .col-md-7 {
+  display: flex;
+  min-height: 18rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .75rem;
+}
+
+.modal-producto .modal-body .col-md-7 > .badge {
+  align-self: flex-start;
+}
+
+.modal-producto .modal-body .col-md-7 > p {
+  width: 100%;
+  margin: 0;
+}
+
+.modal-producto .modal-body .col-md-7 > p:nth-of-type(1) {
+  min-height: 3.2em;
+}
+
+.modal-producto .modal-body .col-md-7 > p:nth-of-type(2),
+.modal-producto .modal-body .col-md-7 > p:nth-of-type(3) {
+  min-height: 1.6em;
+}
+
+.modal-producto .modal-body .col-md-7 > p:nth-of-type(4) {
+  min-height: 2em;
+}
+
+/* ===== Navegación inferior de catálogos ===== */
+.paginacion-inferior {
+  display: flex;
+  justify-content: center;
+  margin-block: 1.25rem;
+}
+
+.paginacion-estado {
+  display: none;
+  justify-content: space-between;
+  gap: .75rem;
+  width: min(100%, 42rem);
+}
+
+.seccion-catalogo:has(#catalogoPagina1:checked) .pagina-inferior-1,
+.seccion-catalogo:has(#catalogoPagina2:checked) .pagina-inferior-2,
+.seccion-catalogo:has(#catalogoPagina3:checked) .pagina-inferior-3,
+.seccion-catalogo:has(#catalogoPagina4:checked) .pagina-inferior-4 {
+  display: flex;
+}
+
+.paginacion-inferior .btn {
+  min-width: 8rem;
+}
+
+.paginacion-catalogo .btn-group > .btn + .btn {
+  margin-top: 0;
+}
+
+/* ===== Pestañas informativas y de ofertas ===== */
+.pestanas-informacion .nav-tabs,
+.pestanas-ofertas.nav-tabs {
+  display: flex;
+  border-bottom-color: var(--color-border-strong);
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.pestanas-informacion .nav-tabs > .nav-item,
+.pestanas-ofertas.nav-tabs > .nav-item {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.pestanas-informacion .nav-tabs .nav-link,
+.pestanas-ofertas.nav-tabs .nav-link {
+  width: 100%;
+  height: 100%;
+  padding: .65rem .5rem;
+  color: var(--color-ink);
+  text-align: center;
+  font-size: clamp(.78rem, 2.8vw, 1rem);
+  line-height: 1.25;
+}
+
+.pestanas-informacion .nav-tabs .nav-link:hover,
+.pestanas-informacion .nav-tabs .nav-link:focus-visible,
+.pestanas-informacion .nav-tabs .nav-link.active,
+.pestanas-ofertas.nav-tabs .nav-link:hover,
+.pestanas-ofertas.nav-tabs .nav-link:focus-visible,
+.pestanas-ofertas.nav-tabs .nav-link.active {
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+/* ===== Preguntas frecuentes ===== */
+.acordeon-preguntas .accordion-button {
+  font-size: clamp(.82rem, 3.3vw, 1rem);
+  line-height: 1.35;
+}
+
+/* ===== Portada de inicio ===== */
+.pagina-inicio .seccion-bienvenida {
+  gap: 1.5rem;
+}
+
+.presentacion-inicio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(12rem, .9fr);
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  border-left: .3rem solid var(--color-orange);
+  border-radius: .5rem;
+  background: linear-gradient(135deg, var(--color-block), var(--color-white));
+}
+
+.presentacion-inicio > * {
+  margin: 0;
+}
+
+.texto-presentacion-inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .75rem;
+}
+
+.texto-presentacion-inicio > * {
+  margin: 0;
+}
+
+.imagen-portada {
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  object-fit: cover;
+  border-radius: .5rem;
+}
+
+.presentacion-inicio .titulo-seccion {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.kicker-inicio {
+  color: var(--color-orange-dark);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.acciones-inicio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: .35rem;
+}
+
+.bloque-modelos-inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.encabezado-carrusel-inicio {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.encabezado-carrusel-inicio h3, .encabezado-carrusel-inicio p {
+  margin: 0;
+}
+
+.encabezado-carrusel-inicio p {
+  color: var(--color-muted);
+}
+
+.grilla-beneficios-inicio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+}
+
+.beneficio-inicio {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: .65rem;
+  padding: .85rem .65rem;
+  text-align: center;
+  background-color: var(--color-white);
+  border: .0625rem solid var(--color-border);
+}
+
+.beneficio-inicio > img {
+  width: clamp(2.25rem, 6vw, 3.5rem);
+  height: clamp(2.25rem, 6vw, 3.5rem);
+  object-fit: contain;
+}
+
+.beneficio-inicio h3 {
+  margin: 0 0 .35rem;
+  color: var(--color-ink);
+  font-size: clamp(.75rem, 1.5vw, 1rem);
+  line-height: 1.3;
+}
+
+.beneficio-inicio p {
+  margin: 0;
+  font-size: clamp(.68rem, 1.2vw, .875rem);
+  line-height: 1.45;
 }
 
 /* ===== Diseño responsive para tablets ===== */
@@ -830,23 +1124,23 @@ textarea {
     gap: .25rem;
   }
 
-  .pagina-productos .grilla-productos,
+  .pagina-catalogo .grilla-productos,
   .grilla-ofertas,
   .lista-valores {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .contenido-principal-layout-inicio,
-  .contenido-principal-layout-productos,
   .contenido-ofertas {
     grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
     grid-template-areas: "contenido apoyo";
   }
 
   .contenido-principal-layout-inicio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
-      "bienvenida apoyo"
-      "ofertas apoyo";
+      "bienvenida bienvenida"
+      "catalogo ofertas"
+      "apoyo apoyo";
   }
 
   .contenido-sobre-nosotros {
@@ -876,6 +1170,7 @@ textarea {
     align-self: start;
     margin-bottom: 0;
   }
+
 }
 
 /* ===== Navbar en escritorio ===== */
@@ -904,18 +1199,21 @@ textarea {
     align-items: center;
     gap: .25rem;
   }
+
 }
 
 /* ===== Diseño responsive para escritorio ===== */
 @media (min-width: 1024px) {
-  .contenido-principal-layout-inicio,
-  .contenido-principal-layout-productos,
   .contenido-ofertas {
     grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
   }
 
-  .pagina-productos .grilla-productos {
+  .contenido-principal-layout-inicio {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pagina-catalogo .grilla-productos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .grilla-ofertas,
@@ -929,22 +1227,7 @@ textarea {
       "presentacion presentacion"
       "mision apoyo";
   }
-}
 
-/* ===== Menú desplegable en móvil y tablet ===== */
-@media (max-width: 61.99rem) {
-  .menu-navegacion .navbar-collapse {
-    position: absolute;
-    z-index: 10;
-    top: 100%;
-    right: 0;
-    width: max-content;
-    min-width: 12rem;
-    padding: .5rem;
-    background-color: var(--color-ink);
-    border: .0625rem solid var(--color-orange);
-    border-radius: .375rem;
-  }
 }
 
 /* ===== Ajustes para pantallas pequeñas ===== */
@@ -969,7 +1252,9 @@ textarea {
     padding-inline: 2.75rem;
     font-size: .85rem;
   }
+
 }
+
 /* ===== Preferencia de movimiento reducido ===== */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -980,4 +1265,36 @@ textarea {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
+
+}
+
+@media (max-width: 47.99rem) {
+  .modal-producto .modal-body .col-md-5,
+  .modal-producto .modal-body .col-md-7 {
+    min-height: 0;
+  }
+
+  .modal-producto .modal-body .col-md-5 > img {
+    height: 13rem;
+    max-height: 13rem;
+  }
+
+  .modal-producto .modal-body .col-md-7 {
+    gap: .5rem;
+  }
+
+  .pagina-catalogo .seccion-ofertas-catalogo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .presentacion-inicio {
+    grid-template-columns: 1fr;
+    padding: 1.1rem;
+  }
+
+  .imagen-portada {
+    min-height: 9rem;
+  }
+
 }

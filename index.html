@@ -1,127 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>URBAN FEETS | Inicio</title>
-  <meta name="description" content="Descubrí zapatillas Urban Feets, conocé nuestras ofertas y encontrá información sobre envíos.">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body class="pagina-inicio">
-  <header class="encabezado-navbar">
-    <a class="logo-sitio" href="./index.html">
-      <img src="./assets/logoUF.png" alt="Logo de URBAN FEETS">
-    </a>
-
-    <h1 class="titulo-sitio">URBAN FEETS</h1>
-
-    <nav class="navbar navbar-expand-lg navbar-dark menu-navegacion" aria-label="Menú de navegación principal">
-      <button class="navbar-toggler boton-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar el menú">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="menuPrincipal">
-        <ul class="navbar-nav lista-navegacion">
-          <li class="nav-item">
-            <a class="nav-link enlace-menu active" href="./index.html" aria-current="page">Inicio</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle enlace-menu" href="./pages/productos.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
-            <ul class="dropdown-menu menu-productos">
-              <li><a class="dropdown-item enlace-desplegable" href="./pages/productos.html">Hombre</a></li>
-              <li><a class="dropdown-item enlace-desplegable" href="./pages/productos.html">Mujer</a></li>
-              <li><a class="dropdown-item enlace-desplegable" href="./pages/productos.html">Niños</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link enlace-menu" href="./pages/ofertas.html">Ofertas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link enlace-menu" href="./pages/sobre-nosotros.html">Sobre nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link enlace-menu" href="./pages/contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main class="contenido-principal-layout-inicio">
-    <section class="seccion-bienvenida">
-      <h2 class="titulo-seccion">Encontrá tus próximas zapatillas</h2>
-      <p>En URBAN FEETS tenemos zapatillas para acompañarte todos los días. Elegí comodidad, estilo y calidad.</p>
-
-      <!-- Carousel Bootstrap -->
-      <div id="galeriaInicio" class="carousel slide carrusel-sitio" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#galeriaInicio" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ver imagen 1"></button>
-          <button type="button" data-bs-target="#galeriaInicio" data-bs-slide-to="1" aria-label="Ver imagen 2"></button>
-          <button type="button" data-bs-target="#galeriaInicio" data-bs-slide-to="2" aria-label="Ver imagen 3"></button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN FEETS | Inicio</title>
+    <meta name="description" content="Descubrí zapatillas Urban Feets, conocé nuestras ofertas y encontrá información sobre envíos.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body class="pagina-inicio">
+    <header class="encabezado-navbar">
+      <a class="logo-sitio" href="./index.html"> <img src="./assets/logoUF.png" alt="Logo de URBAN FEETS"> </a>
+      <h1 class="titulo-sitio">URBAN FEETS</h1>
+      <nav class="navbar navbar-expand-lg navbar-dark menu-navegacion" aria-label="Menú de navegación principal">
+        <button class="navbar-toggler boton-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar el menú"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav lista-navegacion">
+            <li class="nav-item"> <a class="nav-link enlace-menu active" href="./index.html" aria-current="page">Inicio</a> </li>
+            <li class="nav-item"><a class="nav-link enlace-menu" href="./pages/catalogo.html">Catálogo</a></li>
+            <li class="nav-item"> <a class="nav-link enlace-menu" href="./pages/ofertas.html">Ofertas</a> </li>
+            <li class="nav-item"> <a class="nav-link enlace-menu" href="./pages/sobre-nosotros.html">Sobre nosotros</a> </li>
+            <li class="nav-item"> <a class="nav-link enlace-menu" href="./pages/contacto.html">Contacto</a> </li>
+          </ul>
         </div>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="imagen-carrusel" src="./assets/running.index.png" alt="Galería URBAN FEETS, imagen 1">
-            <div class="carousel-caption">
-              <p>Conocé los modelos disponibles en nuestra tienda.</p>
-            </div>
+      </nav>
+    </header>
+    <main class="contenido-principal-layout-inicio">
+      <section class="seccion-bienvenida" aria-labelledby="titulo-bienvenida">
+        <div class="presentacion-inicio">
+          <div class="texto-presentacion-inicio">
+            <p class="kicker-inicio">Estilo urbano · Comodidad diaria</p>
+            <h2 class="titulo-seccion" id="titulo-bienvenida">Encontrá tus próximas zapatillas</h2>
+            <p>Modelos para acompañar tu ritmo, expresar tu estilo y disfrutar cada paso.</p>
+            <div class="acciones-inicio"> <a class="boton-enlace" href="./pages/catalogo.html">Explorar catálogo</a> <a class="boton-enlace" href="./pages/ofertas.html">Ver ofertas</a> </div>
           </div>
-          <div class="carousel-item">
-            <img class="imagen-carrusel" src="./assets/running2.index.png" alt="Galería URBAN FEETS, imagen 2">
-            <div class="carousel-caption">
-              <p>Encontrá tu próximo par en URBAN FEETS.</p>
-            </div>
+          <img class="imagen-portada" src="./assets/imagen-portada.png" alt="Imagen principal de Urban Feets" loading="lazy" decoding="async">
+        </div>
+        <div class="bloque-modelos-inicio">
+          <div class="encabezado-carrusel-inicio">
+            <h3 class="titulo-tarjeta">Modelos destacados</h3>
+            <p>Una selección para inspirar tu próxima elección.</p>
           </div>
-          <div class="carousel-item">
-            <img class="imagen-carrusel" src="./assets/running3.index.png" alt="Galería URBAN FEETS, imagen 3">
-            <div class="carousel-caption">
-              <p>Comodidad y estilo para todos los días.</p>
+          <!-- Carrusel de modelos destacados -->
+          <div id="galeriaInicio" class="carousel slide carrusel-sitio" data-bs-ride="carousel">
+            <div class="carousel-indicators"> <button type="button" data-bs-target="#galeriaInicio" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ver imagen 1"></button> <button type="button" data-bs-target="#galeriaInicio" data-bs-slide-to="1" aria-label="Ver imagen 2"></button> <button type="button" data-bs-target="#galeriaInicio" data-bs-slide-to="2" aria-label="Ver imagen 3"></button> </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="imagen-carrusel" src="./assets/running.index.png" alt="Modelo deportivo destacado, imagen del carrusel 1">
+                <div class="carousel-caption">
+                  <p>Encontrá comodidad para todos los días.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="imagen-carrusel" src="./assets/running2.index.png" alt="Modelo urbano destacado, imagen del carrusel 2">
+                <div class="carousel-caption">
+                  <p>Elegí el estilo que va con vos.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="imagen-carrusel" src="./assets/running3.index.png" alt="Zapatillas destacadas, imagen del carrusel 3">
+                <div class="carousel-caption">
+                  <p>Tu próximo par puede estar acá.</p>
+                </div>
+              </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#galeriaInicio" data-bs-slide="prev" aria-label="Imagen anterior"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#galeriaInicio" data-bs-slide="next" aria-label="Imagen siguiente"> <span class="carousel-control-next-icon" aria-hidden="true"></span> </button>
           </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#galeriaInicio" data-bs-slide="prev" aria-label="Imagen anterior">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#galeriaInicio" data-bs-slide="next" aria-label="Imagen siguiente">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-
-      <p><a class="boton-enlace" href="./pages/productos.html">Ver todos los productos</a></p>
-    </section>
-
-    <section class="seccion-ofertas-seccion-resumen">
-      <h2 class="titulo-seccion">Ofertas especiales</h2>
-      <p>Visitá nuestra sección de ofertas y encontrá descuentos en modelos seleccionados.</p>
-      <a class="boton-enlace" href="./pages/ofertas.html">Ver ofertas</a>
-    </section>
-
-    <aside class="info-adicional">
-      <h2 class="titulo-seccion">Envíos</h2>
-      <ul class="lista-info">
-        <li>Realizamos envíos a todo el país.</li>
-        <li>Seguimiento de tu compra por correo electrónico.</li>
-        <li>Atención personalizada de lunes a viernes.</li>
+      </section>
+      <section class="seccion-catalogo-inicio" aria-labelledby="titulo-catalogo-inicio"><h2 class="titulo-seccion" id="titulo-catalogo-inicio">Explorá el catálogo</h2><p>Encontrá modelos para hombres, mujeres y niños en un solo lugar.</p><a class="boton-enlace" href="./pages/catalogo.html">Ver catálogo</a></section>
+      <section class="seccion-ofertas-seccion-resumen" aria-labelledby="titulo-ofertas-inicio">
+        <h2 class="titulo-seccion" id="titulo-ofertas-inicio">Ofertas especiales</h2>
+        <p>Descubrí descuentos en modelos seleccionados y encontrá tu próximo par a un precio especial.</p>
+        <a class="boton-enlace" href="./pages/ofertas.html">Explorar ofertas</a>
+      </section>
+      <aside class="info-adicional beneficios-inicio" aria-labelledby="titulo-beneficios-inicio">
+        <h2 class="titulo-seccion" id="titulo-beneficios-inicio">Beneficios para vos</h2>
+        <div class="grilla-beneficios-inicio">
+          <article class="beneficio-inicio">
+            <img src="./assets/logo-envios.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Envío gratis</h3>
+              <p>En compras superiores a $80.000, con entrega estimada de 24 a 72 horas hábiles en zonas seleccionadas.</p>
+            </div>
+          </article>
+          <article class="beneficio-inicio">
+            <img src="./assets/logo-cuotas.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>6 cuotas sin interés</h3>
+              <p>Con tarjetas participantes. Además, obtené 10% de descuento pagando por transferencia.</p>
+            </div>
+          </article>
+          <article class="beneficio-inicio">
+            <img src="./assets/logo-comprasegura.png" alt="" loading="lazy" decoding="async">
+            <div>
+              <h3>Compra segura</h3>
+              <p>Tu compra está protegida y asegurada para que elijas con tranquilidad.</p>
+            </div>
+          </article>
+        </div>
+      </aside>
+    </main>
+    <footer class="pie-pagina">
+      <p>&copy; 2026 - URBAN FEETS</p>
+      <p>Seguinos en redes sociales:</p>
+      <ul class="lista-redes">
+        <li><a class="enlace-red-social" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a class="enlace-red-social" href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
       </ul>
-    </aside>
-  </main>
-
-  <footer class="pie-pagina">
-    <p>&copy; 2026 - URBAN FEETS</p>
-    <p>Seguinos en redes sociales:</p>
-    <ul class="lista-redes">
-      <li><a class="enlace-red-social" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      <li><a class="enlace-red-social" href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    </ul>
-  </footer>
-
-  <!-- Bootstrap JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    </footer>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
