@@ -181,7 +181,7 @@ body {
   background-color: var(--color-white);
   background-image:
     linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)),
-    url("../assets/fondo.png");
+    url("../assets/fondo.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
