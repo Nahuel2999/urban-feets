@@ -1,3 +1,4 @@
+@use "../utilities/variables";
 // ===== Encabezado =====
 
 @mixin encabezado {
@@ -5,11 +6,11 @@
   .encabezado-navbar {
     background-color: var(--color-ink);
     color: var(--color-white);
-    border-bottom: .25rem solid var(--color-orange);
+    border-bottom: variables.$espacio-minimo solid var(--color-orange);
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: "logo marca menu";
-    gap: .5rem;
+    gap: variables.$espacio-sm;
     justify-items: stretch;
     align-items: center;
   }
@@ -30,7 +31,7 @@
     grid-area: marca;
     margin: 0;
     justify-self: start;
-    font-size: clamp(1.25rem, 6vw, 2rem);
+    font-size: clamp(variables.$espacio-lg, 6vw, 2rem);
     font-weight: 700;
     text-align: left;
   }
@@ -57,7 +58,7 @@
   }
 
   .titulo-sitio {
-    font-size: clamp(1rem, 5vw, 1.4rem);
+    font-size: clamp(variables.$espacio-md, 5vw, 1.4rem);
     white-space: nowrap;
   }
 }

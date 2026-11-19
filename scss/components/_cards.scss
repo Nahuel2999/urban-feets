@@ -1,3 +1,4 @@
+@use "../utilities/variables";
 @use "../utilities/mixins";
 
 // ===== Tarjetas y componentes =====
@@ -9,7 +10,7 @@
   .lista-valores {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
+    gap: variables.$espacio-lg;
     align-items: stretch;
   }
 
@@ -18,7 +19,7 @@
   .tarjeta-valor {
     min-width: 0;
     background-color: var(--color-page);
-    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    transition: transform variables.$transicion-rapida, box-shadow variables.$transicion-rapida, border-color variables.$transicion-rapida;
   }
 
   /* ===== Etiquetas de ofertas ===== */
@@ -32,8 +33,8 @@
   .tarjeta-producto.card,
   .tarjeta-oferta.card {
     color: var(--color-text);
-    border: .0625rem solid var(--color-border);
-    border-radius: .5rem;
+    border: variables.$borde-fino solid var(--color-border);
+    border-radius: variables.$radio-borde;
     background-color: var(--color-page);
   }
 
@@ -49,12 +50,12 @@
   .tarjeta-producto.card .card-title,
   .tarjeta-oferta.card .card-title {
     min-height: 2.4em;
-    margin-bottom: 1rem;
+    margin-bottom: variables.$espacio-md;
   }
 
   .badge-genero {
     align-self: flex-start;
-    margin-bottom: .5rem;
+    margin-bottom: variables.$espacio-sm;
     color: var(--color-ink);
     background-color: var(--color-orange-soft);
   }
@@ -68,7 +69,7 @@
   .tarjeta-oferta.card figure {
     display: flex;
     flex-direction: column;
-    margin: 0 0 1rem;
+    margin: 0 0 variables.$espacio-md;
   }
 
   .tarjeta-producto.card figure img,
@@ -109,7 +110,7 @@
     width: 100%;
     max-height: 18rem;
     object-fit: contain;
-    border-radius: .375rem;
+    border-radius: variables.$radio-compacto;
   }
 }
 
@@ -118,7 +119,7 @@
   .selector-talle .form-select:focus,
   .selector-genero .form-select:focus {
     border-color: var(--color-orange-bright);
-    box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .2);
+    box-shadow: 0 0 0 .2rem variables.$sombra-foco;
   }
 }
 
@@ -129,7 +130,7 @@
   .lista-valores .tarjeta-valor:hover {
     transform: translateY(-.2rem);
     border-color: var(--color-orange);
-    box-shadow: 0 .5rem 1rem rgba(17, 24, 39, .15);
+    box-shadow: 0 variables.$espacio-sm variables.$espacio-md variables.$sombra-tarjeta;
   }
 
   .grilla-productos .tarjeta-producto:focus-within,
@@ -179,8 +180,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: .35rem;
-    margin-bottom: .75rem;
+    gap: variables.$espacio-xs;
+    margin-bottom: variables.$espacio-intermedio;
   }
 
   .etiquetas-producto .badge {
@@ -211,7 +212,7 @@
     min-height: 18rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: .75rem;
+    gap: variables.$espacio-intermedio;
   }
 
   .modal-producto .modal-body .col-md-7 > .badge {
@@ -241,7 +242,7 @@
   .grilla-beneficios-inicio {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: .75rem;
+    gap: variables.$espacio-intermedio;
   }
 
   .beneficio-inicio {
@@ -253,7 +254,7 @@
     padding: .85rem .65rem;
     text-align: center;
     background-color: var(--color-white);
-    border: .0625rem solid var(--color-border);
+    border: variables.$borde-fino solid var(--color-border);
   }
 
   .beneficio-inicio > img {
@@ -263,9 +264,9 @@
   }
 
   .beneficio-inicio h3 {
-    margin: 0 0 .35rem;
+    margin: 0 0 variables.$espacio-xs;
     color: var(--color-ink);
-    font-size: clamp(.75rem, 1.5vw, 1rem);
+    font-size: clamp(variables.$espacio-intermedio, 1.5vw, variables.$espacio-md);
     line-height: 1.3;
   }
 
@@ -307,6 +308,6 @@
   }
 
   .modal-producto .modal-body .col-md-7 {
-    gap: .5rem;
+    gap: variables.$espacio-sm;
   }
 }

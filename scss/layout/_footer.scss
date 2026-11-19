@@ -1,3 +1,4 @@
+@use "../utilities/variables";
 // Etapa 2: estilos de footer; mixins para preservar la cascada.
 
 @mixin lista-redes {
@@ -7,7 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 1.25rem;
+    gap: variables.$espacio-lg;
   }
 }
 
@@ -16,7 +17,7 @@
   .enlace-red-social:link {
     color: var(--color-orange-soft);
     text-decoration: none;
-    transition: color .2s ease, text-decoration-color .2s ease;
+    transition: color variables.$transicion-rapida, text-decoration-color variables.$transicion-rapida;
   }
 
   .enlace-red-social:visited {

@@ -46,14 +46,14 @@
   aside,
   article {
     background-color: var(--color-block);
-    padding: 1.25rem;
-    border: .0625rem solid var(--color-border);
-    border-radius: .5rem;
+    padding: variables.$espacio-lg;
+    border: variables.$borde-fino solid var(--color-border);
+    border-radius: variables.$radio-borde;
   }
 
   section,
   aside {
-    margin-bottom: 1rem;
+    margin-bottom: variables.$espacio-md;
   }
 }
 
@@ -63,7 +63,7 @@
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: .5rem;
+    border-radius: variables.$radio-borde;
   }
 }
 
@@ -90,5 +90,18 @@
       animation-iteration-count: 1 !important;
     }
 
+  }
+}
+
+
+@mixin enlaces-contenido {
+  /* ===== Enlaces del contenido ===== */
+  main a:not(.boton-enlace) {
+    transition: color variables.$transicion-rapida;
+  }
+
+  main a:not(.boton-enlace):hover,
+  main a:not(.boton-enlace):focus {
+    color: var(--color-orange-dark);
   }
 }

@@ -7,23 +7,24 @@
 @use "layout/header";
 @use "layout/nav";
 @use "layout/footer";
-@use "utilities/variables";
-@use "utilities/mixins";
 
+
+@use "layout/content" as contenido;
+
+@use "components/tabs";
+
+@use "components/forms";
+
+@use "components/accordion";
+
+@use "components/carousel";
+
+@use "components/pagination";
 
 // ===== Estilos generales =====
 @include base.estilos-generales;
 
-/* ===== Contenedores principales ===== */
-.encabezado-navbar,
-.contenido-principal,
-.contenido-principal-layout-inicio,
-.contenido-principal-layout-catalogo,
-.pie-pagina {
-  width: min(100%, 75rem);
-  margin-inline: auto;
-  padding: 1rem;
-}
+@include contenido.contenedores;
 
 // ===== Encabezado =====
 @include header.encabezado;
@@ -34,150 +35,12 @@
 // ===== Migas de pan =====
 @include nav.migas;
 
-/* ===== Layout principal con CSS Grid ===== */
-.contenido-principal,
-.contenido-principal-layout-inicio,
-.contenido-principal-layout-catalogo {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
-  gap: 1.25rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--color-white);
-  background-image:
-    linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)),
-    url("../assets/fondo.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/* ===== Áreas de la página de inicio ===== */
-.contenido-principal-layout-inicio {
-  grid-template-areas:
-    "bienvenida"
-    "catalogo"
-    "ofertas"
-    "apoyo";
-}
-
-.pagina-inicio .seccion-bienvenida {
-  grid-area: bienvenida;
-}
-
-.pagina-inicio .seccion-catalogo-inicio,
-.pagina-inicio .seccion-ofertas-seccion-resumen {
-  align-self: stretch;
-}
-
-.pagina-inicio .seccion-ofertas-seccion-resumen {
-  grid-area: ofertas;
-}
-
-.pagina-inicio .seccion-catalogo-inicio {
-  grid-area: catalogo;
-}
-
-/* ===== Áreas de las páginas internas ===== */
-.contenido-ofertas {
-  grid-template-areas:
-    "contenido"
-    "apoyo";
-}
-
-.contenido-principal-layout-catalogo {
-  grid-template-areas: "contenido";
-}
-
-.contenido-sobre-nosotros {
-  grid-template-areas:
-    "presentacion"
-    "mision"
-    "apoyo";
-}
-
-.contenido-contacto {
-  grid-template-areas:
-    "formulario"
-    "datos"
-    "apoyo";
-}
-
-.pagina-catalogo .seccion-catalogo,
-.contenido-ofertas .seccion-ofertas {
-  grid-area: contenido;
-}
-
-.contenido-sobre-nosotros .seccion-sobre-nosotros {
-  grid-area: presentacion;
-}
-
-.contenido-sobre-nosotros .seccion-mision {
-  grid-area: mision;
-}
-
-.contenido-contacto .seccion-contacto {
-  grid-area: formulario;
-}
-
-.contenido-contacto .seccion-datos-contacto {
-  grid-area: datos;
-}
-
-/* ===== Información adicional ===== */
-.pagina-inicio .info-adicional,
-.contenido-ofertas .info-adicional,
-.contenido-sobre-nosotros .info-adicional,
-.contenido-contacto .info-adicional {
-  grid-area: apoyo;
-}
+@include contenido.distribucion;
 
 // ===== Bloques generales =====
 @include base.bloques-generales;
 
-/* ===== Colores de los bloques ===== */
-.info-adicional,
-.pagina-inicio .seccion-bienvenida,
-.seccion-sobre-nosotros,
-.seccion-contacto,
-.pagina-catalogo .tarjeta-producto,
-.tarjeta-oferta,
-.tarjeta-valor {
-  background-color: var(--color-block);
-}
-
-.pagina-inicio .seccion-bienvenida,
-.pagina-inicio .seccion-ofertas-seccion-resumen,
-.pagina-catalogo .seccion-catalogo,
-.seccion-ofertas,
-.seccion-sobre-nosotros,
-.seccion-mision,
-.seccion-contacto,
-.seccion-datos-contacto {
-  min-width: 0;
-}
-
-/* ===== Oferta destacada del catálogo ===== */
-.pagina-catalogo .seccion-ofertas-catalogo {
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: var(--color-white);
-  background-color: var(--color-ink);
-  border-color: var(--color-orange);
-}
-
-.pagina-catalogo .seccion-ofertas-catalogo .titulo-seccion {
-  margin-bottom: .35rem;
-  color: var(--color-white);
-}
-
-.pagina-catalogo .seccion-ofertas-catalogo p {
-  margin-bottom: 0;
-}
+@include contenido.bloques;
 
 // ===== Tarjetas y grillas =====
 @include cards.tarjetas;
@@ -185,9 +48,7 @@
 // ===== Ventanas de detalle =====
 @include cards.modales;
 
-.contenido-pestanas {
-  padding-top: 1rem;
-}
+@include tabs.contenido;
 
 // ===== Selectores de talle y género =====
 @include cards.selectores;
@@ -198,59 +59,19 @@
 // ===== Estados interactivos de tarjetas =====
 @include cards.estados-tarjetas;
 
-/* ===== Contenido interno con Flexbox ===== */
-.pagina-inicio .seccion-bienvenida,
-.pagina-catalogo .seccion-catalogo {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 1rem;
-}
+@include contenido.contenido-flex;
 
-.formulario-contacto {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 1.25rem;
-}
+@include forms.estructura;
 
 // ===== Lista de redes sociales =====
 @include footer.lista-redes;
 
-.lista-info,
-.lista-precios {
-  padding-left: 1.25rem;
-}
+@include contenido.listas;
 
 // ===== Alternancia de tarjetas =====
 @include cards.alternancia;
 
-/* ===== Acordeón de preguntas frecuentes ===== */
-.acordeon-preguntas {
-  margin-top: 1.25rem;
-}
-
-.acordeon-preguntas .accordion-button {
-  color: var(--color-ink);
-  background-color: var(--color-page);
-  font: inherit;
-  font-weight: 600;
-}
-
-.acordeon-preguntas .accordion-button:not(.collapsed) {
-  color: var(--color-ink);
-  background-color: var(--color-orange-soft);
-  box-shadow: none;
-}
-
-.acordeon-preguntas .accordion-button:focus {
-  border-color: var(--color-orange-bright);
-  box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .25);
-}
-
-.acordeon-preguntas .accordion-body {
-  background-color: var(--color-white);
-}
+@include accordion.acordeon;
 
 // ===== Títulos =====
 @include tipografia.titulos;
@@ -261,101 +82,17 @@
 // ===== Leyendas =====
 @include tipografia.leyendas;
 
-/* ===== Carousel Bootstrap personalizado ===== */
-.carrusel-sitio {
-  width: 100%;
-  max-width: 64rem;
-  margin-inline: auto;
-  overflow: hidden;
-  border-radius: .5rem;
-}
-
-.imagen-carrusel {
-  width: 100%;
-  height: clamp(15rem, 36vw, 24rem);
-  object-fit: cover;
-}
-
-.carrusel-sitio .carousel-caption {
-  right: 0;
-  bottom: 2rem;
-  left: 0;
-  padding: 1rem 3.5rem;
-  color: var(--color-white);
-  background-color: rgba(17, 24, 39, .72);
-}
-
-.carrusel-sitio .carousel-caption p {
-  margin: 0;
-}
-
-.carrusel-sitio .carousel-indicators {
-  bottom: .25rem;
-  margin-bottom: 0;
-}
-
-.carrusel-sitio .carousel-indicators [data-bs-target] {
-  width: .75rem;
-  height: .75rem;
-  border: 0;
-  border-radius: 50%;
-  transition: opacity .2s ease, transform .2s ease;
-}
-
-.carrusel-sitio .carousel-indicators [data-bs-target]:hover,
-.carrusel-sitio .carousel-indicators [data-bs-target]:focus {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-.carrusel-sitio .carousel-control-prev,
-.carrusel-sitio .carousel-control-next {
-  transition: background-color .2s ease, opacity .2s ease;
-}
-
-.carrusel-sitio .carousel-control-prev:hover,
-.carrusel-sitio .carousel-control-next:hover,
-.carrusel-sitio .carousel-control-prev:focus,
-.carrusel-sitio .carousel-control-next:focus {
-  background-color: rgba(17, 24, 39, .25);
-  opacity: 1;
-}
-
-.carrusel-sitio .carousel-control-prev:active,
-.carrusel-sitio .carousel-control-next:active {
-  background-color: rgba(234, 88, 12, .55);
-}
+@include carousel.carrusel;
 
 // ===== Enlaces de redes sociales =====
 @include footer.enlaces;
 
-/* ===== Enlaces del contenido ===== */
-main a:not(.boton-enlace) {
-  transition: color .2s ease;
-}
-
-main a:not(.boton-enlace):hover,
-main a:not(.boton-enlace):focus {
-  color: var(--color-orange-dark);
-}
+@include base.enlaces-contenido;
 
 // ===== Botones =====
 @include buttons.botones;
 
-/* ===== Acciones de inicio ===== */
-.pagina-inicio .seccion-catalogo-inicio,
-.pagina-inicio .seccion-ofertas-seccion-resumen {
-  display: flex;
-  flex-direction: column;
-  gap: .75rem;
-}
-
-.pagina-inicio .seccion-catalogo-inicio > .titulo-seccion,
-.pagina-inicio .seccion-catalogo-inicio > p,
-.pagina-inicio .seccion-ofertas-seccion-resumen > .titulo-seccion,
-.pagina-inicio .seccion-ofertas-seccion-resumen > p {
-  margin: 0;
-}
+@include contenido.acciones-inicio;
 
 // ===== Botones de inicio =====
 @include buttons.botones-inicio;
@@ -363,261 +100,28 @@ main a:not(.boton-enlace):focus {
 // ===== Foco de teclado =====
 @include base.foco-teclado;
 
-/* ===== Formulario ===== */
-fieldset {
-  border: .0625rem solid var(--color-border-strong);
-  padding: 1.25rem;
-}
-
-legend {
-  font-weight: 700;
-  padding: 0 .5rem;
-}
-
-label {
-  display: block;
-  margin-top: .5rem;
-  margin-bottom: .25rem;
-  font-weight: 600;
-}
-
-input:not(.btn-check),
-textarea,
-select,
-.formulario-contacto button {
-  width: 100%;
-  padding: .6rem;
-  border: .0625rem solid var(--color-input-border);
-  border-radius: .375rem;
-  font: inherit;
-}
-
-textarea {
-  min-height: 8rem;
-  resize: vertical;
-}
+@include forms.campos;
 
 // ===== Pie de página =====
 @include footer.pie;
 
-/* ===== Controles y paginación de catálogos ===== */
-.controles-catalogo {
-  min-width: 0;
-  margin: 0 0 1rem;
-  padding: .75rem;
-  border: .0625rem solid var(--color-border-strong);
-  border-radius: .5rem;
-  background-color: var(--color-white);
-}
-
-.controles-catalogo .form-label {
-  margin: 0 0 .5rem;
-  font-weight: 700;
-}
-
-.controles-catalogo .btn-group {
-  display: flex;
-  width: 100%;
-}
-
-.controles-catalogo .btn {
-  flex: 1 1 auto;
-  white-space: normal;
-}
-
-.controles-catalogo .btn-outline-secondary {
-  color: var(--color-ink);
-  border-color: var(--color-border-strong);
-}
-
-.controles-catalogo .btn-check:checked + .btn-outline-secondary {
-  color: var(--color-white);
-  background-color: var(--color-ink);
-  border-color: var(--color-orange);
-}
-
-.controles-catalogo .btn-check:focus-visible + .btn-outline-secondary {
-  @include mixins.foco-visible;
-}
-
-/* ===== Paginación de catálogos ===== */
-.seccion-catalogo:has(#catalogoPagina1:checked) .grilla-catalogo .tarjeta-producto:not(.pagina-1),
-.seccion-catalogo:has(#catalogoPagina2:checked) .grilla-catalogo .tarjeta-producto:not(.pagina-2),
-.seccion-catalogo:has(#catalogoPagina3:checked) .grilla-catalogo .tarjeta-producto:not(.pagina-3),
-.seccion-catalogo:has(#catalogoPagina4:checked) .grilla-catalogo .tarjeta-producto:not(.pagina-4) {
-  display: none;
-}
+@include pagination.controles;
 
 // ===== Descripción y selectores =====
 @include cards.descripcion-selectores;
 
-/* ===== Controles compactos de catálogo ===== */
-.paginacion-catalogo .btn-group {
-  display: flex;
-  width: auto;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: .35rem;
-}
-
-.paginacion-catalogo .btn {
-  min-width: 2.75rem;
-  flex: 0 0 auto;
-  white-space: nowrap;
-}
+@include pagination.controles-compactos;
 
 // ===== Detalles de productos =====
 @include cards.detalles;
 
-/* ===== Navegación inferior de catálogos ===== */
-.paginacion-inferior {
-  display: flex;
-  justify-content: center;
-  margin-block: 1.25rem;
-}
+@include pagination.navegacion-inferior;
 
-.paginacion-estado {
-  display: none;
-  justify-content: space-between;
-  gap: .75rem;
-  width: min(100%, 42rem);
-}
+@include tabs.pestanas;
 
-.seccion-catalogo:has(#catalogoPagina1:checked) .pagina-inferior-1,
-.seccion-catalogo:has(#catalogoPagina2:checked) .pagina-inferior-2,
-.seccion-catalogo:has(#catalogoPagina3:checked) .pagina-inferior-3,
-.seccion-catalogo:has(#catalogoPagina4:checked) .pagina-inferior-4 {
-  display: flex;
-}
+@include accordion.tipografia;
 
-.paginacion-inferior .btn {
-  min-width: 8rem;
-}
-
-.paginacion-catalogo .btn-group > .btn + .btn {
-  margin-top: 0;
-}
-
-/* ===== Pestañas informativas y de ofertas ===== */
-.pestanas-informacion .nav-tabs,
-.pestanas-ofertas.nav-tabs {
-  display: flex;
-  border-bottom-color: var(--color-border-strong);
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
-.pestanas-informacion .nav-tabs > .nav-item,
-.pestanas-ofertas.nav-tabs > .nav-item {
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-.pestanas-informacion .nav-tabs .nav-link,
-.pestanas-ofertas.nav-tabs .nav-link {
-  width: 100%;
-  height: 100%;
-  padding: .65rem .5rem;
-  color: var(--color-ink);
-  text-align: center;
-  font-size: clamp(.78rem, 2.8vw, 1rem);
-  line-height: 1.25;
-}
-
-.pestanas-informacion .nav-tabs .nav-link:hover,
-.pestanas-informacion .nav-tabs .nav-link:focus-visible,
-.pestanas-informacion .nav-tabs .nav-link.active,
-.pestanas-ofertas.nav-tabs .nav-link:hover,
-.pestanas-ofertas.nav-tabs .nav-link:focus-visible,
-.pestanas-ofertas.nav-tabs .nav-link.active {
-  color: var(--color-white);
-  background-color: var(--color-orange);
-  border-color: var(--color-orange);
-}
-
-/* ===== Preguntas frecuentes ===== */
-.acordeon-preguntas .accordion-button {
-  font-size: clamp(.82rem, 3.3vw, 1rem);
-  line-height: 1.35;
-}
-
-/* ===== Portada de inicio ===== */
-.pagina-inicio .seccion-bienvenida {
-  gap: 1.5rem;
-}
-
-.presentacion-inicio {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(12rem, .9fr);
-  align-items: center;
-  gap: 1rem;
-  padding: clamp(1.25rem, 3vw, 2.25rem);
-  border-left: .3rem solid var(--color-orange);
-  border-radius: .5rem;
-  background: linear-gradient(135deg, var(--color-block), var(--color-white));
-}
-
-.presentacion-inicio > * {
-  margin: 0;
-}
-
-.texto-presentacion-inicio {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: .75rem;
-}
-
-.texto-presentacion-inicio > * {
-  margin: 0;
-}
-
-.imagen-portada {
-  width: 100%;
-  height: 100%;
-  min-height: 12rem;
-  object-fit: cover;
-  border-radius: .5rem;
-}
-
-.presentacion-inicio .titulo-seccion {
-  font-size: clamp(1.7rem, 4vw, 2.5rem);
-}
-
-.kicker-inicio {
-  color: var(--color-orange-dark);
-  font-size: .85rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.acciones-inicio {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-  margin-top: .35rem;
-}
-
-.bloque-modelos-inicio {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.encabezado-carrusel-inicio {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-
-.encabezado-carrusel-inicio h3, .encabezado-carrusel-inicio p {
-  margin: 0;
-}
-
-.encabezado-carrusel-inicio p {
-  color: var(--color-muted);
-}
+@include contenido.portada;
 
 // ===== Beneficios =====
 @include cards.beneficios;
@@ -625,125 +129,15 @@ textarea {
 // ===== Menú móvil =====
 @include nav.menu-movil;
 
-/* ===== Diseño responsive para tablets ===== */
-@media (min-width: variables.$tablet) {
-  // ===== Encabezado en tablet =====
-  @include header.tablet;
+@include contenido.tablet;
 
-  // ===== Menú en tablet =====
-  @include nav.tablet;
+@include contenido.navbar-escritorio;
 
-  // ===== Grillas en tablet =====
-  @include cards.grillas-tablet;
+@include contenido.escritorio;
 
-  .contenido-ofertas {
-    grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
-    grid-template-areas: "contenido apoyo";
-  }
-
-  .contenido-principal-layout-inicio {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "bienvenida bienvenida"
-      "catalogo ofertas"
-      "apoyo apoyo";
-  }
-
-  .contenido-sobre-nosotros {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "presentacion presentacion"
-      "mision mision"
-      "apoyo apoyo";
-  }
-
-  .contenido-contacto {
-    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
-    grid-template-rows: min-content min-content;
-    grid-template-areas:
-      "formulario datos"
-      "formulario apoyo";
-    align-content: start;
-    row-gap: 1rem;
-  }
-
-  .contenido-contacto .seccion-contacto {
-    grid-row: 1 / span 2;
-  }
-
-  .contenido-contacto .seccion-datos-contacto,
-  .contenido-contacto .info-adicional {
-    align-self: start;
-    margin-bottom: 0;
-  }
-
-}
-
-/* ===== Navbar en escritorio ===== */
-@media (min-width: variables.$menu-escritorio) {
-  // ===== Encabezado en escritorio =====
-  @include header.escritorio;
-
-  // ===== Menú en escritorio =====
-  @include nav.escritorio;
-
-
-}
-
-/* ===== Diseño responsive para escritorio ===== */
-@media (min-width: variables.$escritorio) {
-  .contenido-ofertas {
-    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
-  }
-
-  // ===== Grillas en escritorio =====
-  @include cards.grillas-escritorio;
-
-  .contenido-sobre-nosotros {
-    grid-template-areas:
-      "presentacion presentacion"
-      "mision apoyo";
-  }
-
-}
-
-/* ===== Ajustes para pantallas pequeñas ===== */
-@media (max-width: variables.$pantalla-pequena) {
-  // ===== Encabezado compacto =====
-  @include header.compacto;
-
-  /* ===== Carrusel ===== */
-  .imagen-carrusel {
-    height: 16rem;
-  }
-
-  .carrusel-sitio .carousel-caption {
-    padding-inline: 2.75rem;
-    font-size: .85rem;
-  }
-
-}
+@include contenido.pantalla-pequena;
 
 // ===== Preferencia de movimiento reducido =====
 @include base.movimiento-reducido;
 
-/* ===== Ajustes móviles de modales y catálogo ===== */
-@media (max-width: variables.$movil) {
-  // ===== Modales en móvil =====
-  @include cards.modales-movil;
-
-  .pagina-catalogo .seccion-ofertas-catalogo {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .presentacion-inicio {
-    grid-template-columns: 1fr;
-    padding: 1.1rem;
-  }
-
-  .imagen-portada {
-    min-height: 9rem;
-  }
-
-}
+@include contenido.movil;

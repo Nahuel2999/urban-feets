@@ -1,3 +1,4 @@
+@use "../utilities/variables";
 // ===== Botones =====
 
 @mixin botones-tarjetas {
@@ -14,14 +15,14 @@
     display: inline-block;
     width: auto;
     padding: .5em 1em;
-    border: .125rem solid var(--color-orange);
+    border: variables.$borde-medio solid var(--color-orange);
     color: var(--color-orange);
     background-color: var(--color-white);
     text-decoration: none;
     font-weight: 700;
-    border-radius: .375rem;
+    border-radius: variables.$radio-compacto;
     cursor: pointer;
-    transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
+    transition: color variables.$transicion-rapida, background-color variables.$transicion-rapida, border-color variables.$transicion-rapida, transform variables.$transicion-rapida;
 
     &:hover,
     &:focus {
@@ -43,6 +44,6 @@
   .pagina-inicio .seccion-catalogo-inicio > .boton-enlace,
   .pagina-inicio .seccion-ofertas-seccion-resumen > .boton-enlace {
     align-self: flex-start;
-    margin-top: .25rem;
+    margin-top: variables.$espacio-minimo;
   }
 }
