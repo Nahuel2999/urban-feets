@@ -1,0 +1,49 @@
+// Migración SCSS: components/_buttons.scss
+// Los mixins conservan el orden de las reglas CSS al invocarse desde main.scss.
+
+@mixin botones-tarjetas {
+  /* ===== Alineación de botones de tarjetas ===== */
+  .tarjeta-producto.card .boton-enlace,
+  .tarjeta-oferta.card .boton-enlace {
+    align-self: flex-start;
+  }
+}
+
+@mixin botones {
+  /* ===== Botones ===== */
+  .boton-enlace {
+    display: inline-block;
+    width: auto;
+    padding: .5em 1em;
+    border: .125rem solid var(--color-orange);
+    color: var(--color-orange);
+    background-color: var(--color-white);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: .375rem;
+    cursor: pointer;
+    transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-orange);
+      border-color: var(--color-orange);
+      color: var(--color-white);
+    }
+
+    &:active {
+      background-color: var(--color-orange-dark);
+      border-color: var(--color-orange-dark);
+      color: var(--color-white);
+      transform: translateY(.1rem);
+    }
+  }
+}
+
+@mixin botones-inicio {
+  .pagina-inicio .seccion-catalogo-inicio > .boton-enlace,
+  .pagina-inicio .seccion-ofertas-seccion-resumen > .boton-enlace {
+    align-self: flex-start;
+    margin-top: .25rem;
+  }
+}

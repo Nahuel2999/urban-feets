@@ -1,0 +1,312 @@
+// Migración SCSS: components/_cards.scss
+// Los mixins conservan el orden de las reglas CSS al invocarse desde main.scss.
+
+@mixin tarjetas {
+  /* ===== Grillas de tarjetas ===== */
+  .pagina-catalogo .grilla-productos,
+  .grilla-ofertas,
+  .lista-valores {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .pagina-catalogo .tarjeta-producto,
+  .tarjeta-oferta,
+  .tarjeta-valor {
+    min-width: 0;
+    background-color: var(--color-page);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+
+  /* ===== Etiquetas de ofertas ===== */
+  .etiqueta-oferta {
+    align-self: flex-start;
+    color: var(--color-white);
+    background-color: var(--color-orange);
+  }
+
+  /* ===== Tarjetas Bootstrap personalizadas ===== */
+  .tarjeta-producto.card,
+  .tarjeta-oferta.card {
+    color: var(--color-text);
+    border: .0625rem solid var(--color-border);
+    border-radius: .5rem;
+    background-color: var(--color-page);
+  }
+
+  .tarjeta-producto.card .card-body,
+  .tarjeta-oferta.card .card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .tarjeta-producto.card .card-title,
+  .tarjeta-oferta.card .card-title {
+    min-height: 2.4em;
+    margin-bottom: 1rem;
+  }
+
+  .badge-genero {
+    align-self: flex-start;
+    margin-bottom: .5rem;
+    color: var(--color-ink);
+    background-color: var(--color-orange-soft);
+  }
+
+  .tarjeta-producto.card .card-text {
+    color: var(--color-text);
+  }
+
+  /* ===== Espacios uniformes en tarjetas de productos y ofertas ===== */
+  .tarjeta-producto.card figure,
+  .tarjeta-oferta.card figure {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem;
+  }
+
+  .tarjeta-producto.card figure img,
+  .tarjeta-oferta.card figure img {
+    width: 100%;
+    height: 14rem;
+    object-fit: contain;
+    background-color: var(--color-white);
+  }
+
+  .tarjeta-producto.card .leyenda-imagen,
+  .tarjeta-oferta.card .leyenda-imagen {
+    min-height: 2.8em;
+  }
+
+  .tarjeta-producto.card figure + .card-text {
+    min-height: 4.8rem;
+  }
+
+  .tarjeta-producto.card figure + .card-text + .card-text {
+    min-height: 1.6rem;
+  }
+}
+
+@mixin modales {
+  /* ===== Ventanas de detalle de producto ===== */
+  .modal-producto {
+    color: var(--color-text);
+    background-color: var(--color-block);
+    border-color: var(--color-border);
+  }
+  
+  .modal-producto .modal-header {
+    border-bottom-color: var(--color-border-strong);
+  }
+
+  .imagen-modal-producto {
+    width: 100%;
+    max-height: 18rem;
+    object-fit: contain;
+    border-radius: .375rem;
+  }
+}
+
+@mixin selectores {
+  /* ===== Selectores de talle y género ===== */
+  .selector-talle .form-select:focus,
+  .selector-genero .form-select:focus {
+    border-color: var(--color-orange-bright);
+    box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .2);
+  }
+}
+
+@mixin estados-tarjetas {
+  /* ===== Estados interactivos de tarjetas ===== */
+  .grilla-productos .tarjeta-producto:hover,
+  .grilla-ofertas .tarjeta-oferta:hover,
+  .lista-valores .tarjeta-valor:hover {
+    transform: translateY(-.2rem);
+    border-color: var(--color-orange);
+    box-shadow: 0 .5rem 1rem rgba(17, 24, 39, .15);
+  }
+
+  .grilla-productos .tarjeta-producto:focus-within,
+  .grilla-ofertas .tarjeta-oferta:focus-within,
+  .lista-valores .tarjeta-valor:focus-within {
+    outline: .2rem solid var(--color-orange-bright);
+    outline-offset: .15rem;
+  }
+
+  .grilla-productos .tarjeta-producto:active,
+  .grilla-ofertas .tarjeta-oferta:active,
+  .lista-valores .tarjeta-valor:active {
+    transform: translateY(0);
+  }
+
+  .lista-valores {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .grilla-ofertas .tarjeta-oferta,
+  .lista-valores .tarjeta-valor {
+    height: 100%;
+  }
+}
+
+@mixin alternancia {
+  /* ===== Pseudoclases estructurales ===== */
+  .lista-valores > li:nth-child(even) .tarjeta-valor {
+    border-color: var(--color-border);
+  }
+}
+
+@mixin descripcion-selectores {
+  .descripcion-producto {
+    min-height: 3.2em;
+  }
+
+  .selector-talle,
+  .selector-genero {
+    margin-top: 0;
+  }
+}
+
+@mixin detalles {
+  /* ===== Uniformidad de tarjetas y detalles ===== */
+  .etiquetas-producto {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: .35rem;
+    margin-bottom: .75rem;
+  }
+
+  .etiquetas-producto .badge {
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
+
+  .modal-producto .modal-body > .row {
+    align-items: stretch !important;
+  }
+
+  .modal-producto .modal-body .col-md-5 {
+    display: flex;
+    min-height: 18rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-producto .modal-body .col-md-5 > img {
+    width: 100%;
+    height: 18rem;
+    max-height: 18rem;
+    object-fit: contain;
+  }
+
+  .modal-producto .modal-body .col-md-7 {
+    display: flex;
+    min-height: 18rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+  }
+
+  .modal-producto .modal-body .col-md-7 > .badge {
+    align-self: flex-start;
+  }
+
+  .modal-producto .modal-body .col-md-7 > p {
+    width: 100%;
+    margin: 0;
+  }
+
+  .modal-producto .modal-body .col-md-7 > p:nth-of-type(1) {
+    min-height: 3.2em;
+  }
+
+  .modal-producto .modal-body .col-md-7 > p:nth-of-type(2),
+  .modal-producto .modal-body .col-md-7 > p:nth-of-type(3) {
+    min-height: 1.6em;
+  }
+
+  .modal-producto .modal-body .col-md-7 > p:nth-of-type(4) {
+    min-height: 2em;
+  }
+}
+
+@mixin beneficios {
+  .grilla-beneficios-inicio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .75rem;
+  }
+
+  .beneficio-inicio {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: .65rem;
+    padding: .85rem .65rem;
+    text-align: center;
+    background-color: var(--color-white);
+    border: .0625rem solid var(--color-border);
+  }
+
+  .beneficio-inicio > img {
+    width: clamp(2.25rem, 6vw, 3.5rem);
+    height: clamp(2.25rem, 6vw, 3.5rem);
+    object-fit: contain;
+  }
+
+  .beneficio-inicio h3 {
+    margin: 0 0 .35rem;
+    color: var(--color-ink);
+    font-size: clamp(.75rem, 1.5vw, 1rem);
+    line-height: 1.3;
+  }
+
+  .beneficio-inicio p {
+    margin: 0;
+    font-size: clamp(.68rem, 1.2vw, .875rem);
+    line-height: 1.45;
+  }
+}
+
+@mixin grillas-tablet {
+  .pagina-catalogo .grilla-productos,
+  .grilla-ofertas,
+  .lista-valores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@mixin grillas-escritorio {
+  .pagina-catalogo .grilla-productos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grilla-ofertas,
+  .lista-valores {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+}
+
+@mixin modales-movil {
+  .modal-producto .modal-body .col-md-5,
+  .modal-producto .modal-body .col-md-7 {
+    min-height: 0;
+  }
+
+  .modal-producto .modal-body .col-md-5 > img {
+    height: 13rem;
+    max-height: 13rem;
+  }
+
+  .modal-producto .modal-body .col-md-7 {
+    gap: .5rem;
+  }
+}
