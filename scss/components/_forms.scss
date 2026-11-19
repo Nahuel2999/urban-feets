@@ -1,0 +1,48 @@
+@use "../utilities/variables";
+
+
+@mixin estructura {
+  .formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: variables.$espacio-lg;
+  }
+}
+
+
+@mixin campos {
+  /* ===== Formulario ===== */
+  fieldset {
+    border: variables.$borde-fino solid var(--color-border-strong);
+    padding: variables.$espacio-lg;
+  }
+
+  legend {
+    font-weight: 700;
+    padding: 0 variables.$espacio-sm;
+  }
+
+  label {
+    display: block;
+    margin-top: variables.$espacio-sm;
+    margin-bottom: variables.$espacio-minimo;
+    font-weight: 600;
+  }
+
+  input:not(.btn-check),
+  textarea,
+  select,
+  .formulario-contacto button {
+    width: 100%;
+    padding: .6rem;
+    border: variables.$borde-fino solid var(--color-input-border);
+    border-radius: variables.$radio-compacto;
+    font: inherit;
+  }
+
+  textarea {
+    min-height: 8rem;
+    resize: vertical;
+  }
+}

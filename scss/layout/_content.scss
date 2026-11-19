@@ -1,0 +1,415 @@
+@use "header";
+@use "nav";
+@use "../components/cards";
+@use "../utilities/variables";
+
+
+@mixin contenedores {
+  /* ===== Contenedores principales ===== */
+  .encabezado-navbar,
+  .contenido-principal,
+  .contenido-principal-layout-inicio,
+  .contenido-principal-layout-catalogo,
+  .pie-pagina {
+    width: min(100%, 75rem);
+    margin-inline: auto;
+    padding: variables.$espacio-md;
+  }
+}
+
+
+@mixin distribucion {
+  /* ===== Layout principal con CSS Grid ===== */
+  .contenido-principal,
+  .contenido-principal-layout-inicio,
+  .contenido-principal-layout-catalogo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: variables.$espacio-lg;
+    margin-top: variables.$espacio-md;
+    margin-bottom: variables.$espacio-md;
+    background-color: var(--color-white);
+    background-image:
+      linear-gradient(variables.$fondo-contenido, variables.$fondo-contenido),
+      url("../assets/fondo.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* ===== Áreas de la página de inicio ===== */
+  .contenido-principal-layout-inicio {
+    grid-template-areas:
+      "bienvenida"
+      "catalogo"
+      "ofertas"
+      "apoyo";
+  }
+
+  .pagina-inicio .seccion-bienvenida {
+    grid-area: bienvenida;
+  }
+
+  .pagina-inicio .seccion-catalogo-inicio,
+  .pagina-inicio .seccion-ofertas-seccion-resumen {
+    align-self: stretch;
+  }
+
+  .pagina-inicio .seccion-ofertas-seccion-resumen {
+    grid-area: ofertas;
+  }
+
+  .pagina-inicio .seccion-catalogo-inicio {
+    grid-area: catalogo;
+  }
+
+  /* ===== Áreas de las páginas internas ===== */
+  .contenido-ofertas {
+    grid-template-areas:
+      "contenido"
+      "apoyo";
+  }
+
+  .contenido-principal-layout-catalogo {
+    grid-template-areas: "contenido";
+  }
+
+  .contenido-sobre-nosotros {
+    grid-template-areas:
+      "presentacion"
+      "mision"
+      "apoyo";
+  }
+
+  .contenido-contacto {
+    grid-template-areas:
+      "formulario"
+      "datos"
+      "apoyo";
+  }
+
+  .pagina-catalogo .seccion-catalogo,
+  .contenido-ofertas .seccion-ofertas {
+    grid-area: contenido;
+  }
+
+  .contenido-sobre-nosotros .seccion-sobre-nosotros {
+    grid-area: presentacion;
+  }
+
+  .contenido-sobre-nosotros .seccion-mision {
+    grid-area: mision;
+  }
+
+  .contenido-contacto .seccion-contacto {
+    grid-area: formulario;
+  }
+
+  .contenido-contacto .seccion-datos-contacto {
+    grid-area: datos;
+  }
+
+  /* ===== Información adicional ===== */
+  .pagina-inicio .info-adicional,
+  .contenido-ofertas .info-adicional,
+  .contenido-sobre-nosotros .info-adicional,
+  .contenido-contacto .info-adicional {
+    grid-area: apoyo;
+  }
+}
+
+
+@mixin bloques {
+  /* ===== Colores de los bloques ===== */
+  .info-adicional,
+  .pagina-inicio .seccion-bienvenida,
+  .seccion-sobre-nosotros,
+  .seccion-contacto,
+  .pagina-catalogo .tarjeta-producto,
+  .tarjeta-oferta,
+  .tarjeta-valor {
+    background-color: var(--color-block);
+  }
+
+  .pagina-inicio .seccion-bienvenida,
+  .pagina-inicio .seccion-ofertas-seccion-resumen,
+  .pagina-catalogo .seccion-catalogo,
+  .seccion-ofertas,
+  .seccion-sobre-nosotros,
+  .seccion-mision,
+  .seccion-contacto,
+  .seccion-datos-contacto {
+    min-width: 0;
+  }
+
+  /* ===== Oferta destacada del catálogo ===== */
+  .pagina-catalogo .seccion-ofertas-catalogo {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: variables.$espacio-md;
+    color: var(--color-white);
+    background-color: var(--color-ink);
+    border-color: var(--color-orange);
+  }
+
+  .pagina-catalogo .seccion-ofertas-catalogo .titulo-seccion {
+    margin-bottom: variables.$espacio-xs;
+    color: var(--color-white);
+  }
+
+  .pagina-catalogo .seccion-ofertas-catalogo p {
+    margin-bottom: 0;
+  }
+}
+
+
+@mixin contenido-flex {
+  /* ===== Contenido interno con Flexbox ===== */
+  .pagina-inicio .seccion-bienvenida,
+  .pagina-catalogo .seccion-catalogo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: variables.$espacio-md;
+  }
+}
+
+
+@mixin listas {
+  .lista-info,
+  .lista-precios {
+    padding-left: variables.$espacio-lg;
+  }
+}
+
+
+@mixin acciones-inicio {
+  /* ===== Acciones de inicio ===== */
+  .pagina-inicio .seccion-catalogo-inicio,
+  .pagina-inicio .seccion-ofertas-seccion-resumen {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$espacio-intermedio;
+  }
+
+  .pagina-inicio .seccion-catalogo-inicio > .titulo-seccion,
+  .pagina-inicio .seccion-catalogo-inicio > p,
+  .pagina-inicio .seccion-ofertas-seccion-resumen > .titulo-seccion,
+  .pagina-inicio .seccion-ofertas-seccion-resumen > p {
+    margin: 0;
+  }
+}
+
+
+@mixin portada {
+  /* ===== Portada de inicio ===== */
+  .pagina-inicio .seccion-bienvenida {
+    gap: 1.5rem;
+  }
+
+  .presentacion-inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(12rem, .9fr);
+    align-items: center;
+    gap: variables.$espacio-md;
+    padding: clamp(variables.$espacio-lg, 3vw, 2.25rem);
+    border-left: .3rem solid var(--color-orange);
+    border-radius: variables.$radio-borde;
+    background: linear-gradient(135deg, var(--color-block), var(--color-white));
+  }
+
+  .presentacion-inicio > * {
+    margin: 0;
+  }
+
+  .texto-presentacion-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: variables.$espacio-intermedio;
+  }
+
+  .texto-presentacion-inicio > * {
+    margin: 0;
+  }
+
+  .imagen-portada {
+    width: 100%;
+    height: 100%;
+    min-height: 12rem;
+    object-fit: cover;
+    border-radius: variables.$radio-borde;
+  }
+
+  .presentacion-inicio .titulo-seccion {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+  }
+
+  .kicker-inicio {
+    color: var(--color-orange-dark);
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .acciones-inicio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: variables.$espacio-intermedio;
+    margin-top: variables.$espacio-xs;
+  }
+
+  .bloque-modelos-inicio {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$espacio-lg;
+  }
+
+  .encabezado-carrusel-inicio {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$espacio-sm;
+  }
+
+  .encabezado-carrusel-inicio h3, .encabezado-carrusel-inicio p {
+    margin: 0;
+  }
+
+  .encabezado-carrusel-inicio p {
+    color: var(--color-muted);
+  }
+}
+
+@mixin tablet {
+  /* ===== Diseño responsive para tablets ===== */
+  @media (min-width: variables.$tablet) {
+    // ===== Encabezado en tablet =====
+    @include header.tablet;
+
+    // ===== Menú en tablet =====
+    @include nav.tablet;
+
+    // ===== Grillas en tablet =====
+    @include cards.grillas-tablet;
+
+    .contenido-ofertas {
+      grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
+      grid-template-areas: "contenido apoyo";
+    }
+
+    .contenido-principal-layout-inicio {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        "bienvenida bienvenida"
+        "catalogo ofertas"
+        "apoyo apoyo";
+    }
+
+    .contenido-sobre-nosotros {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        "presentacion presentacion"
+        "mision mision"
+        "apoyo apoyo";
+    }
+
+    .contenido-contacto {
+      grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+      grid-template-rows: min-content min-content;
+      grid-template-areas:
+        "formulario datos"
+        "formulario apoyo";
+      align-content: start;
+      row-gap: variables.$espacio-md;
+    }
+
+    .contenido-contacto .seccion-contacto {
+      grid-row: 1 / span 2;
+    }
+
+    .contenido-contacto .seccion-datos-contacto,
+    .contenido-contacto .info-adicional {
+      align-self: start;
+      margin-bottom: 0;
+    }
+
+  }
+}
+
+@mixin navbar-escritorio {
+  /* ===== Navbar en escritorio ===== */
+  @media (min-width: variables.$menu-escritorio) {
+    // ===== Encabezado en escritorio =====
+    @include header.escritorio;
+
+    // ===== Menú en escritorio =====
+    @include nav.escritorio;
+
+
+  }
+}
+
+@mixin escritorio {
+  /* ===== Diseño responsive para escritorio ===== */
+  @media (min-width: variables.$escritorio) {
+    .contenido-ofertas {
+      grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+    }
+
+    // ===== Grillas en escritorio =====
+    @include cards.grillas-escritorio;
+
+    .contenido-sobre-nosotros {
+      grid-template-areas:
+        "presentacion presentacion"
+        "mision apoyo";
+    }
+
+  }
+}
+
+@mixin pantalla-pequena {
+  /* ===== Ajustes para pantallas pequeñas ===== */
+  @media (max-width: variables.$pantalla-pequena) {
+    // ===== Encabezado compacto =====
+    @include header.compacto;
+
+    /* ===== Carrusel ===== */
+    .imagen-carrusel {
+      height: 16rem;
+    }
+
+    .carrusel-sitio .carousel-caption {
+      padding-inline: 2.75rem;
+      font-size: .85rem;
+    }
+
+  }
+}
+
+@mixin movil {
+  /* ===== Ajustes móviles de modales y catálogo ===== */
+  @media (max-width: variables.$movil) {
+    // ===== Modales en móvil =====
+    @include cards.modales-movil;
+
+    .pagina-catalogo .seccion-ofertas-catalogo {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .presentacion-inicio {
+      grid-template-columns: 1fr;
+      padding: 1.1rem;
+    }
+
+    .imagen-portada {
+      min-height: 9rem;
+    }
+
+  }
+}

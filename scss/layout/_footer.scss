@@ -1,0 +1,44 @@
+@use "../utilities/variables";
+// Etapa 2: estilos de footer; mixins para preservar la cascada.
+
+@mixin lista-redes {
+  .lista-redes {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: variables.$espacio-lg;
+  }
+}
+
+@mixin enlaces {
+  /* ===== Enlaces de redes sociales ===== */
+  .enlace-red-social:link {
+    color: var(--color-orange-soft);
+    text-decoration: none;
+    transition: color variables.$transicion-rapida, text-decoration-color variables.$transicion-rapida;
+  }
+
+  .enlace-red-social:visited {
+    color: var(--color-social-visited);
+  }
+
+  .enlace-red-social:hover,
+  .enlace-red-social:focus {
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+
+  .enlace-red-social:active {
+    color: var(--color-orange);
+  }
+}
+
+@mixin pie {
+  /* ===== Pie de página ===== */
+  .pie-pagina {
+    background-color: var(--color-ink);
+    color: var(--color-white);
+  }
+}

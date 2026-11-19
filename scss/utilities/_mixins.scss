@@ -1,0 +1,5 @@
+// ===== Mixins reutilizables =====
+@mixin foco-visible {
+  outline: .2rem solid var(--color-orange-bright);
+  outline-offset: .15rem;
+}

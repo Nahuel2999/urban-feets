@@ -1,0 +1,45 @@
+// ===== Variables de colores =====
+$color-white: #fff;
+$color-ink: #111827;
+$color-text: #1F2937;
+$color-page: #F3F4F6;
+$color-block: #e0e1e4;
+$color-border: #e5e7eb;
+$color-border-strong: #d1d5db;
+$color-input-border: #9ca3af;
+$color-muted: #4b5563;
+$color-orange: #ea580c;
+$color-orange-bright: #f97316;
+$color-orange-soft: #fdba74;
+$color-orange-dark: #c2410c;
+$color-social-visited: #f9a66c;
+
+// ===== Puntos de quiebre responsivos =====
+$menu-movil: 61.99rem;
+$tablet: 48rem;
+$menu-escritorio: 62rem;
+$escritorio: 1024px;
+$pantalla-pequena: 30rem;
+$movil: 47.99rem;
+
+// ===== Espaciados, bordes y transiciones =====
+$espacio-sm: 0.5rem;
+$espacio-md: 1rem;
+$espacio-lg: 1.25rem;
+$espacio-intermedio: .75rem;
+$espacio-xs: .35rem;
+$espacio-minimo: .25rem;
+$radio-compacto: .375rem;
+$borde-fino: .0625rem;
+$borde-medio: .125rem;
+$transicion-rapida: .2s ease;
+$radio-borde: .5rem;
+
+// ===== Fondos y sombras =====
+$sombra-foco: rgba(249, 115, 22, .2);
+$sombra-acordeon: rgba(249, 115, 22, .25);
+$sombra-tarjeta: rgba(17, 24, 39, .15);
+$fondo-leyenda: rgba(17, 24, 39, .72);
+$fondo-control: rgba(17, 24, 39, .25);
+$fondo-control-activo: rgba(234, 88, 12, .55);
+$fondo-contenido: rgba(255, 255, 255, .78);

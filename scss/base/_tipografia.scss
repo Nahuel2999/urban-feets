@@ -1,0 +1,28 @@
+// ===== Tipografías =====
+
+/* ===== Tipografías ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap');
+
+@mixin titulos {
+  /* ===== Títulos ===== */
+  .titulo-seccion {
+    margin-top: 0;
+    color: var(--color-ink);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .titulo-tarjeta {
+    color: var(--color-orange);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0;
+  }
+}
+
+@mixin leyendas {
+  .leyenda-imagen {
+    color: var(--color-muted);
+    font-size: .875rem;
+  }
+}
