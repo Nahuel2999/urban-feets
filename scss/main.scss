@@ -1,39 +1,12 @@
-/* ===== Tipografías ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap');
-:root {
-  --color-white: #fff;
-  --color-ink: #111827;
-  --color-text: #1F2937;
-  --color-page: #F3F4F6;
-  --color-block: #e0e1e4;
-  --color-border: #e5e7eb;
-  --color-border-strong: #d1d5db;
-  --color-input-border: #9ca3af;
-  --color-muted: #4b5563;
-  --color-orange: #ea580c;
-  --color-orange-bright: #f97316;
-  --color-orange-soft: #fdba74;
-  --color-orange-dark: #c2410c;
-  --color-social-visited: #f9a66c;
-}
+// Migración SCSS - etapa 1. Los mixins se incluyen en el orden original.
+@use "base/base";
+@use "base/tipografia";
+@use "components/buttons";
+@use "components/cards";
 
-/* ===== Estilos generales ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: "Poppins", "Roboto", sans-serif;
-  color: var(--color-text);
-  background-color: var(--color-page);
-  line-height: 1.6;
-}
+// Estilos trasladados a base/_base.scss.
+@include base.estilos-generales;
 
 /* ===== Contenedores principales ===== */
 .encabezado-navbar,
@@ -267,20 +240,8 @@ body {
   grid-area: apoyo;
 }
 
-/* ===== Secciones, tarjetas e información adicional ===== */
-section,
-aside,
-article {
-  background-color: var(--color-block);
-  padding: 1.25rem;
-  border: .0625rem solid var(--color-border);
-  border-radius: .5rem;
-}
-
-section,
-aside {
-  margin-bottom: 1rem;
-}
+// Estilos trasladados a base/_base.scss.
+@include base.bloques-generales;
 
 /* ===== Colores de los bloques ===== */
 .info-adicional,
@@ -325,161 +286,24 @@ aside {
   margin-bottom: 0;
 }
 
-/* ===== Grillas de tarjetas ===== */
-.pagina-catalogo .grilla-productos,
-.grilla-ofertas,
-.lista-valores {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: stretch;
-}
+// Estilos trasladados a components/_cards.scss.
+@include cards.tarjetas;
 
-.pagina-catalogo .tarjeta-producto,
-.tarjeta-oferta,
-.tarjeta-valor {
-  min-width: 0;
-  background-color: var(--color-page);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-
-/* ===== Etiquetas de ofertas ===== */
-.etiqueta-oferta {
-  align-self: flex-start;
-  color: var(--color-white);
-  background-color: var(--color-orange);
-}
-
-/* ===== Tarjetas Bootstrap personalizadas ===== */
-.tarjeta-producto.card,
-.tarjeta-oferta.card {
-  color: var(--color-text);
-  border: .0625rem solid var(--color-border);
-  border-radius: .5rem;
-  background-color: var(--color-page);
-}
-
-.tarjeta-producto.card .card-body,
-.tarjeta-oferta.card .card-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  width: 100%;
-  padding: 0;
-}
-
-.tarjeta-producto.card .card-title,
-.tarjeta-oferta.card .card-title {
-  min-height: 2.4em;
-  margin-bottom: 1rem;
-}
-
-.badge-genero {
-  align-self: flex-start;
-  margin-bottom: .5rem;
-  color: var(--color-ink);
-  background-color: var(--color-orange-soft);
-}
-
-.tarjeta-producto.card .card-text {
-  color: var(--color-text);
-}
-
-/* ===== Espacios uniformes en tarjetas de productos y ofertas ===== */
-.tarjeta-producto.card figure,
-.tarjeta-oferta.card figure {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 1rem;
-}
-
-.tarjeta-producto.card figure img,
-.tarjeta-oferta.card figure img {
-  width: 100%;
-  height: 14rem;
-  object-fit: contain;
-  background-color: var(--color-white);
-}
-
-.tarjeta-producto.card .leyenda-imagen,
-.tarjeta-oferta.card .leyenda-imagen {
-  min-height: 2.8em;
-}
-
-.tarjeta-producto.card figure + .card-text {
-  min-height: 4.8rem;
-}
-
-.tarjeta-producto.card figure + .card-text + .card-text {
-  min-height: 1.6rem;
-}
-
-/* ===== Ventanas de detalle de producto ===== */
-.modal-producto {
-  color: var(--color-text);
-  background-color: var(--color-block);
-  border-color: var(--color-border);
-}
-
-.modal-producto .modal-header {
-  border-bottom-color: var(--color-border-strong);
-}
-
-.imagen-modal-producto {
-  width: 100%;
-  max-height: 18rem;
-  object-fit: contain;
-  border-radius: .375rem;
-}
+// Estilos trasladados a components/_cards.scss.
+@include cards.modales;
 
 .contenido-pestanas {
   padding-top: 1rem;
 }
 
-/* ===== Selectores de talle y género ===== */
-.selector-talle .form-select:focus,
-.selector-genero .form-select:focus {
-  border-color: var(--color-orange-bright);
-  box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .2);
-}
+// Estilos trasladados a components/_cards.scss.
+@include cards.selectores;
 
-/* ===== Alineación de botones de tarjetas ===== */
-.tarjeta-producto.card .boton-enlace,
-.tarjeta-oferta.card .boton-enlace {
-  align-self: flex-start;
-}
+// Estilos trasladados a components/_buttons.scss.
+@include buttons.botones-tarjetas;
 
-/* ===== Estados interactivos de tarjetas ===== */
-.grilla-productos .tarjeta-producto:hover,
-.grilla-ofertas .tarjeta-oferta:hover,
-.lista-valores .tarjeta-valor:hover {
-  transform: translateY(-.2rem);
-  border-color: var(--color-orange);
-  box-shadow: 0 .5rem 1rem rgba(17, 24, 39, .15);
-}
-
-.grilla-productos .tarjeta-producto:focus-within,
-.grilla-ofertas .tarjeta-oferta:focus-within,
-.lista-valores .tarjeta-valor:focus-within {
-  outline: .2rem solid var(--color-orange-bright);
-  outline-offset: .15rem;
-}
-
-.grilla-productos .tarjeta-producto:active,
-.grilla-ofertas .tarjeta-oferta:active,
-.lista-valores .tarjeta-valor:active {
-  transform: translateY(0);
-}
-
-.lista-valores {
-  list-style: none;
-  padding-left: 0;
-}
-
-.grilla-ofertas .tarjeta-oferta,
-.lista-valores .tarjeta-valor {
-  height: 100%;
-}
+// Estilos trasladados a components/_cards.scss.
+@include cards.estados-tarjetas;
 
 /* ===== Contenido interno con Flexbox ===== */
 .pagina-inicio .seccion-bienvenida,
@@ -511,10 +335,8 @@ aside {
   padding-left: 1.25rem;
 }
 
-/* ===== Pseudoclases estructurales ===== */
-.lista-valores > li:nth-child(even) .tarjeta-valor {
-  border-color: var(--color-border);
-}
+// Estilos trasladados a components/_cards.scss.
+@include cards.alternancia;
 
 /* ===== Acordeón de preguntas frecuentes ===== */
 .acordeon-preguntas {
@@ -543,33 +365,14 @@ aside {
   background-color: var(--color-white);
 }
 
-/* ===== Títulos ===== */
-.titulo-seccion {
-  margin-top: 0;
-  color: var(--color-ink);
-  font-size: 1.5rem;
-  font-weight: 700;
-}
+// Estilos trasladados a base/_tipografia.scss.
+@include tipografia.titulos;
 
-.titulo-tarjeta {
-  color: var(--color-orange);
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 0;
-}
+// Estilos trasladados a base/_base.scss.
+@include base.imagenes;
 
-/* ===== Imágenes ===== */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: .5rem;
-}
-
-.leyenda-imagen {
-  color: var(--color-muted);
-  font-size: .875rem;
-}
+// Estilos trasladados a base/_tipografia.scss.
+@include tipografia.leyendas;
 
 /* ===== Carousel Bootstrap personalizado ===== */
 .carrusel-sitio {
@@ -667,34 +470,8 @@ main a:not(.boton-enlace):focus {
   color: var(--color-orange-dark);
 }
 
-/* ===== Botones ===== */
-.boton-enlace {
-  display: inline-block;
-  width: auto;
-  padding: .5em 1em;
-  border: .125rem solid var(--color-orange);
-  color: var(--color-orange);
-  background-color: var(--color-white);
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: .375rem;
-  cursor: pointer;
-  transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
-}
-
-.boton-enlace:hover,
-.boton-enlace:focus {
-  background-color: var(--color-orange);
-  border-color: var(--color-orange);
-  color: var(--color-white);
-}
-
-.boton-enlace:active {
-  background-color: var(--color-orange-dark);
-  border-color: var(--color-orange-dark);
-  color: var(--color-white);
-  transform: translateY(.1rem);
-}
+// Estilos trasladados a components/_buttons.scss.
+@include buttons.botones;
 
 /* ===== Acciones de inicio ===== */
 .pagina-inicio .seccion-catalogo-inicio,
@@ -711,21 +488,11 @@ main a:not(.boton-enlace):focus {
   margin: 0;
 }
 
-.pagina-inicio .seccion-catalogo-inicio > .boton-enlace,
-.pagina-inicio .seccion-ofertas-seccion-resumen > .boton-enlace {
-  align-self: flex-start;
-  margin-top: .25rem;
-}
+// Estilos trasladados a components/_buttons.scss.
+@include buttons.botones-inicio;
 
-/* ===== Foco de teclado ===== */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: .2rem solid var(--color-orange-bright);
-  outline-offset: .15rem;
-}
+// Estilos trasladados a base/_base.scss.
+@include base.foco-teclado;
 
 /* ===== Formulario ===== */
 fieldset {
@@ -816,14 +583,8 @@ textarea {
   display: none;
 }
 
-.descripcion-producto {
-  min-height: 3.2em;
-}
-
-.selector-talle,
-.selector-genero {
-  margin-top: 0;
-}
+// Estilos trasladados a components/_cards.scss.
+@include cards.descripcion-selectores;
 
 /* ===== Controles compactos de catálogo ===== */
 .paginacion-catalogo .btn-group {
@@ -840,67 +601,8 @@ textarea {
   white-space: nowrap;
 }
 
-/* ===== Uniformidad de tarjetas y detalles ===== */
-.etiquetas-producto {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: .35rem;
-  margin-bottom: .75rem;
-}
-
-.etiquetas-producto .badge {
-  align-self: flex-start;
-  margin-bottom: 0;
-}
-
-.modal-producto .modal-body > .row {
-  align-items: stretch !important;
-}
-
-.modal-producto .modal-body .col-md-5 {
-  display: flex;
-  min-height: 18rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-producto .modal-body .col-md-5 > img {
-  width: 100%;
-  height: 18rem;
-  max-height: 18rem;
-  object-fit: contain;
-}
-
-.modal-producto .modal-body .col-md-7 {
-  display: flex;
-  min-height: 18rem;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: .75rem;
-}
-
-.modal-producto .modal-body .col-md-7 > .badge {
-  align-self: flex-start;
-}
-
-.modal-producto .modal-body .col-md-7 > p {
-  width: 100%;
-  margin: 0;
-}
-
-.modal-producto .modal-body .col-md-7 > p:nth-of-type(1) {
-  min-height: 3.2em;
-}
-
-.modal-producto .modal-body .col-md-7 > p:nth-of-type(2),
-.modal-producto .modal-body .col-md-7 > p:nth-of-type(3) {
-  min-height: 1.6em;
-}
-
-.modal-producto .modal-body .col-md-7 > p:nth-of-type(4) {
-  min-height: 2em;
-}
+// Estilos trasladados a components/_cards.scss.
+@include cards.detalles;
 
 /* ===== Navegación inferior de catálogos ===== */
 .paginacion-inferior {
@@ -1052,42 +754,8 @@ textarea {
   color: var(--color-muted);
 }
 
-.grilla-beneficios-inicio {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .75rem;
-}
-
-.beneficio-inicio {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  align-items: center;
-  gap: .65rem;
-  padding: .85rem .65rem;
-  text-align: center;
-  background-color: var(--color-white);
-  border: .0625rem solid var(--color-border);
-}
-
-.beneficio-inicio > img {
-  width: clamp(2.25rem, 6vw, 3.5rem);
-  height: clamp(2.25rem, 6vw, 3.5rem);
-  object-fit: contain;
-}
-
-.beneficio-inicio h3 {
-  margin: 0 0 .35rem;
-  color: var(--color-ink);
-  font-size: clamp(.75rem, 1.5vw, 1rem);
-  line-height: 1.3;
-}
-
-.beneficio-inicio p {
-  margin: 0;
-  font-size: clamp(.68rem, 1.2vw, .875rem);
-  line-height: 1.45;
-}
+// Estilos trasladados a components/_cards.scss.
+@include cards.beneficios;
 
 /* ===== Menú desplegable en móvil y tablet ===== */
 @media (max-width: 61.99rem) {
@@ -1129,11 +797,8 @@ textarea {
     align-items: flex-start;
   }
 
-  .pagina-catalogo .grilla-productos,
-  .grilla-ofertas,
-  .lista-valores {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  // Estilos trasladados a components/_cards.scss.
+  @include cards.grillas-tablet;
 
   .contenido-ofertas {
     grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
@@ -1206,14 +871,8 @@ textarea {
     grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
   }
 
-  .pagina-catalogo .grilla-productos {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .grilla-ofertas,
-  .lista-valores {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  }
+  // Estilos trasladados a components/_cards.scss.
+  @include cards.grillas-escritorio;
 
   .contenido-sobre-nosotros {
     grid-template-areas:
@@ -1248,34 +907,13 @@ textarea {
 
 }
 
-/* ===== Preferencia de movimiento reducido ===== */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-
-}
+// Estilos trasladados a base/_base.scss.
+@include base.movimiento-reducido;
 
 /* ===== Ajustes móviles de modales y catálogo ===== */
 @media (max-width: 47.99rem) {
-  .modal-producto .modal-body .col-md-5,
-  .modal-producto .modal-body .col-md-7 {
-    min-height: 0;
-  }
-
-  .modal-producto .modal-body .col-md-5 > img {
-    height: 13rem;
-    max-height: 13rem;
-  }
-
-  .modal-producto .modal-body .col-md-7 {
-    gap: .5rem;
-  }
+  // Estilos trasladados a components/_cards.scss.
+  @include cards.modales-movil;
 
   .pagina-catalogo .seccion-ofertas-catalogo {
     align-items: flex-start;

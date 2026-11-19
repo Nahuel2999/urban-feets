@@ -1,0 +1,93 @@
+// Migración SCSS: base/_base.scss
+// Los mixins conservan el orden de las reglas CSS al invocarse desde main.scss.
+
+@mixin estilos-generales {
+  :root {
+    --color-white: #fff;
+    --color-ink: #111827;
+    --color-text: #1F2937;
+    --color-page: #F3F4F6;
+    --color-block: #e0e1e4;
+    --color-border: #e5e7eb;
+    --color-border-strong: #d1d5db;
+    --color-input-border: #9ca3af;
+    --color-muted: #4b5563;
+    --color-orange: #ea580c;
+    --color-orange-bright: #f97316;
+    --color-orange-soft: #fdba74;
+    --color-orange-dark: #c2410c;
+    --color-social-visited: #f9a66c;
+  }
+
+  /* ===== Estilos generales ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-family: "Poppins", "Roboto", sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-page);
+    line-height: 1.6;
+  }
+}
+
+@mixin bloques-generales {
+  /* ===== Secciones, tarjetas e información adicional ===== */
+  section,
+  aside,
+  article {
+    background-color: var(--color-block);
+    padding: 1.25rem;
+    border: .0625rem solid var(--color-border);
+    border-radius: .5rem;
+  }
+
+  section,
+  aside {
+    margin-bottom: 1rem;
+  }
+}
+
+@mixin imagenes {
+  /* ===== Imágenes ===== */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: .5rem;
+  }
+}
+
+@mixin foco-teclado {
+  /* ===== Foco de teclado ===== */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: .2rem solid var(--color-orange-bright);
+    outline-offset: .15rem;
+  }
+}
+
+@mixin movimiento-reducido {
+  /* ===== Preferencia de movimiento reducido ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: .01ms !important;
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+
+  }
+}
