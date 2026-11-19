@@ -1,22 +1,24 @@
-// Migración SCSS: base/_base.scss
-// Los mixins conservan el orden de las reglas CSS al invocarse desde main.scss.
+@use "../utilities/variables";
+@use "../utilities/mixins";
+
+// ===== Estilos generales =====
 
 @mixin estilos-generales {
   :root {
-    --color-white: #fff;
-    --color-ink: #111827;
-    --color-text: #1F2937;
-    --color-page: #F3F4F6;
-    --color-block: #e0e1e4;
-    --color-border: #e5e7eb;
-    --color-border-strong: #d1d5db;
-    --color-input-border: #9ca3af;
-    --color-muted: #4b5563;
-    --color-orange: #ea580c;
-    --color-orange-bright: #f97316;
-    --color-orange-soft: #fdba74;
-    --color-orange-dark: #c2410c;
-    --color-social-visited: #f9a66c;
+    --color-white: #{variables.$color-white};
+    --color-ink: #{variables.$color-ink};
+    --color-text: #{variables.$color-text};
+    --color-page: #{variables.$color-page};
+    --color-block: #{variables.$color-block};
+    --color-border: #{variables.$color-border};
+    --color-border-strong: #{variables.$color-border-strong};
+    --color-input-border: #{variables.$color-input-border};
+    --color-muted: #{variables.$color-muted};
+    --color-orange: #{variables.$color-orange};
+    --color-orange-bright: #{variables.$color-orange-bright};
+    --color-orange-soft: #{variables.$color-orange-soft};
+    --color-orange-dark: #{variables.$color-orange-dark};
+    --color-social-visited: #{variables.$color-social-visited};
   }
 
   /* ===== Estilos generales ===== */
@@ -72,8 +74,7 @@
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible {
-    outline: .2rem solid var(--color-orange-bright);
-    outline-offset: .15rem;
+    @include mixins.foco-visible;
   }
 }
 

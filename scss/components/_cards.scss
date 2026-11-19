@@ -1,5 +1,6 @@
-// Migración SCSS: components/_cards.scss
-// Los mixins conservan el orden de las reglas CSS al invocarse desde main.scss.
+@use "../utilities/mixins";
+
+// ===== Tarjetas y componentes =====
 
 @mixin tarjetas {
   /* ===== Grillas de tarjetas ===== */
@@ -99,7 +100,7 @@
     background-color: var(--color-block);
     border-color: var(--color-border);
   }
-  
+
   .modal-producto .modal-header {
     border-bottom-color: var(--color-border-strong);
   }
@@ -134,8 +135,7 @@
   .grilla-productos .tarjeta-producto:focus-within,
   .grilla-ofertas .tarjeta-oferta:focus-within,
   .lista-valores .tarjeta-valor:focus-within {
-    outline: .2rem solid var(--color-orange-bright);
-    outline-offset: .15rem;
+    @include mixins.foco-visible;
   }
 
   .grilla-productos .tarjeta-producto:active,

@@ -1,0 +1,63 @@
+// ===== Encabezado =====
+
+@mixin encabezado {
+  /* ===== Encabezado ===== */
+  .encabezado-navbar {
+    background-color: var(--color-ink);
+    color: var(--color-white);
+    border-bottom: .25rem solid var(--color-orange);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "logo marca menu";
+    gap: .5rem;
+    justify-items: stretch;
+    align-items: center;
+  }
+
+  .logo-sitio {
+    grid-area: logo;
+    justify-self: start;
+    display: block;
+  }
+
+  .logo-sitio img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+  }
+
+  .titulo-sitio {
+    grid-area: marca;
+    margin: 0;
+    justify-self: start;
+    font-size: clamp(1.25rem, 6vw, 2rem);
+    font-weight: 700;
+    text-align: left;
+  }
+}
+
+@mixin tablet {
+  .titulo-sitio {
+    white-space: nowrap;
+  }
+}
+
+@mixin escritorio {
+  .encabezado-navbar {
+    grid-template-columns: auto auto minmax(0, 1fr) auto;
+    grid-template-areas: "logo marca . menu";
+  }
+}
+
+@mixin compacto {
+  /* ===== Encabezado compacto ===== */
+  .logo-sitio img {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .titulo-sitio {
+    font-size: clamp(1rem, 5vw, 1.4rem);
+    white-space: nowrap;
+  }
+}

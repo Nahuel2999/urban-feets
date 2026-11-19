@@ -1,11 +1,17 @@
-// Migración SCSS - etapa 1. Los mixins se incluyen en el orden original.
+// ===== Módulos de estilos base y componentes =====
 @use "base/base";
 @use "base/tipografia";
 @use "components/buttons";
 @use "components/cards";
+// ===== Módulos de estructura y utilidades =====
+@use "layout/header";
+@use "layout/nav";
+@use "layout/footer";
+@use "utilities/variables";
+@use "utilities/mixins";
 
 
-// Estilos trasladados a base/_base.scss.
+// ===== Estilos generales =====
 @include base.estilos-generales;
 
 /* ===== Contenedores principales ===== */
@@ -19,127 +25,14 @@
   padding: 1rem;
 }
 
-/* ===== Encabezado ===== */
-.encabezado-navbar {
-  background-color: var(--color-ink);
-  color: var(--color-white);
-  border-bottom: .25rem solid var(--color-orange);
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  grid-template-areas: "logo marca menu";
-  gap: .5rem;
-  justify-items: stretch;
-  align-items: center;
-}
+// ===== Encabezado =====
+@include header.encabezado;
 
-.logo-sitio {
-  grid-area: logo;
-  justify-self: start;
-  display: block;
-}
+// ===== Menú de navegación =====
+@include nav.menu;
 
-.logo-sitio img {
-  width: 3.5rem;
-  height: 3.5rem;
-  object-fit: contain;
-}
-
-.titulo-sitio {
-  grid-area: marca;
-  margin: 0;
-  justify-self: start;
-  font-size: clamp(1.25rem, 6vw, 2rem);
-  font-weight: 700;
-  text-align: left;
-}
-
-/* ===== Navbar Bootstrap personalizada ===== */
-.menu-navegacion {
-  grid-area: menu;
-  width: auto;
-  padding: 0;
-  position: relative;
-  justify-self: end;
-}
-
-.boton-menu {
-  display: block;
-  margin-left: auto;
-  border-color: var(--color-orange-bright);
-}
-
-.menu-navegacion .navbar-collapse {
-  justify-content: flex-start;
-}
-
-.lista-navegacion {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  gap: .25rem;
-  margin: 0;
-  padding: 0;
-}
-
-.enlace-menu {
-  color: var(--color-white);
-  font-weight: 700;
-  text-decoration: none;
-  padding: .5em .75em;
-  border: .125rem solid transparent;
-  border-radius: .375rem;
-  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
-}
-
-/* ===== Estados de los enlaces del menú ===== */
-.enlace-menu:link {
-  color: var(--color-white);
-}
-
-.enlace-menu:visited {
-  color: var(--color-orange-soft);
-}
-
-/* ===== Enlace de navegación actual ===== */
-.enlace-menu[aria-current="page"] {
-  color: var(--color-orange-bright);
-  border-color: var(--color-orange-bright);
-}
-
-.enlace-menu:hover,
-.enlace-menu:focus {
-  color: var(--color-orange-bright);
-  border-color: var(--color-orange-bright);
-}
-
-.enlace-menu:active {
-  color: var(--color-white);
-  background-color: var(--color-orange);
-}
-
-/* ===== Migas de pan ===== */
-.breadcrumb {
-  margin-bottom: 1rem;
-  font-size: .9rem;
-}
-
-.breadcrumb-item a {
-  color: var(--color-orange-dark);
-  text-decoration: none;
-}
-
-.breadcrumb-item a:hover,
-.breadcrumb-item a:focus {
-  color: var(--color-orange);
-  text-decoration: underline;
-}
-
-.breadcrumb-item.active {
-  color: var(--color-muted);
-}
+// ===== Migas de pan =====
+@include nav.migas;
 
 /* ===== Layout principal con CSS Grid ===== */
 .contenido-principal,
@@ -240,7 +133,7 @@
   grid-area: apoyo;
 }
 
-// Estilos trasladados a base/_base.scss.
+// ===== Bloques generales =====
 @include base.bloques-generales;
 
 /* ===== Colores de los bloques ===== */
@@ -286,23 +179,23 @@
   margin-bottom: 0;
 }
 
-// Estilos trasladados a components/_cards.scss.
+// ===== Tarjetas y grillas =====
 @include cards.tarjetas;
 
-// Estilos trasladados a components/_cards.scss.
+// ===== Ventanas de detalle =====
 @include cards.modales;
 
 .contenido-pestanas {
   padding-top: 1rem;
 }
 
-// Estilos trasladados a components/_cards.scss.
+// ===== Selectores de talle y género =====
 @include cards.selectores;
 
-// Estilos trasladados a components/_buttons.scss.
+// ===== Botones de tarjetas =====
 @include buttons.botones-tarjetas;
 
-// Estilos trasladados a components/_cards.scss.
+// ===== Estados interactivos de tarjetas =====
 @include cards.estados-tarjetas;
 
 /* ===== Contenido interno con Flexbox ===== */
@@ -321,21 +214,15 @@
   gap: 1.25rem;
 }
 
-.lista-redes {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 1.25rem;
-}
+// ===== Lista de redes sociales =====
+@include footer.lista-redes;
 
 .lista-info,
 .lista-precios {
   padding-left: 1.25rem;
 }
 
-// Estilos trasladados a components/_cards.scss.
+// ===== Alternancia de tarjetas =====
 @include cards.alternancia;
 
 /* ===== Acordeón de preguntas frecuentes ===== */
@@ -365,13 +252,13 @@
   background-color: var(--color-white);
 }
 
-// Estilos trasladados a base/_tipografia.scss.
+// ===== Títulos =====
 @include tipografia.titulos;
 
-// Estilos trasladados a base/_base.scss.
+// ===== Imágenes =====
 @include base.imagenes;
 
-// Estilos trasladados a base/_tipografia.scss.
+// ===== Leyendas =====
 @include tipografia.leyendas;
 
 /* ===== Carousel Bootstrap personalizado ===== */
@@ -439,26 +326,8 @@
   background-color: rgba(234, 88, 12, .55);
 }
 
-/* ===== Enlaces de redes sociales ===== */
-.enlace-red-social:link {
-  color: var(--color-orange-soft);
-  text-decoration: none;
-  transition: color .2s ease, text-decoration-color .2s ease;
-}
-
-.enlace-red-social:visited {
-  color: var(--color-social-visited);
-}
-
-.enlace-red-social:hover,
-.enlace-red-social:focus {
-  color: var(--color-white);
-  text-decoration: underline;
-}
-
-.enlace-red-social:active {
-  color: var(--color-orange);
-}
+// ===== Enlaces de redes sociales =====
+@include footer.enlaces;
 
 /* ===== Enlaces del contenido ===== */
 main a:not(.boton-enlace) {
@@ -470,7 +339,7 @@ main a:not(.boton-enlace):focus {
   color: var(--color-orange-dark);
 }
 
-// Estilos trasladados a components/_buttons.scss.
+// ===== Botones =====
 @include buttons.botones;
 
 /* ===== Acciones de inicio ===== */
@@ -488,10 +357,10 @@ main a:not(.boton-enlace):focus {
   margin: 0;
 }
 
-// Estilos trasladados a components/_buttons.scss.
+// ===== Botones de inicio =====
 @include buttons.botones-inicio;
 
-// Estilos trasladados a base/_base.scss.
+// ===== Foco de teclado =====
 @include base.foco-teclado;
 
 /* ===== Formulario ===== */
@@ -528,11 +397,8 @@ textarea {
   resize: vertical;
 }
 
-/* ===== Pie de página ===== */
-.pie-pagina {
-  background-color: var(--color-ink);
-  color: var(--color-white);
-}
+// ===== Pie de página =====
+@include footer.pie;
 
 /* ===== Controles y paginación de catálogos ===== */
 .controles-catalogo {
@@ -571,8 +437,7 @@ textarea {
 }
 
 .controles-catalogo .btn-check:focus-visible + .btn-outline-secondary {
-  outline: .2rem solid var(--color-orange-bright);
-  outline-offset: .15rem;
+  @include mixins.foco-visible;
 }
 
 /* ===== Paginación de catálogos ===== */
@@ -583,7 +448,7 @@ textarea {
   display: none;
 }
 
-// Estilos trasladados a components/_cards.scss.
+// ===== Descripción y selectores =====
 @include cards.descripcion-selectores;
 
 /* ===== Controles compactos de catálogo ===== */
@@ -601,7 +466,7 @@ textarea {
   white-space: nowrap;
 }
 
-// Estilos trasladados a components/_cards.scss.
+// ===== Detalles de productos =====
 @include cards.detalles;
 
 /* ===== Navegación inferior de catálogos ===== */
@@ -754,50 +619,21 @@ textarea {
   color: var(--color-muted);
 }
 
-// Estilos trasladados a components/_cards.scss.
+// ===== Beneficios =====
 @include cards.beneficios;
 
-/* ===== Menú desplegable en móvil y tablet ===== */
-@media (max-width: 61.99rem) {
-  .menu-navegacion {
-    z-index: 2;
-  }
-
-  .menu-navegacion .navbar-collapse {
-    position: absolute;
-    top: calc(100% + 1.75rem);
-    right: 0;
-    z-index: 20;
-    width: min(88vw, 18rem);
-    padding: .5rem;
-    border: .0625rem solid var(--color-orange);
-    border-radius: .5rem;
-    background-color: var(--color-ink);
-    box-shadow: 0 .5rem 1rem rgba(17, 24, 39, .28);
-  }
-
-  .menu-navegacion .navbar-collapse .lista-navegacion {
-    align-items: stretch;
-    width: 100%;
-  }
-
-  .menu-navegacion .navbar-collapse .enlace-menu {
-    width: 100%;
-    text-align: left;
-  }
-}
+// ===== Menú móvil =====
+@include nav.menu-movil;
 
 /* ===== Diseño responsive para tablets ===== */
-@media (min-width: 48rem) {
-  .titulo-sitio {
-    white-space: nowrap;
-  }
+@media (min-width: variables.$tablet) {
+  // ===== Encabezado en tablet =====
+  @include header.tablet;
 
-  .lista-navegacion {
-    align-items: flex-start;
-  }
+  // ===== Menú en tablet =====
+  @include nav.tablet;
 
-  // Estilos trasladados a components/_cards.scss.
+  // ===== Grillas en tablet =====
   @include cards.grillas-tablet;
 
   .contenido-ofertas {
@@ -844,34 +680,23 @@ textarea {
 }
 
 /* ===== Navbar en escritorio ===== */
-@media (min-width: 62rem) {
-  .encabezado-navbar {
-    grid-template-columns: auto auto minmax(0, 1fr) auto;
-    grid-template-areas: "logo marca . menu";
-  }
+@media (min-width: variables.$menu-escritorio) {
+  // ===== Encabezado en escritorio =====
+  @include header.escritorio;
 
-  .menu-navegacion {
-    width: max-content;
-    max-width: 100%;
-    justify-self: end;
-  }
+  // ===== Menú en escritorio =====
+  @include nav.escritorio;
 
-  .lista-navegacion {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-  }
 
 }
 
 /* ===== Diseño responsive para escritorio ===== */
-@media (min-width: 1024px) {
+@media (min-width: variables.$escritorio) {
   .contenido-ofertas {
     grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
   }
 
-  // Estilos trasladados a components/_cards.scss.
+  // ===== Grillas en escritorio =====
   @include cards.grillas-escritorio;
 
   .contenido-sobre-nosotros {
@@ -883,17 +708,9 @@ textarea {
 }
 
 /* ===== Ajustes para pantallas pequeñas ===== */
-@media (max-width: 30rem) {
-  /* ===== Encabezado compacto ===== */
-  .logo-sitio img {
-    width: 2.75rem;
-    height: 2.75rem;
-  }
-
-  .titulo-sitio {
-    font-size: clamp(1rem, 5vw, 1.4rem);
-    white-space: nowrap;
-  }
+@media (max-width: variables.$pantalla-pequena) {
+  // ===== Encabezado compacto =====
+  @include header.compacto;
 
   /* ===== Carrusel ===== */
   .imagen-carrusel {
@@ -907,12 +724,12 @@ textarea {
 
 }
 
-// Estilos trasladados a base/_base.scss.
+// ===== Preferencia de movimiento reducido =====
 @include base.movimiento-reducido;
 
 /* ===== Ajustes móviles de modales y catálogo ===== */
-@media (max-width: 47.99rem) {
-  // Estilos trasladados a components/_cards.scss.
+@media (max-width: variables.$movil) {
+  // ===== Modales en móvil =====
   @include cards.modales-movil;
 
   .pagina-catalogo .seccion-ofertas-catalogo {
