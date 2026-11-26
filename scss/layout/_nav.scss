@@ -1,4 +1,5 @@
 @use "../utilities/variables";
+@use "../utilities/mixins";
 
 // ===== Navegación =====
 
@@ -38,8 +39,7 @@
     color: var(--color-white);
     font-weight: 700;
     text-decoration: none;
-    padding: .5em .75em;
-    border: variables.$borde-medio solid transparent;
+    @include mixins.espaciado-y-borde-boton(.5em .75em, transparent);
     border-radius: variables.$radio-compacto;
     transition: color variables.$transicion-rapida, background-color variables.$transicion-rapida, border-color variables.$transicion-rapida;
 

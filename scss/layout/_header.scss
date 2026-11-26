@@ -52,9 +52,11 @@
 
 @mixin compacto {
   /* ===== Encabezado compacto ===== */
-  .logo-sitio img {
-    width: 2.75rem;
-    height: 2.75rem;
+  .logo-sitio {
+    img {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
   }
 
   .titulo-sitio {

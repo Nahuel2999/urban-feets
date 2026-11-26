@@ -1,8 +1,16 @@
+@use "variables";
+
 // ===== Mixins reutilizables =====
+@mixin espaciado-y-borde-boton($relleno, $color-borde) {
+  padding: $relleno;
+  border: variables.$borde-medio solid $color-borde;
+}
+
 @mixin foco-visible($color: var(--color-orange-bright), $grosor: .2rem, $distancia: .15rem) {
   outline: $grosor solid $color;
   outline-offset: $distancia;
 }
+
 @mixin imagen-ajustada($altura, $ajuste) {
   width: 100%;
   height: $altura;

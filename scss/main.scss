@@ -1,3 +1,7 @@
+// Utilidades
+@use "utilities/variables";
+@use "utilities/mixins";
+
 // Base y tipografía
 @use "base/base";
 @use "base/tipografia";
@@ -16,6 +20,8 @@
 @use "components/forms";
 @use "components/pagination";
 @use "components/tabs";
+
+// ===== Inclusión de estilos =====
 
 // Base y contenedores
 @include base.estilos-generales;

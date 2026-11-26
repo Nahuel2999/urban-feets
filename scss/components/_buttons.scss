@@ -1,4 +1,5 @@
 @use "../utilities/variables";
+@use "../utilities/mixins";
 // ===== Botones =====
 
 @mixin botones-tarjetas {
@@ -14,8 +15,7 @@
   .boton-enlace {
     display: inline-block;
     width: auto;
-    padding: .5em 1em;
-    border: variables.$borde-medio solid var(--color-orange);
+    @include mixins.espaciado-y-borde-boton(.5em 1em, var(--color-orange));
     color: var(--color-orange);
     background-color: var(--color-white);
     text-decoration: none;
