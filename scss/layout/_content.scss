@@ -47,21 +47,23 @@
       "apoyo";
   }
 
-  .pagina-inicio .seccion-bienvenida {
-    grid-area: bienvenida;
-  }
+  .pagina-inicio {
+    .seccion-bienvenida {
+      grid-area: bienvenida;
+    }
 
-  .pagina-inicio .seccion-catalogo-inicio,
-  .pagina-inicio .seccion-ofertas-seccion-resumen {
-    align-self: stretch;
-  }
+    .seccion-catalogo-inicio,
+    .seccion-ofertas-seccion-resumen {
+      align-self: stretch;
+    }
 
-  .pagina-inicio .seccion-ofertas-seccion-resumen {
-    grid-area: ofertas;
-  }
+    .seccion-ofertas-seccion-resumen {
+      grid-area: ofertas;
+    }
 
-  .pagina-inicio .seccion-catalogo-inicio {
-    grid-area: catalogo;
+    .seccion-catalogo-inicio {
+      grid-area: catalogo;
+    }
   }
 
   /* ===== Áreas de las páginas internas ===== */
@@ -94,20 +96,24 @@
     grid-area: contenido;
   }
 
-  .contenido-sobre-nosotros .seccion-sobre-nosotros {
-    grid-area: presentacion;
+  .contenido-sobre-nosotros {
+    .seccion-sobre-nosotros {
+      grid-area: presentacion;
+    }
+
+    .seccion-mision {
+      grid-area: mision;
+    }
   }
 
-  .contenido-sobre-nosotros .seccion-mision {
-    grid-area: mision;
-  }
+  .contenido-contacto {
+    .seccion-contacto {
+      grid-area: formulario;
+    }
 
-  .contenido-contacto .seccion-contacto {
-    grid-area: formulario;
-  }
-
-  .contenido-contacto .seccion-datos-contacto {
-    grid-area: datos;
+    .seccion-datos-contacto {
+      grid-area: datos;
+    }
   }
 
   /* ===== Información adicional ===== */
@@ -144,24 +150,26 @@
   }
 
   /* ===== Oferta destacada del catálogo ===== */
-  .pagina-catalogo .seccion-ofertas-catalogo {
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: variables.$espacio-md;
-    color: var(--color-white);
-    background-color: var(--color-ink);
-    border-color: var(--color-orange);
-  }
+  .pagina-catalogo {
+    .seccion-ofertas-catalogo {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: variables.$espacio-md;
+      color: var(--color-white);
+      background-color: var(--color-ink);
+      border-color: var(--color-orange);
 
-  .pagina-catalogo .seccion-ofertas-catalogo .titulo-seccion {
-    margin-bottom: variables.$espacio-xs;
-    color: var(--color-white);
-  }
+      .titulo-seccion {
+        margin-bottom: variables.$espacio-xs;
+        color: var(--color-white);
+      }
 
-  .pagina-catalogo .seccion-ofertas-catalogo p {
-    margin-bottom: 0;
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
@@ -188,18 +196,18 @@
 
 @mixin acciones-inicio {
   /* ===== Acciones de inicio ===== */
-  .pagina-inicio .seccion-catalogo-inicio,
-  .pagina-inicio .seccion-ofertas-seccion-resumen {
-    display: flex;
-    flex-direction: column;
-    gap: variables.$espacio-intermedio;
-  }
+  .pagina-inicio {
+    .seccion-catalogo-inicio,
+    .seccion-ofertas-seccion-resumen {
+      display: flex;
+      flex-direction: column;
+      gap: variables.$espacio-intermedio;
 
-  .pagina-inicio .seccion-catalogo-inicio > .titulo-seccion,
-  .pagina-inicio .seccion-catalogo-inicio > p,
-  .pagina-inicio .seccion-ofertas-seccion-resumen > .titulo-seccion,
-  .pagina-inicio .seccion-ofertas-seccion-resumen > p {
-    margin: 0;
+      > .titulo-seccion,
+      > p {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -219,10 +227,10 @@
     border-left: .3rem solid var(--color-orange);
     border-radius: variables.$radio-borde;
     background: linear-gradient(135deg, var(--color-block), var(--color-white));
-  }
 
-  .presentacion-inicio > * {
-    margin: 0;
+    > * {
+      margin: 0;
+    }
   }
 
   .texto-presentacion-inicio {
@@ -230,10 +238,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: variables.$espacio-intermedio;
-  }
 
-  .texto-presentacion-inicio > * {
-    margin: 0;
+    > * {
+      margin: 0;
+    }
   }
 
   .imagen-portada {
@@ -273,14 +281,15 @@
     display: flex;
     flex-direction: column;
     gap: variables.$espacio-sm;
-  }
 
-  .encabezado-carrusel-inicio h3, .encabezado-carrusel-inicio p {
-    margin: 0;
-  }
+    h3,
+    p {
+      margin: 0;
+    }
 
-  .encabezado-carrusel-inicio p {
-    color: var(--color-muted);
+    p {
+      color: var(--color-muted);
+    }
   }
 }
 
@@ -325,16 +334,16 @@
         "formulario apoyo";
       align-content: start;
       row-gap: variables.$espacio-md;
-    }
 
-    .contenido-contacto .seccion-contacto {
-      grid-row: 1 / span 2;
-    }
+      .seccion-contacto {
+        grid-row: 1 / span 2;
+      }
 
-    .contenido-contacto .seccion-datos-contacto,
-    .contenido-contacto .info-adicional {
-      align-self: start;
-      margin-bottom: 0;
+      .seccion-datos-contacto,
+      .info-adicional {
+        align-self: start;
+        margin-bottom: 0;
+      }
     }
 
   }

@@ -36,21 +36,19 @@
     border: variables.$borde-fino solid var(--color-border);
     border-radius: variables.$radio-borde;
     background-color: var(--color-page);
-  }
 
-  .tarjeta-producto.card .card-body,
-  .tarjeta-oferta.card .card-body {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
-  }
+    .card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+    }
 
-  .tarjeta-producto.card .card-title,
-  .tarjeta-oferta.card .card-title {
-    min-height: 2.4em;
-    margin-bottom: variables.$espacio-md;
+    .card-title {
+      min-height: 2.4em;
+      margin-bottom: variables.$espacio-md;
+    }
   }
 
   .badge-genero {
@@ -65,32 +63,34 @@
   }
 
   /* ===== Espacios uniformes en tarjetas de productos y ofertas ===== */
-  .tarjeta-producto.card figure,
-  .tarjeta-oferta.card figure {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 variables.$espacio-md;
+  .tarjeta-producto.card,
+  .tarjeta-oferta.card {
+    figure {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 variables.$espacio-md;
+
+      img {
+        @include mixins.imagen-ajustada(14rem, contain);
+        background-color: var(--color-white);
+      }
+    }
+
+    .leyenda-imagen {
+      min-height: 2.8em;
+    }
   }
 
-  .tarjeta-producto.card figure img,
-  .tarjeta-oferta.card figure img {
-    width: 100%;
-    height: 14rem;
-    object-fit: contain;
-    background-color: var(--color-white);
-  }
+  .tarjeta-producto.card {
+    figure {
+      + .card-text {
+        min-height: 4.8rem;
+      }
 
-  .tarjeta-producto.card .leyenda-imagen,
-  .tarjeta-oferta.card .leyenda-imagen {
-    min-height: 2.8em;
-  }
-
-  .tarjeta-producto.card figure + .card-text {
-    min-height: 4.8rem;
-  }
-
-  .tarjeta-producto.card figure + .card-text + .card-text {
-    min-height: 1.6rem;
+      + .card-text + .card-text {
+        min-height: 1.6rem;
+      }
+    }
   }
 }
 
@@ -100,10 +100,10 @@
     color: var(--color-text);
     background-color: var(--color-block);
     border-color: var(--color-border);
-  }
 
-  .modal-producto .modal-header {
-    border-bottom-color: var(--color-border-strong);
+    .modal-header {
+      border-bottom-color: var(--color-border-strong);
+    }
   }
 
   .imagen-modal-producto {
@@ -118,31 +118,29 @@
   /* ===== Selectores de talle y género ===== */
   .selector-talle .form-select:focus,
   .selector-genero .form-select:focus {
-    border-color: var(--color-orange-bright);
-    box-shadow: 0 0 0 .2rem variables.$sombra-foco;
+    @include mixins.foco-control(variables.$sombra-foco);
   }
 }
 
 @mixin estados-tarjetas {
   /* ===== Estados interactivos de tarjetas ===== */
-  .grilla-productos .tarjeta-producto:hover,
-  .grilla-ofertas .tarjeta-oferta:hover,
-  .lista-valores .tarjeta-valor:hover {
-    transform: translateY(-.2rem);
-    border-color: var(--color-orange);
-    box-shadow: 0 variables.$espacio-sm variables.$espacio-md variables.$sombra-tarjeta;
-  }
+  // Cada tarjeta conserva su relación con la grilla correspondiente.
+  .grilla-productos .tarjeta-producto,
+  .grilla-ofertas .tarjeta-oferta,
+  .lista-valores .tarjeta-valor {
+    &:hover {
+      transform: translateY(-.2rem);
+      border-color: var(--color-orange);
+      box-shadow: 0 variables.$espacio-sm variables.$espacio-md variables.$sombra-tarjeta;
+    }
 
-  .grilla-productos .tarjeta-producto:focus-within,
-  .grilla-ofertas .tarjeta-oferta:focus-within,
-  .lista-valores .tarjeta-valor:focus-within {
-    @include mixins.foco-visible;
-  }
+    &:focus-within {
+      @include mixins.foco-visible;
+    }
 
-  .grilla-productos .tarjeta-producto:active,
-  .grilla-ofertas .tarjeta-oferta:active,
-  .lista-valores .tarjeta-valor:active {
-    transform: translateY(0);
+    &:active {
+      transform: translateY(0);
+    }
   }
 
   .lista-valores {
@@ -182,59 +180,63 @@
     align-items: flex-start;
     gap: variables.$espacio-xs;
     margin-bottom: variables.$espacio-intermedio;
+
+    .badge {
+      align-self: flex-start;
+      margin-bottom: 0;
+    }
   }
 
-  .etiquetas-producto .badge {
-    align-self: flex-start;
-    margin-bottom: 0;
-  }
+  .modal-producto {
+    .modal-body {
+      > .row {
+        align-items: stretch !important;
+      }
 
-  .modal-producto .modal-body > .row {
-    align-items: stretch !important;
-  }
+      .col-md-5 {
+        display: flex;
+        min-height: 18rem;
+        align-items: center;
+        justify-content: center;
+      }
 
-  .modal-producto .modal-body .col-md-5 {
-    display: flex;
-    min-height: 18rem;
-    align-items: center;
-    justify-content: center;
-  }
+      .col-md-5 > img {
+        width: 100%;
+        height: 18rem;
+        max-height: 18rem;
+        object-fit: contain;
+      }
 
-  .modal-producto .modal-body .col-md-5 > img {
-    width: 100%;
-    height: 18rem;
-    max-height: 18rem;
-    object-fit: contain;
-  }
+      .col-md-7 {
+        display: flex;
+        min-height: 18rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: variables.$espacio-intermedio;
+      }
 
-  .modal-producto .modal-body .col-md-7 {
-    display: flex;
-    min-height: 18rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: variables.$espacio-intermedio;
-  }
+      .col-md-7 > .badge {
+        align-self: flex-start;
+      }
 
-  .modal-producto .modal-body .col-md-7 > .badge {
-    align-self: flex-start;
-  }
+      .col-md-7 > p {
+        width: 100%;
+        margin: 0;
+      }
 
-  .modal-producto .modal-body .col-md-7 > p {
-    width: 100%;
-    margin: 0;
-  }
+      .col-md-7 > p:nth-of-type(1) {
+        min-height: 3.2em;
+      }
 
-  .modal-producto .modal-body .col-md-7 > p:nth-of-type(1) {
-    min-height: 3.2em;
-  }
+      .col-md-7 > p:nth-of-type(2),
+      .col-md-7 > p:nth-of-type(3) {
+        min-height: 1.6em;
+      }
 
-  .modal-producto .modal-body .col-md-7 > p:nth-of-type(2),
-  .modal-producto .modal-body .col-md-7 > p:nth-of-type(3) {
-    min-height: 1.6em;
-  }
-
-  .modal-producto .modal-body .col-md-7 > p:nth-of-type(4) {
-    min-height: 2em;
+      .col-md-7 > p:nth-of-type(4) {
+        min-height: 2em;
+      }
+    }
   }
 }
 
@@ -255,25 +257,25 @@
     text-align: center;
     background-color: var(--color-white);
     border: variables.$borde-fino solid var(--color-border);
-  }
 
-  .beneficio-inicio > img {
-    width: clamp(2.25rem, 6vw, 3.5rem);
-    height: clamp(2.25rem, 6vw, 3.5rem);
-    object-fit: contain;
-  }
+    > img {
+      width: clamp(2.25rem, 6vw, 3.5rem);
+      height: clamp(2.25rem, 6vw, 3.5rem);
+      object-fit: contain;
+    }
 
-  .beneficio-inicio h3 {
-    margin: 0 0 variables.$espacio-xs;
-    color: var(--color-ink);
-    font-size: clamp(variables.$espacio-intermedio, 1.5vw, variables.$espacio-md);
-    line-height: 1.3;
-  }
+    h3 {
+      margin: 0 0 variables.$espacio-xs;
+      color: var(--color-ink);
+      font-size: clamp(variables.$espacio-intermedio, 1.5vw, variables.$espacio-md);
+      line-height: 1.3;
+    }
 
-  .beneficio-inicio p {
-    margin: 0;
-    font-size: clamp(.68rem, 1.2vw, .875rem);
-    line-height: 1.45;
+    p {
+      margin: 0;
+      font-size: clamp(.68rem, 1.2vw, .875rem);
+      line-height: 1.45;
+    }
   }
 }
 
@@ -297,17 +299,21 @@
 }
 
 @mixin modales-movil {
-  .modal-producto .modal-body .col-md-5,
-  .modal-producto .modal-body .col-md-7 {
-    min-height: 0;
-  }
+  .modal-producto {
+    .modal-body {
+      .col-md-5,
+      .col-md-7 {
+        min-height: 0;
+      }
 
-  .modal-producto .modal-body .col-md-5 > img {
-    height: 13rem;
-    max-height: 13rem;
-  }
+      .col-md-5 > img {
+        height: 13rem;
+        max-height: 13rem;
+      }
 
-  .modal-producto .modal-body .col-md-7 {
-    gap: variables.$espacio-sm;
+      .col-md-7 {
+        gap: variables.$espacio-sm;
+      }
+    }
   }
 }

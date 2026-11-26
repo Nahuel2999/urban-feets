@@ -96,12 +96,16 @@
 
 @mixin enlaces-contenido {
   /* ===== Enlaces del contenido ===== */
-  main a:not(.boton-enlace) {
-    transition: color variables.$transicion-rapida;
-  }
+  main {
+    a {
+      &:not(.boton-enlace) {
+        transition: color variables.$transicion-rapida;
+      }
 
-  main a:not(.boton-enlace):hover,
-  main a:not(.boton-enlace):focus {
-    color: var(--color-orange-dark);
+      &:not(.boton-enlace):hover,
+      &:not(.boton-enlace):focus {
+        color: var(--color-orange-dark);
+      }
+    }
   }
 }

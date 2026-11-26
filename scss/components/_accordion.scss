@@ -1,32 +1,32 @@
 @use "../utilities/variables";
+@use "../utilities/mixins";
 
 
 @mixin acordeon {
   /* ===== Acordeón de preguntas frecuentes ===== */
   .acordeon-preguntas {
     margin-top: variables.$espacio-lg;
-  }
 
-  .acordeon-preguntas .accordion-button {
-    color: var(--color-ink);
-    background-color: var(--color-page);
-    font: inherit;
-    font-weight: 600;
-  }
+    .accordion-button {
+      color: var(--color-ink);
+      background-color: var(--color-page);
+      font: inherit;
+      font-weight: 600;
 
-  .acordeon-preguntas .accordion-button:not(.collapsed) {
-    color: var(--color-ink);
-    background-color: var(--color-orange-soft);
-    box-shadow: none;
-  }
+      &:not(.collapsed) {
+        color: var(--color-ink);
+        background-color: var(--color-orange-soft);
+        box-shadow: none;
+      }
 
-  .acordeon-preguntas .accordion-button:focus {
-    border-color: var(--color-orange-bright);
-    box-shadow: 0 0 0 .2rem variables.$sombra-acordeon;
-  }
+      &:focus {
+        @include mixins.foco-control(variables.$sombra-acordeon);
+      }
+    }
 
-  .acordeon-preguntas .accordion-body {
-    background-color: var(--color-white);
+    .accordion-body {
+      background-color: var(--color-white);
+    }
   }
 }
 

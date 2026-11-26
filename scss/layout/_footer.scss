@@ -14,24 +14,26 @@
 
 @mixin enlaces {
   /* ===== Enlaces de redes sociales ===== */
-  .enlace-red-social:link {
-    color: var(--color-orange-soft);
-    text-decoration: none;
-    transition: color variables.$transicion-rapida, text-decoration-color variables.$transicion-rapida;
-  }
+  .enlace-red-social {
+    &:link {
+      color: var(--color-orange-soft);
+      text-decoration: none;
+      transition: color variables.$transicion-rapida, text-decoration-color variables.$transicion-rapida;
+    }
 
-  .enlace-red-social:visited {
-    color: var(--color-social-visited);
-  }
+    &:visited {
+      color: var(--color-social-visited);
+    }
 
-  .enlace-red-social:hover,
-  .enlace-red-social:focus {
-    color: var(--color-white);
-    text-decoration: underline;
-  }
+    &:hover,
+    &:focus {
+      color: var(--color-white);
+      text-decoration: underline;
+    }
 
-  .enlace-red-social:active {
-    color: var(--color-orange);
+    &:active {
+      color: var(--color-orange);
+    }
   }
 }
 

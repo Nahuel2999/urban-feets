@@ -11,36 +11,38 @@
     border: variables.$borde-fino solid var(--color-border-strong);
     border-radius: variables.$radio-borde;
     background-color: var(--color-white);
-  }
 
-  .controles-catalogo .form-label {
-    margin: 0 0 variables.$espacio-sm;
-    font-weight: 700;
-  }
+    .form-label {
+      margin: 0 0 variables.$espacio-sm;
+      font-weight: 700;
+    }
 
-  .controles-catalogo .btn-group {
-    display: flex;
-    width: 100%;
-  }
+    .btn-group {
+      display: flex;
+      width: 100%;
+    }
 
-  .controles-catalogo .btn {
-    flex: 1 1 auto;
-    white-space: normal;
-  }
+    .btn {
+      flex: 1 1 auto;
+      white-space: normal;
+    }
 
-  .controles-catalogo .btn-outline-secondary {
-    color: var(--color-ink);
-    border-color: var(--color-border-strong);
-  }
+    .btn-outline-secondary {
+      color: var(--color-ink);
+      border-color: var(--color-border-strong);
+    }
 
-  .controles-catalogo .btn-check:checked + .btn-outline-secondary {
-    color: var(--color-white);
-    background-color: var(--color-ink);
-    border-color: var(--color-orange);
-  }
+    .btn-check {
+      &:checked + .btn-outline-secondary {
+        color: var(--color-white);
+        background-color: var(--color-ink);
+        border-color: var(--color-orange);
+      }
 
-  .controles-catalogo .btn-check:focus-visible + .btn-outline-secondary {
-    @include mixins.foco-visible;
+      &:focus-visible + .btn-outline-secondary {
+        @include mixins.foco-visible;
+      }
+    }
   }
 
   /* ===== Paginación de catálogos ===== */
@@ -55,18 +57,20 @@
 
 @mixin controles-compactos {
   /* ===== Controles compactos de catálogo ===== */
-  .paginacion-catalogo .btn-group {
-    display: flex;
-    width: auto;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: variables.$espacio-xs;
-  }
+  .paginacion-catalogo {
+    .btn-group {
+      display: flex;
+      width: auto;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: variables.$espacio-xs;
+    }
 
-  .paginacion-catalogo .btn {
-    min-width: 2.75rem;
-    flex: 0 0 auto;
-    white-space: nowrap;
+    .btn {
+      min-width: 2.75rem;
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
   }
 }
 

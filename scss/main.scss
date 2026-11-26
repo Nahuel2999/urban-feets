@@ -1,143 +1,79 @@
-// ===== Módulos de estilos base y componentes =====
+// Base y tipografía
 @use "base/base";
 @use "base/tipografia";
-@use "components/buttons";
-@use "components/cards";
-// ===== Módulos de estructura y utilidades =====
+
+// Estructura
+@use "layout/content" as contenido;
+@use "layout/footer";
 @use "layout/header";
 @use "layout/nav";
-@use "layout/footer";
 
-
-@use "layout/content" as contenido;
-
+// Componentes
+@use "components/accordion";
+@use "components/buttons";
+@use "components/cards";
+@use "components/carousel";
+@use "components/forms";
+@use "components/pagination";
 @use "components/tabs";
 
-@use "components/forms";
-
-@use "components/accordion";
-
-@use "components/carousel";
-
-@use "components/pagination";
-
-// ===== Estilos generales =====
+// Los includes siguen el orden de la cascada del sitio.
+// Base y contenedores
 @include base.estilos-generales;
-
 @include contenido.contenedores;
 
-// ===== Encabezado =====
+// Encabezado y distribución
 @include header.encabezado;
-
-// ===== Menú de navegación =====
 @include nav.menu;
-
-// ===== Migas de pan =====
 @include nav.migas;
-
 @include contenido.distribucion;
-
-// ===== Bloques generales =====
 @include base.bloques-generales;
-
 @include contenido.bloques;
 
-// ===== Tarjetas y grillas =====
+// Componentes y contenido
 @include cards.tarjetas;
-
-// ===== Ventanas de detalle =====
 @include cards.modales;
-
 @include tabs.contenido;
-
-// ===== Selectores de talle y género =====
 @include cards.selectores;
-
-// ===== Botones de tarjetas =====
 @include buttons.botones-tarjetas;
-
-// ===== Estados interactivos de tarjetas =====
 @include cards.estados-tarjetas;
-
 @include contenido.contenido-flex;
-
 @include forms.estructura;
-
-// ===== Lista de redes sociales =====
 @include footer.lista-redes;
-
 @include contenido.listas;
-
-// ===== Alternancia de tarjetas =====
 @include cards.alternancia;
-
 @include accordion.acordeon;
 
-// ===== Títulos =====
+// Tipografía y controles
 @include tipografia.titulos;
-
-// ===== Imágenes =====
 @include base.imagenes;
-
-// ===== Leyendas =====
 @include tipografia.leyendas;
-
 @include carousel.carrusel;
-
-// ===== Enlaces de redes sociales =====
 @include footer.enlaces;
-
 @include base.enlaces-contenido;
-
-// ===== Botones =====
 @include buttons.botones;
-
 @include contenido.acciones-inicio;
-
-// ===== Botones de inicio =====
 @include buttons.botones-inicio;
-
-// ===== Foco de teclado =====
 @include base.foco-teclado;
-
 @include forms.campos;
 
-// ===== Pie de página =====
+// Pie y detalles de catálogo
 @include footer.pie;
-
 @include pagination.controles;
-
-// ===== Descripción y selectores =====
 @include cards.descripcion-selectores;
-
 @include pagination.controles-compactos;
-
-// ===== Detalles de productos =====
 @include cards.detalles;
-
 @include pagination.navegacion-inferior;
-
 @include tabs.pestanas;
-
 @include accordion.tipografia;
-
 @include contenido.portada;
-
-// ===== Beneficios =====
 @include cards.beneficios;
 
-// ===== Menú móvil =====
+// Puntos de quiebre y movimiento reducido
 @include nav.menu-movil;
-
 @include contenido.tablet;
-
 @include contenido.navbar-escritorio;
-
 @include contenido.escritorio;
-
 @include contenido.pantalla-pequena;
-
-// ===== Preferencia de movimiento reducido =====
 @include base.movimiento-reducido;
-
 @include contenido.movil;

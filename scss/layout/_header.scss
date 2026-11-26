@@ -19,12 +19,12 @@
     grid-area: logo;
     justify-self: start;
     display: block;
-  }
 
-  .logo-sitio img {
-    width: 3.5rem;
-    height: 3.5rem;
-    object-fit: contain;
+    img {
+      width: 3.5rem;
+      height: 3.5rem;
+      object-fit: contain;
+    }
   }
 
   .titulo-sitio {

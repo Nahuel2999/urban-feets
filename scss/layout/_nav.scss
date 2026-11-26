@@ -42,32 +42,31 @@
     border: variables.$borde-medio solid transparent;
     border-radius: variables.$radio-compacto;
     transition: color variables.$transicion-rapida, background-color variables.$transicion-rapida, border-color variables.$transicion-rapida;
-  }
 
-  /* ===== Estados de los enlaces del menú ===== */
-  .enlace-menu:link {
-    color: var(--color-white);
-  }
+    // Estados del enlace y página actual, con la especificidad original.
+    &:link {
+      color: var(--color-white);
+    }
 
-  .enlace-menu:visited {
-    color: var(--color-orange-soft);
-  }
+    &:visited {
+      color: var(--color-orange-soft);
+    }
 
-  /* ===== Enlace de navegación actual ===== */
-  .enlace-menu[aria-current="page"] {
-    color: var(--color-orange-bright);
-    border-color: var(--color-orange-bright);
-  }
+    &[aria-current="page"] {
+      color: var(--color-orange-bright);
+      border-color: var(--color-orange-bright);
+    }
 
-  .enlace-menu:hover,
-  .enlace-menu:focus {
-    color: var(--color-orange-bright);
-    border-color: var(--color-orange-bright);
-  }
+    &:hover,
+    &:focus {
+      color: var(--color-orange-bright);
+      border-color: var(--color-orange-bright);
+    }
 
-  .enlace-menu:active {
-    color: var(--color-white);
-    background-color: var(--color-orange);
+    &:active {
+      color: var(--color-white);
+      background-color: var(--color-orange);
+    }
   }
 }
 
@@ -78,15 +77,17 @@
     font-size: .9rem;
   }
 
-  .breadcrumb-item a {
-    color: var(--color-orange-dark);
-    text-decoration: none;
-  }
+  .breadcrumb-item {
+    a {
+      color: var(--color-orange-dark);
+      text-decoration: none;
 
-  .breadcrumb-item a:hover,
-  .breadcrumb-item a:focus {
-    color: var(--color-orange);
-    text-decoration: underline;
+      &:hover,
+      &:focus {
+        color: var(--color-orange);
+        text-decoration: underline;
+      }
+    }
   }
 
   .breadcrumb-item.active {
@@ -99,29 +100,29 @@
   @media (max-width: variables.$menu-movil) {
     .menu-navegacion {
       z-index: 2;
-    }
 
-    .menu-navegacion .navbar-collapse {
-      position: absolute;
-      top: calc(100% + 1.75rem);
-      right: 0;
-      z-index: 20;
-      width: min(88vw, 18rem);
-      padding: variables.$espacio-sm;
-      border: variables.$borde-fino solid var(--color-orange);
-      border-radius: variables.$radio-borde;
-      background-color: var(--color-ink);
-      box-shadow: 0 variables.$espacio-sm variables.$espacio-md rgba(17, 24, 39, .28);
-    }
+      .navbar-collapse {
+        position: absolute;
+        top: calc(100% + 1.75rem);
+        right: 0;
+        z-index: 20;
+        width: min(88vw, 18rem);
+        padding: variables.$espacio-sm;
+        border: variables.$borde-fino solid var(--color-orange);
+        border-radius: variables.$radio-borde;
+        background-color: var(--color-ink);
+        box-shadow: 0 variables.$espacio-sm variables.$espacio-md rgba(17, 24, 39, .28);
+      }
 
-    .menu-navegacion .navbar-collapse .lista-navegacion {
-      align-items: stretch;
-      width: 100%;
-    }
+      .navbar-collapse .lista-navegacion {
+        align-items: stretch;
+        width: 100%;
+      }
 
-    .menu-navegacion .navbar-collapse .enlace-menu {
-      width: 100%;
-      text-align: left;
+      .navbar-collapse .enlace-menu {
+        width: 100%;
+        text-align: left;
+      }
     }
   }
 }

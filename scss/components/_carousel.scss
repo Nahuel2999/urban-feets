@@ -1,4 +1,5 @@
 @use "../utilities/variables";
+@use "../utilities/mixins";
 
 
 @mixin carrusel {
@@ -12,58 +13,58 @@
   }
 
   .imagen-carrusel {
-    width: 100%;
-    height: clamp(15rem, 36vw, 24rem);
-    object-fit: cover;
+    @include mixins.imagen-ajustada(clamp(15rem, 36vw, 24rem), cover);
   }
 
-  .carrusel-sitio .carousel-caption {
-    right: 0;
-    bottom: 2rem;
-    left: 0;
-    padding: variables.$espacio-md 3.5rem;
-    color: var(--color-white);
-    background-color: variables.$fondo-leyenda;
-  }
+  .carrusel-sitio {
+    .carousel-caption {
+      right: 0;
+      bottom: 2rem;
+      left: 0;
+      padding: variables.$espacio-md 3.5rem;
+      color: var(--color-white);
+      background-color: variables.$fondo-leyenda;
 
-  .carrusel-sitio .carousel-caption p {
-    margin: 0;
-  }
+      p {
+        margin: 0;
+      }
+    }
 
-  .carrusel-sitio .carousel-indicators {
-    bottom: variables.$espacio-minimo;
-    margin-bottom: 0;
-  }
+    .carousel-indicators {
+      bottom: variables.$espacio-minimo;
+      margin-bottom: 0;
 
-  .carrusel-sitio .carousel-indicators [data-bs-target] {
-    width: variables.$espacio-intermedio;
-    height: variables.$espacio-intermedio;
-    border: 0;
-    border-radius: 50%;
-    transition: opacity variables.$transicion-rapida, transform variables.$transicion-rapida;
-  }
+      [data-bs-target] {
+        width: variables.$espacio-intermedio;
+        height: variables.$espacio-intermedio;
+        border: 0;
+        border-radius: 50%;
+        transition: opacity variables.$transicion-rapida, transform variables.$transicion-rapida;
+      }
 
-  .carrusel-sitio .carousel-indicators [data-bs-target]:hover,
-  .carrusel-sitio .carousel-indicators [data-bs-target]:focus {
-    opacity: 1;
-    transform: scale(1.2);
-  }
+      [data-bs-target]:hover,
+      [data-bs-target]:focus {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
 
-  .carrusel-sitio .carousel-control-prev,
-  .carrusel-sitio .carousel-control-next {
-    transition: background-color variables.$transicion-rapida, opacity variables.$transicion-rapida;
-  }
+    .carousel-control-prev,
+    .carousel-control-next {
+      transition: background-color variables.$transicion-rapida, opacity variables.$transicion-rapida;
+    }
 
-  .carrusel-sitio .carousel-control-prev:hover,
-  .carrusel-sitio .carousel-control-next:hover,
-  .carrusel-sitio .carousel-control-prev:focus,
-  .carrusel-sitio .carousel-control-next:focus {
-    background-color: variables.$fondo-control;
-    opacity: 1;
-  }
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover,
+    .carousel-control-prev:focus,
+    .carousel-control-next:focus {
+      background-color: variables.$fondo-control;
+      opacity: 1;
+    }
 
-  .carrusel-sitio .carousel-control-prev:active,
-  .carrusel-sitio .carousel-control-next:active {
-    background-color: variables.$fondo-control-activo;
+    .carousel-control-prev:active,
+    .carousel-control-next:active {
+      background-color: variables.$fondo-control-activo;
+    }
   }
 }
