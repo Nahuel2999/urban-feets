@@ -124,7 +124,6 @@
 
 @mixin estados-tarjetas {
   /* ===== Estados interactivos de tarjetas ===== */
-  // Cada tarjeta conserva su relación con la grilla correspondiente.
   .grilla-productos .tarjeta-producto,
   .grilla-ofertas .tarjeta-oferta,
   .lista-valores .tarjeta-valor {

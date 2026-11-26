@@ -10,7 +10,6 @@
 
 @mixin pestanas {
   /* ===== Pestañas informativas y de ofertas ===== */
-  // Las dos variantes comparten estilos sin cambiar sus selectores Bootstrap.
   .pestanas-informacion .nav-tabs,
   .pestanas-ofertas.nav-tabs {
     display: flex;

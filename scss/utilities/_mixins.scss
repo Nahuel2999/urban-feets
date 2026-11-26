@@ -1,17 +1,14 @@
 // ===== Mixins reutilizables =====
-// Centraliza el contorno de teclado con valores configurables.
 @mixin foco-visible($color: var(--color-orange-bright), $grosor: .2rem, $distancia: .15rem) {
   outline: $grosor solid $color;
   outline-offset: $distancia;
 }
-// Comparte el ancho y el ajuste de las imágenes; cada componente define su altura.
 @mixin imagen-ajustada($altura, $ajuste) {
   width: 100%;
   height: $altura;
   object-fit: $ajuste;
 }
 
-// Mantiene el borde y el anillo de foco de controles Bootstrap.
 @mixin foco-control($sombra) {
   border-color: var(--color-orange-bright);
   box-shadow: 0 0 0 .2rem $sombra;

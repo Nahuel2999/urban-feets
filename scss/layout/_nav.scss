@@ -43,7 +43,6 @@
     border-radius: variables.$radio-compacto;
     transition: color variables.$transicion-rapida, background-color variables.$transicion-rapida, border-color variables.$transicion-rapida;
 
-    // Estados del enlace y página actual, con la especificidad original.
     &:link {
       color: var(--color-white);
     }

@@ -17,7 +17,6 @@
 @use "components/pagination";
 @use "components/tabs";
 
-// Los includes siguen el orden de la cascada del sitio.
 // Base y contenedores
 @include base.estilos-generales;
 @include contenido.contenedores;
