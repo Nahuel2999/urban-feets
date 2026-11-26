@@ -17,7 +17,7 @@ El proyecto cuenta con un diseño responsive y una arquitectura de estilos modul
 - **Bootstrap 5.3.3** para la navbar, las cards, los badges, los breadcrumbs, el acordeón, las pestañas y los modales.
 - **JavaScript** para las funcionalidades interactivas del sitio.
 - **Google Fonts** para las tipografías Poppins y Roboto.
-- **Node.js y npm** para la instalación de Sass.
+- **Node.js y npm** para instalar la versión de Sass del proyecto y ejecutar los scripts de compilación.
 - **Git** para el control de versiones y la gestión de ramas.
 - **GitHub** para el almacenamiento y seguimiento del proyecto.
 - **GitHub Pages** para la publicación del sitio web.
@@ -31,6 +31,9 @@ Bootstrap y Google Fonts se cargan desde servicios externos mediante CDN, por lo
 urban-feets/
 ├── index.html
 ├── README.md
+├── .gitignore
+├── package.json
+├── package-lock.json
 ├── assets/
 │   └── imágenes y recursos del sitio
 ├── css/
@@ -73,7 +76,7 @@ Los estilos propios del proyecto se encuentran organizados en una estructura mod
 Contiene los recursos reutilizables del sistema de estilos.
 
 - `_variables.scss`: colores, espaciados, bordes, sombras, transiciones y puntos de quiebre responsivos.
-- `_mixins.scss`: bloques de estilos reutilizables.
+- `_mixins.scss`: mixins con parámetros para el borde y el relleno de botones y enlaces del menú, el ajuste de imágenes y los estados de foco.
 
 ### Base
 
@@ -107,7 +110,7 @@ Contiene los estilos de los elementos reutilizables del sitio y la personalizaci
 
 El archivo `main.scss` constituye el único punto de entrada para la compilación de los estilos.
 
-La integración de los partials se realiza mediante las directivas `@use` y `@include`, respetando el orden de la cascada y favoreciendo la organización del código.
+Los `@use` se agrupan al comienzo en el orden `utilities → base → layout → components`. A continuación, los `@include` incorporan los estilos en el orden de la cascada.
 
 El archivo `css/styles.css` es generado automáticamente mediante Sass y no debe editarse de forma manual.
 
@@ -127,7 +130,7 @@ El archivo `css/styles.css` es generado automáticamente mediante Sass y no debe
 - Tarjetas Bootstrap con alturas y botones alineados.
 - Catálogo unificado con 22 modelos.
 - Selectores de género y talle.
-- Opciones de talles del 36 al 46 para adultos y del 20 al 36 para niños.
+- Opciones de talles del 36 al 46 para adultos y del 20 al 35 para niños.
 - Paginación de hasta seis productos por página.
 - Modales Bootstrap con información ampliada de los productos.
 - Badges para identificar las ofertas.
@@ -166,34 +169,32 @@ Bootstrap y las tipografías requieren conexión a internet.
 
 ## Compilación de SCSS
 
-Para modificar los estilos del proyecto es necesario contar con Node.js, npm y Sass.
+Para modificar los estilos, necesitás Node.js 20.19.0 o superior y npm. Ejecutá los comandos desde la raíz del proyecto, donde está `package.json`.
 
 ### Instalación de Sass
 
 ~~~bash
-npm install -g sass
+npm ci
 ~~~
 
-### Verificación de la instalación
-
-~~~bash
-sass --version
-~~~
+Sass se instala como dependencia de desarrollo según las versiones registradas en `package-lock.json`. Git ignora la carpeta `node_modules/`.
 
 ### Compilación manual
 
 Desde el directorio raíz del proyecto:
 
 ~~~bash
-sass scss/main.scss css/styles.css
+npm run build:css
 ~~~
+
+El comando compila `scss/main.scss` y genera `css/styles.css` y `css/styles.css.map`.
 
 ### Compilación automática
 
 Para detectar modificaciones en los archivos SCSS y actualizar automáticamente la hoja de estilos:
 
 ~~~bash
-sass --watch scss/main.scss css/styles.css
+npm run watch:css
 ~~~
 
 Para detener la compilación automática, utilizar `Ctrl + C` en la terminal.
