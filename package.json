@@ -1,0 +1,26 @@
+{
+  "name": "urban-feets",
+  "version": "1.0.0",
+  "description": "Sitio web estático de una tienda de zapatillas, desarrollado como proyecto del curso de **Desarrollo Web** de Coderhouse.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass --style=expanded --source-map scss/main.scss css/styles.css",
+    "watch:css": "sass --watch --style=expanded --source-map scss/main.scss css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nahuel2999/urban-feets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Nahuel2999/urban-feets/issues"
+  },
+  "homepage": "https://github.com/Nahuel2999/urban-feets#readme",
+  "devDependencies": {
+    "sass": "1.108.2"
+  }
+}
