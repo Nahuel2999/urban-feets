@@ -1,6 +1,12 @@
 @use "variables";
 
 // ===== Mixins reutilizables =====
+@mixin desde($ancho) {
+  @media (min-width: $ancho) {
+    @content;
+  }
+}
+
 @mixin espaciado-y-borde-boton($relleno, $color-borde) {
   padding: $relleno;
   border: variables.$borde-medio solid $color-borde;

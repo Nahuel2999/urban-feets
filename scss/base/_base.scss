@@ -90,6 +90,9 @@
       animation-iteration-count: 1 !important;
     }
 
+    .animate__animated {
+      animation-name: none;
+    }
   }
 }
 

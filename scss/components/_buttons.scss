@@ -35,7 +35,22 @@
       background-color: var(--color-orange-dark);
       border-color: var(--color-orange-dark);
       color: var(--color-white);
-      transform: translateY(.1rem);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      &:focus-visible {
+        transform: translateY(-.125rem);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          transform: translateY(-.125rem);
+        }
+      }
+
+      &:active {
+        transform: translateY(.1rem);
+      }
     }
   }
 }

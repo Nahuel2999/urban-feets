@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* ===== Tipografías ===== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100..900&display=swap");
+.titulo-seccion, .titulo-tarjeta {
+  margin-top: 0;
+  font-weight: 700;
+}
+
 :root {
   --color-white: #fff;
   --color-ink: #111827;
@@ -228,6 +233,10 @@ body {
 }
 .contenido-contacto .seccion-datos-contacto {
   grid-area: datos;
+}
+
+.seccion-datos-contacto {
+  overflow-wrap: anywhere;
 }
 
 /* ===== Información adicional ===== */
@@ -502,17 +511,13 @@ aside {
 
 /* ===== Títulos ===== */
 .titulo-seccion {
-  margin-top: 0;
   color: var(--color-ink);
   font-size: 1.5rem;
-  font-weight: 700;
 }
 
 .titulo-tarjeta {
   color: var(--color-orange);
   font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 0;
 }
 
 /* ===== Imágenes ===== */
@@ -634,7 +639,21 @@ main a:not(.boton-enlace):hover, main a:not(.boton-enlace):focus {
   background-color: var(--color-orange-dark);
   border-color: var(--color-orange-dark);
   color: var(--color-white);
-  transform: translateY(0.1rem);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .boton-enlace:focus-visible {
+    transform: translateY(-0.125rem);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .boton-enlace:hover {
+    transform: translateY(-0.125rem);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .boton-enlace:active {
+    transform: translateY(0.1rem);
+  }
 }
 
 /* ===== Acciones de inicio ===== */
@@ -848,7 +867,8 @@ textarea {
 }
 
 .paginacion-inferior .btn {
-  min-width: 8rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .paginacion-catalogo .btn-group > .btn + .btn {
@@ -877,6 +897,7 @@ textarea {
   text-align: center;
   font-size: clamp(0.78rem, 2.8vw, 1rem);
   line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 .pestanas-informacion .nav-tabs .nav-link:hover, .pestanas-informacion .nav-tabs .nav-link:focus-visible, .pestanas-informacion .nav-tabs .nav-link.active,
 .pestanas-ofertas.nav-tabs .nav-link:hover,
@@ -900,10 +921,10 @@ textarea {
 
 .presentacion-inicio {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(12rem, 0.9fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: 1rem;
-  padding: clamp(1.25rem, 3vw, 2.25rem);
+  padding: 1.25rem;
   border-left: 0.3rem solid var(--color-orange);
   border-radius: 0.5rem;
   background: linear-gradient(135deg, var(--color-block), var(--color-white));
@@ -925,7 +946,7 @@ textarea {
 .imagen-portada {
   width: 100%;
   height: 100%;
-  min-height: 12rem;
+  min-height: 9rem;
   object-fit: cover;
   border-radius: 0.5rem;
 }
@@ -970,7 +991,7 @@ textarea {
 
 .grilla-beneficios-inicio {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.75rem;
 }
 
@@ -993,12 +1014,12 @@ textarea {
 .beneficio-inicio h3 {
   margin: 0 0 0.35rem;
   color: var(--color-ink);
-  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-size: 1rem;
   line-height: 1.3;
 }
 .beneficio-inicio p {
   margin: 0;
-  font-size: clamp(0.68rem, 1.2vw, 0.875rem);
+  font-size: 0.875rem;
   line-height: 1.45;
 }
 
@@ -1029,21 +1050,27 @@ textarea {
   }
 }
 /* ===== Diseño responsive para tablets ===== */
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
   .titulo-sitio {
     white-space: nowrap;
   }
   .lista-navegacion {
     align-items: flex-start;
   }
+  .grilla-beneficios-inicio {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .pagina-catalogo .grilla-productos,
   .grilla-ofertas,
   .lista-valores {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .contenido-ofertas {
-    grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
-    grid-template-areas: "contenido apoyo";
+  .presentacion-inicio {
+    grid-template-columns: minmax(0, 1.1fr) minmax(12rem, 0.9fr);
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+  }
+  .imagen-portada {
+    min-height: 12rem;
   }
   .contenido-principal-layout-inicio {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1091,6 +1118,7 @@ textarea {
 @media (min-width: 1024px) {
   .contenido-ofertas {
     grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+    grid-template-areas: "contenido apoyo";
   }
   .pagina-catalogo .grilla-productos {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1133,6 +1161,9 @@ textarea {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+  .animate__animated {
+    animation-name: none;
+  }
 }
 /* ===== Ajustes móviles de modales y catálogo ===== */
 @media (max-width: 47.99rem) {
@@ -1150,13 +1181,6 @@ textarea {
   .pagina-catalogo .seccion-ofertas-catalogo {
     align-items: flex-start;
     flex-direction: column;
-  }
-  .presentacion-inicio {
-    grid-template-columns: 1fr;
-    padding: 1.1rem;
-  }
-  .imagen-portada {
-    min-height: 9rem;
   }
 }
 

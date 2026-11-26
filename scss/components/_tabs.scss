@@ -30,6 +30,7 @@
       text-align: center;
       font-size: clamp(.78rem, 2.8vw, variables.$espacio-md);
       line-height: 1.25;
+      overflow-wrap: anywhere;
 
       &:hover,
       &:focus-visible,

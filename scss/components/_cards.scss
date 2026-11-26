@@ -242,7 +242,7 @@
 @mixin beneficios {
   .grilla-beneficios-inicio {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: variables.$espacio-intermedio;
   }
 
@@ -266,19 +266,23 @@
     h3 {
       margin: 0 0 variables.$espacio-xs;
       color: var(--color-ink);
-      font-size: clamp(variables.$espacio-intermedio, 1.5vw, variables.$espacio-md);
+      font-size: variables.$espacio-md;
       line-height: 1.3;
     }
 
     p {
       margin: 0;
-      font-size: clamp(.68rem, 1.2vw, .875rem);
+      font-size: .875rem;
       line-height: 1.45;
     }
   }
 }
 
 @mixin grillas-tablet {
+  .grilla-beneficios-inicio {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .pagina-catalogo .grilla-productos,
   .grilla-ofertas,
   .lista-valores {
